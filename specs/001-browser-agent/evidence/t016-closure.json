@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-24T02:26:54.288Z",
+  "timestamp": "2026-10-24T02:40:40.268Z",
   "kind": "release-evidence-closure",
   "status": "passed",
   "mode": "reuse-existing-acceptance-with-frozen-status-line-review",
@@ -67,7 +67,7 @@
     "specs/001-browser-agent/evidence/t014-reliability.json": "eddbdc7f4ee31ca106107377f2309860581bb9a2532a6bdc228b2afea7671f91",
     "specs/001-browser-agent/evidence/t014-acceptance.json": "c930ca49cbf3e8ccd77484c172e2f65767b908f8bffebfe9868b4c1310672579",
     "specs/001-browser-agent/evidence/t014-checks.json": "f7be12ea4721c6492b1681bac4c53ed644b3087dcdc7e9ae39f530d886b7d593",
-    "specs/001-browser-agent/evidence/t015-checks.json": "a9eb8139ed104617be22a80460c44b36f9dda18de7b3d5007556b1691939127f",
+    "specs/001-browser-agent/evidence/t015-checks.json": "a69c6cadb254e9443788c89eba0cc521633af6ce6bd50e0926ddbb9de7e08f6a",
     "specs/001-browser-agent/closure-baseline.json": "b96f222827d355e1a7e311b715f8ca704715028388f8dd2fe71e21c2bc7a0238",
     "specs/001-browser-agent/closure-v01.md": "b4757c91ec858cf2a2db76972deb2189810112cf4c0142f6ecdea15d972afbb2",
     "specs/001-browser-agent/t016-report.md": "5da3f419a147ca8166a115a228b2f91c53b77d4d1cd65913da2c50d400138fb5",

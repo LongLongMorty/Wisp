@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-24T02:25:57.786Z",
+  "timestamp": "2026-10-24T02:40:07.946Z",
   "kind": "documentation-and-traceability-review",
   "status": "passed",
   "checks": [
@@ -7,8 +7,8 @@
       "name": "localLinks",
       "passed": true,
       "detail": {
-        "documents": 13,
-        "links": 337
+        "documents": 14,
+        "links": 335
       }
     },
     {
@@ -128,7 +128,7 @@
     }
   ],
   "files": {
-    "README.md": "b422438cd8a72b64cc44e5868e32e119039020bcf5d06a3cc35cd7e37d6a9835",
+    "README.md": "3b9aa8a9b0233847f021a3f6585d4981a60943e6f67848b6c5a16e4434dcc648",
     "specs/001-browser-agent/README.md": "9db218d6fd8b7546805368242450f4038c1b0b082bee40f0a800c38545dec859",
     "specs/001-browser-agent/documentation-v01.md": "cfc62c586593c276def4782604e34b59f11d27ced35e49e163b560866cbe2d6f",
     "specs/001-browser-agent/traceability.md": "da276edd96c20f69aae481a2c74b0b3b8db2bf5c4df9da0a2d3fefa150935483",
@@ -137,6 +137,7 @@
     "docs/architecture.md": "e0c69d8b2f1f17c3e7003536626d38ead91e522dc1f90eaa1ac4abea42941d89",
     "docs/changelog.md": "24ca7e51a8d19a0018619b98ba475cb156ee779002fd9af8b04ccd76124394a8",
     "docs/getting-started.md": "02af980eec47cab73274d8a5341a6012867706adcba2b9ff122a9d29ffdd481a",
+    "docs/history/design-discussion.md": "ee798078046ad4384a0830a929eabf8ae5f0f4631f8fe0b09a82c61089bd71ef",
     "docs/sdk.md": "0f6bca1c14163b0af5e2bbbe07760dd7bfbd73b1816ab3a57a803465491005b5",
     "docs/security.md": "0c733e0c25a47512d220ab22586162f31e4333dc362d5075c1834037b7e92e01",
     "docs/support.md": "b1743ec3f21e402e90dbba53f2af5c42194a22b1c7f504ea4f12f30512b9a388",

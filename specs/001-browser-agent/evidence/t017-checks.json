@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-10-24T02:27:01.974Z",
+  "timestamp": "2026-10-24T02:40:41.322Z",
   "kind": "local-reproducible-release-candidate",
   "version": "0.1.0-rc.1",
   "status": "passed",
-  "output": "E:\\Wisp\\.cache\\candidates\\0.1.0-rc.1-2026-10-24T02-27-01-969Z",
+  "output": "E:\\Wisp\\.cache\\candidates\\0.1.0-rc.1-2026-10-24T02-40-41-316Z",
   "installMode": "online",
   "environment": {
     "node": "v22.20.0",
@@ -16,15 +16,15 @@
       "passed": true,
       "detail": {
         "status": "passed",
-        "sha256": "8527d628bf339aa6190d3829595010108133f36b5ad63d08e2efa16c99beccdf"
+        "sha256": "e9dc5ea7a1ca8528638fbce1cebf9231ecacde7f18b4f657b9cd3e95f0c8a59c"
       }
     },
     {
       "name": "sourceSnapshot",
       "passed": true,
       "detail": {
-        "files": 272,
-        "sha256": "6af4cecb3643c8c08a095939c441adf04a54ec637d3be2abab76b0f5f2f65336",
+        "files": 273,
+        "sha256": "176b06756600919fc1c939e02712d93160dbcc6e5467f581462c66e4fffbda37",
         "git": "No Git metadata; content-addressed source snapshot"
       }
     },
@@ -92,15 +92,15 @@
       "name": "sourceAndAcceptanceUnchanged",
       "passed": true,
       "detail": {
-        "sourceFiles": 272
+        "sourceFiles": 273
       }
     }
   ],
   "artifacts": {
     "extension-manifest.json": "cda6ecc98d3d747d168e88235f6f252385697a3699f43497a19c481f7ef84324",
-    "source-manifest.json": "f61e7756a746747ae9a010e6649ece28000c4eb1f2e8a932f4b215c79ae14002",
+    "source-manifest.json": "8457556a52f78e30f01bdf4c02e6e78342c4da8cfe71e2cf671b263d850b9a7e",
     "wisp-0.1.0-rc.1-chrome-mv3.zip": "4988dd72a96e437b556c54ce3d4a8b3ede5183fdc7bd60bfe309c60620d99419",
-    "wisp-0.1.0-rc.1-source.zip": "6af4cecb3643c8c08a095939c441adf04a54ec637d3be2abab76b0f5f2f65336"
+    "wisp-0.1.0-rc.1-source.zip": "176b06756600919fc1c939e02712d93160dbcc6e5467f581462c66e4fffbda37"
   },
   "publication": "local-only",
   "manualBrowserLoad": "not-run"

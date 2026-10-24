@@ -1,6 +1,11 @@
-> From: https://gemini.google.com/app/ba92886e1c8b6b71?hl=zh
+# 早期设计讨论记录
 
-# you asked
+> 早期探索性对话的原始记录，仅用于追溯设计来源，**不作为实现依据**。当前需求、契约与验收以 [specs/001-browser-agent](../../specs/001-browser-agent/README.md) 为准。原始分享链接已移除。
+
+---
+
+## 对话记录
+
 
 message time: 2026-10-17 23:02:01
 
