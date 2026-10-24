@@ -1,0 +1,10 @@
+import { runTool, extension } from './tools.mjs';
+await import('./protocol-build.mjs');
+await import('./browser-build.mjs');
+await import('./policy-build.mjs');
+await import('./runtime-build.mjs');
+await import('./models-build.mjs');
+await import('./sdk-build.mjs');
+runTool('typescript','tsc',['-p','packages/protocol/tsconfig.test.json']);
+runTool('wxt','wxt',['prepare'],extension);
+runTool('typescript','tsc',['--noEmit','-p','tsconfig.json'],extension);

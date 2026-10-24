@@ -1,0 +1,161 @@
+{
+  "machine": {
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics         ",
+    "logicalCpus": 12,
+    "totalMemoryBytes": 29909643264
+  },
+  "timestamp": "2026-10-18T11:15:33.850Z",
+  "fixtureVersion": "fixture-0.1",
+  "node": "v22.20.0",
+  "platform": "win32",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "idb.atomicRollback",
+      "passed": true
+    },
+    {
+      "name": "worker.prepared.restarted",
+      "passed": true
+    },
+    {
+      "name": "worker.prepared.paused",
+      "passed": true
+    },
+    {
+      "name": "worker.prepared.stage",
+      "passed": true
+    },
+    {
+      "name": "worker.prepared.noReplay",
+      "passed": true
+    },
+    {
+      "name": "worker.dispatching.restarted",
+      "passed": true
+    },
+    {
+      "name": "worker.dispatching.paused",
+      "passed": true
+    },
+    {
+      "name": "worker.dispatching.stage",
+      "passed": true
+    },
+    {
+      "name": "worker.dispatching.noReplay",
+      "passed": true
+    },
+    {
+      "name": "worker.dispatching.unknownBarrier",
+      "passed": true
+    },
+    {
+      "name": "worker.responded.restarted",
+      "passed": true
+    },
+    {
+      "name": "worker.responded.paused",
+      "passed": true
+    },
+    {
+      "name": "worker.responded.stage",
+      "passed": true
+    },
+    {
+      "name": "worker.responded.noReplay",
+      "passed": true
+    },
+    {
+      "name": "worker.responded.unknownBarrier",
+      "passed": true
+    },
+    {
+      "name": "worker.responded.reconciled",
+      "passed": true
+    },
+    {
+      "name": "worker.finished.restarted",
+      "passed": true
+    },
+    {
+      "name": "worker.finished.paused",
+      "passed": true
+    },
+    {
+      "name": "worker.finished.stage",
+      "passed": true
+    },
+    {
+      "name": "worker.finished.noReplay",
+      "passed": true
+    },
+    {
+      "name": "lease.twoWorkersOneOwner",
+      "passed": true
+    },
+    {
+      "name": "input.trustedCannotProveUser",
+      "passed": true
+    },
+    {
+      "name": "input.unknownPauses",
+      "passed": true
+    },
+    {
+      "name": "oracle.onlyRecordedEffects",
+      "passed": true
+    }
+  ],
+  "files": {
+    "packages/protocol/src/actions.mts": "78d8c4a749bb6c6633f7cde025ad749aa6c566d1dd25a1411ad0b52bd2d85e3e",
+    "packages/protocol/src/index.mts": "605cc4a9f70cbbedef27458a19986824872a0a311a5d694c6bf0b7b2d60a18a7",
+    "packages/protocol/src/messages.mts": "8e95f14745bad30dc99e5023356c23ff356ff55e28ab796c11279f0e1ef3f901",
+    "packages/protocol/src/observation.mts": "5a1813a724ca36de57a2b0cf4b3e96182638e26c6e7841be17ef99918936c244",
+    "packages/protocol/src/policy.mts": "74a152fa13e9909a4298894c745024eb8335a804ff62f4d2f6db58a5034a9a88",
+    "packages/protocol/src/runtime.mts": "17b62b4318a381b7aa2943c2a8e0aa7797dafaaff86d50327312ca8b3cc0094c",
+    "packages/protocol/src/validation.mts": "a35cf1ba97666893dfc915e9d3a42703708d404e7bbbbfc02fae061d7b9b5c27",
+    "packages/browser-chrome/src/adapter.mts": "d5feee24628a21fbed4ad98adfa5752c0b75e66ead8a4b7522bc88953aa68c23",
+    "packages/browser-chrome/src/chrome.mts": "8bc721fd48a3d7d45adeff62ffcc9bf295a513c8183114fb3c30bda867e8a588",
+    "packages/browser-chrome/src/control-document.mts": "ae3c0213cfa4a92326af294521b8ee64e6acfba47c3fff1e0f52375bd00fc87b",
+    "packages/browser-chrome/src/document.mts": "7d039b7bd303eb8fb5a14f1c59714f1f90749e1453cc423f43206a4e0929a3b5",
+    "packages/browser-chrome/src/index.mts": "a14a89c20fb17238c36bdbc472f722365f846c1e36329866d54c5685e6a48ffc",
+    "packages/browser-chrome/src/references.mts": "900e10b18bc357daaf6d6f153c6e6d5e548d2cf4a767bd53a6bd28a4d1a4d4ec",
+    "packages/browser-chrome/src/sanitize.mts": "7c8f4120bafd11d078f4ec6aa10b399092c77111f6fc5531ba812115315b2dc6",
+    "packages/policy/src/index.mts": "a95a1274e19e723f58cfa63903bf8984425dd4add693f6c76abe16920235f4f9",
+    "packages/models/src/index.mts": "4b53a3cb47f136cad517fb8fd9d58a0298b601d6d0ac32aade219e4fa346e0f4",
+    "packages/models/src/schema.mts": "3df5701f67f2a01959c0b72da5273265b37119193be34595be6966350d215097",
+    "packages/runtime/src/loop.mts": "9ecc112d869c2d4e16167ababe9af2a774e982106dd49ec67d58661acb462fa9",
+    "packages/runtime/src/index.mts": "ff2c2cf718d53b72b6af94f662ebd3b0175184c91bde9f26abac86e22bc5317d",
+    "packages/runtime/src/runtime.mts": "0776ba8ab34a0fe2bbb85e917c121d63a588cce57d27f76113a11fae070505d3",
+    "packages/runtime/src/store.mts": "d51f0be4ae66de14c2dd46ac10fead2392eb77ac58a8357530f6565a9cf5d45c",
+    "packages/runtime/test/runtime-browser.mjs": "2523590213f38ffa61b2255d995268cc8e8b6930ed8fc0deefcf303799c3bb67",
+    "packages/runtime/test/extension-background.mjs": "19434df39c6f8abb1f3c7d943a06b311a133e35379d874b19b7b5a21e69775fd",
+    "packages/runtime/test/extension-runner.mjs": "b6311e0f47b7db77e9e74d5c62fd1a5700ccdf6fbed00f5f1886ec880ee4f0d8",
+    "packages/runtime/test/extension-peer.mjs": "44678d932163cea4381ff13c23b34322fe7ef2c5712bcb94bd74d6d3ef8bc632",
+    "packages/runtime/test/build-extension.mjs": "58f5078ba654af38755e8c457118d0c29993368079580668acfd4e21117d62f1",
+    "scripts/runtime-smoke.mjs": "b78614186b9f8bf6e3cc4579c51d71977be94c97d7c528f4091587ce7d24249d",
+    "fixtures/web/domain.mjs": "84220f790727054a0b9b6b3fff03c4f71359a54568653b332a138c6705def221",
+    "fixtures/web/server.mjs": "1f127c7d2ed668ec6ceb8836b7c5da29bdfd5da9895ac25c7a79bcb41e26c32a",
+    "fixtures/web/oracle.mjs": "cc52d1fd81892ab36d76e6662480568d9831f3f32fd1a25834d403eb1c0e9109",
+    "fixtures/web/pages.mjs": "dd0b00dc9e70795469603266b276a403f266a1d19cd239bd82f9f6469a337d60",
+    "fixtures/web/public/app.mjs": "c87d6c957d21a92444afc2f64a589e44325cd637a550857859fbfe0b56fee75a",
+    "fixtures/web/public/style.css": "767186f736acd7fdcada587e5f088003c061a439b9deb3d5eb82f03879a35b85"
+  },
+  "workerHarness": {
+    "primary": "MV3 ServiceWorker",
+    "peer": "module DedicatedWorker",
+    "leaseClock": "controlled; advance 6000ms per restart",
+    "authorization": "host-only test UI metadata; native SidePanel integration deferred to T012"
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.35",
+    "revision": "@4befba4e8237fc6452fe5918001a01235180e6fc",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.16"
+  },
+  "extensionId": "pioeojgnabaenaeblemcfdkggoejdglj"
+}

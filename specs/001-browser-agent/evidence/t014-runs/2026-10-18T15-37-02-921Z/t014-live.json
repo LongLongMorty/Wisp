@@ -1,0 +1,6328 @@
+{
+  "timestamp": "2026-10-18T15:34:50.925Z",
+  "kind": "actual-model-browser-tasks",
+  "taskVersion": "release-fixture-0.2",
+  "machine": {
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics         ",
+    "logicalCpus": 12,
+    "totalMemoryBytes": 29909643264,
+    "node": "v22.20.0"
+  },
+  "status": "failed",
+  "files": {
+    "packages/runtime/package.json": "19b7cb2151eda48d6cd82dc842258e0937a56382bdad6efb01c43f95c18b717b",
+    "packages/runtime/README.md": "87ad450679d72983a0b957773d0006cf487d05bd6ccdc9234ce502900a38d8b8",
+    "packages/runtime/src/index.mts": "ff2c2cf718d53b72b6af94f662ebd3b0175184c91bde9f26abac86e22bc5317d",
+    "packages/runtime/src/loop.mts": "796af66b9b26ee5788185038523573360183296d6d02482537727c5cbb64a4e2",
+    "packages/runtime/src/runtime.mts": "69ec1c541300e040484526a11440a88ae596f54e0672b56f814ac12559707618",
+    "packages/runtime/src/store.mts": "d51f0be4ae66de14c2dd46ac10fead2392eb77ac58a8357530f6565a9cf5d45c",
+    "packages/runtime/test/build-extension.mjs": "58f5078ba654af38755e8c457118d0c29993368079580668acfd4e21117d62f1",
+    "packages/runtime/test/extension-background.mjs": "d27ad921b9c190831322e13539ff26a007f8b15b3e376e686ac980429484eb69",
+    "packages/runtime/test/extension-peer.mjs": "186eb98be44a77e1a0a8e9b73a07b0985ce01d494c1ac3140089b06ba6a611bf",
+    "packages/runtime/test/extension-runner.mjs": "b6311e0f47b7db77e9e74d5c62fd1a5700ccdf6fbed00f5f1886ec880ee4f0d8",
+    "packages/runtime/test/fault-evidence.test.mjs": "6233d0faa907cdde34333be9760a08629fca9ed9f6d38e3a4d51fc617b9decfb",
+    "packages/runtime/test/faults.test.mjs": "2ed1c8ea9eeefb7b15bc43fc34ce7c6a9f6f886917aeac2fc42086bc953a2869",
+    "packages/runtime/test/loop-browser.mjs": "d2ea2182c7b2b5ffc1a7b003dccceba5bb5607c54a37498b5fbba54a0359ad18",
+    "packages/runtime/test/loop.test.mjs": "b0e84333a0d3d78ac9d4a2727b6e228306eee56712b5e6dfc5f4d9ff9e97fd6f",
+    "packages/runtime/test/release.test.mjs": "a38772d8d62fa49f61dda4d1ca733e45fb25d2ffc490b5b77cb16e9a1926f1bb",
+    "packages/runtime/test/runtime-browser.mjs": "16ede5ca27c8cf7c585415d0e8b16f7a9c704ee38bf763a66aa2733e85982383",
+    "packages/runtime/test/runtime.test.mjs": "48171a652d92013658604d5c7056ee5b358a16a289ab3b7a2b8f89e972b85e86",
+    "packages/runtime/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "packages/models/package.json": "025d1b3ed77d0af51b94f6a691395b89b52d3ac9595e61a53649c3afccfd3b6c",
+    "packages/models/README.md": "084eca7f65f03fd51155fef1e683f08469f1c93820bc598fbf58102100a4aca6",
+    "packages/models/src/index.mts": "eb25552c933b0dccb20f56d0899594e8490d4757178a9ebe382028ce2b3191b7",
+    "packages/models/src/schema.mts": "3df5701f67f2a01959c0b72da5273265b37119193be34595be6966350d215097",
+    "packages/models/test/input.mjs": "47644559ea85d5d84210e0c7d04734ffe593e17969d5218008dc6dbdad2966b9",
+    "packages/models/test/models.test.mjs": "e1ea6a602ab9deae51ebdf9758f5de41388b262c30b7a5c1ac06fb1edb9671b4",
+    "packages/models/tsconfig.json": "b295463f39f199298301a577ce5272541552e9a39417469b26e39107874633b4",
+    "packages/protocol/package.json": "8e1bcb1dfc6b250602552e4666bc478c1dd4ab2431167947e8290c247cabdb55",
+    "packages/protocol/README.md": "be7c70f1126e1243b001da5948ba8fd9ffc9ca5fd8b308b0972ae27db70d5764",
+    "packages/protocol/src/actions.mts": "6aae79a6409e9d405eca347c0882b7c24bbf9a402d5498377f9c8fb29b321b1a",
+    "packages/protocol/src/index.mts": "605cc4a9f70cbbedef27458a19986824872a0a311a5d694c6bf0b7b2d60a18a7",
+    "packages/protocol/src/messages.mts": "d3b072c96679be89856f9d1a7c4f544ff7fb256a719025b59154962a20c85e77",
+    "packages/protocol/src/observation.mts": "0462f9b3dda848855d29f6e6efbea4f12fb4808bb42f80b2e53cda8537d275fc",
+    "packages/protocol/src/policy.mts": "74a152fa13e9909a4298894c745024eb8335a804ff62f4d2f6db58a5034a9a88",
+    "packages/protocol/src/runtime.mts": "c8c488129a6b715eb8e2688547ed2473e58c5621554f0382e37f85afe030ba16",
+    "packages/protocol/src/validation.mts": "a35cf1ba97666893dfc915e9d3a42703708d404e7bbbbfc02fae061d7b9b5c27",
+    "packages/protocol/test/action.test.mjs": "03ee234d2001ddce951736e61c84479c143678caa8edcf06ac1f112e61109315",
+    "packages/protocol/test/contract.test-d.mts": "5750006cb8c5aa9cbf202fb11b07fb08b04dc5ad2887750c557f6216e45757d7",
+    "packages/protocol/test/fixtures.mjs": "decb1ca9dd6ec1a6c5d28bce5c7e55015ff22f1a6401ea990d4d0e6e630ac2e1",
+    "packages/protocol/test/reliability.test.mjs": "6f2c49b4841e1383da06e1e3a0fdfc8bf45470bf9b51bec55b10847d79f48b47",
+    "packages/protocol/test/wire.test.mjs": "b1a650de7ba326c3b04e5d5e8a0deb9a77e31b721543689a0e98a94a974fd30d",
+    "packages/protocol/tsconfig.json": "9c067a501c38054f99d97fabf26d5bdf3d7a0d2e4045c0fc83da180f06507f13",
+    "packages/protocol/tsconfig.test.json": "4a31014f19b0737d4fafaf2eabe36d35163b9c810f1678de10bedc887fc6f8c5",
+    "packages/browser-chrome/package.json": "3e978e9b7cf097f04dea2dd66fd68e80abc748160ab89820f2c80a0afef49696",
+    "packages/browser-chrome/README.md": "c5e45e072cde28fed7dfd96c02ee6452eb0a39b91d5d16b41ddcdd4224e65981",
+    "packages/browser-chrome/src/adapter.mts": "21a4f3fda3f491ffac63824ef9f2afcdcced8c7156b7cc481bcd279493ad3eca",
+    "packages/browser-chrome/src/chrome.mts": "fa5abebe96f556b1ab654c8f34df340ec0b155f7f6872a376f9bc44b29ae461b",
+    "packages/browser-chrome/src/control-document.mts": "e92e22aa9b7d0ff27e4b1d7a926103c25df27604d43b0f583ae5d46e2ddc37f8",
+    "packages/browser-chrome/src/document.mts": "14e9fef7da8592ca1e894930120bfaaa1a3de330368f9d1c2b49c01a95cc561e",
+    "packages/browser-chrome/src/index.mts": "a14a89c20fb17238c36bdbc472f722365f846c1e36329866d54c5685e6a48ffc",
+    "packages/browser-chrome/src/references.mts": "900e10b18bc357daaf6d6f153c6e6d5e548d2cf4a767bd53a6bd28a4d1a4d4ec",
+    "packages/browser-chrome/src/sanitize.mts": "7c8f4120bafd11d078f4ec6aa10b399092c77111f6fc5531ba812115315b2dc6",
+    "packages/browser-chrome/test/async-bridge.test.mjs": "2eb161e641168a824c883eb39d9ec0d69e5846f6777a795e7cfc25931b299dcd",
+    "packages/browser-chrome/test/control-browser.mjs": "57d8c7676ea7f599741c3fc06fe463c2f8295f8a6aaaee745ace2af1054b6eba",
+    "packages/browser-chrome/test/control.test.mjs": "b6b1a967e1d55f217acec70e87a737312eb38cd6ceede1f4eb325a284650d8bc",
+    "packages/browser-chrome/test/observer-browser.mjs": "d5d9087eb8fab74eaf50a68aa0827d4dfe13beb96f180df01aa0a7e15062b52a",
+    "packages/browser-chrome/test/observer-owner.test.mjs": "c64a688fe619869cf026358882b3e3b5b618667fee95c49138a8adbb5026f269",
+    "packages/browser-chrome/test/observer.test.mjs": "495b70c52ba84cba9639d12ef703a71591e49b96d458676afd81444a563ef492",
+    "packages/browser-chrome/test/policy-context.test.mjs": "a24368863b20f9eb7715aa21a97312f2879a85b3cb78919a3e3b25bba3276dbd",
+    "packages/browser-chrome/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "packages/policy/package.json": "2fe0a7a45dc009bdf7dc5b6c566c7aa9cfb44e99fee2bd608ee81935e8087946",
+    "packages/policy/README.md": "5d3d45884f27902d7009f9ee0bfb7489d29c5c3e9acf5cb261d5c54befc2c97a",
+    "packages/policy/src/index.mts": "85ffba3334b92043e2246d347f8609bc76aa5ab9ad477fd21195ae7efe882b79",
+    "packages/policy/test/policy-browser.mjs": "8271532981c75fba86ef810e412f49a0dcbdb52bee07651aa99f2e3cdb80cfdb",
+    "packages/policy/test/policy.test.mjs": "25c51ffad4703a005510a1c8042861cafd7a28a9421620207779c3f903b65853",
+    "packages/policy/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "fixtures/web/domain.mjs": "84220f790727054a0b9b6b3fff03c4f71359a54568653b332a138c6705def221",
+    "fixtures/web/oracle.mjs": "cc52d1fd81892ab36d76e6662480568d9831f3f32fd1a25834d403eb1c0e9109",
+    "fixtures/web/pages.mjs": "dd0b00dc9e70795469603266b276a403f266a1d19cd239bd82f9f6469a337d60",
+    "fixtures/web/public/app.mjs": "c87d6c957d21a92444afc2f64a589e44325cd637a550857859fbfe0b56fee75a",
+    "fixtures/web/public/style.css": "767186f736acd7fdcada587e5f088003c061a439b9deb3d5eb82f03879a35b85",
+    "fixtures/web/README.md": "df13499180d5194298948ef2a4dc0efac870508ed3bd67e025f8e1bea17d647d",
+    "fixtures/web/server.mjs": "1f127c7d2ed668ec6ceb8836b7c5da29bdfd5da9895ac25c7a79bcb41e26c32a",
+    "fixtures/web/start.mjs": "f5a264679eb3958fc74386d7142397a4a8d499f0ab1d5a3f48d0f07b50e84419",
+    "fixtures/web/test/browser-smoke.mjs": "0c09582e98eceb4e64f992a891f9a11cb4e87e4593d9ae9ae98868660530f41e",
+    "fixtures/web/test/server.test.mjs": "78a4b4c8fb4f2247ac049cf8099458bc5a90e37981e5ab6c9aa0b7afc0befdf9",
+    "scripts/loop-smoke.mjs": "da0fe0d3c2ec8caebf65347175f1ed901d8a95713c9c8bdb5faba107c32af509",
+    "scripts/loop-evidence.mjs": "f15881dff3e16a4052c98b72504de01712eecad2539f89177ea0cfe259bf045b",
+    "scripts/runtime-smoke.mjs": "e971430b3171920811b730bc21471a9912481475d9753f0abd3e457f7c9bbd52",
+    "scripts/runtime-build.mjs": "0d7619f42264a15d7a5d11cc69fd78e8cc93aea3ec162889f4c729b1fcf003fc",
+    "scripts/models-build.mjs": "518be813b6b334edca464e6b1c809805cfa6d4034f4f2a5233a9379b17f482c8",
+    "package.json": "28cce6c07b92cc944fe63c6a4695aee271b869361d1768a098d2eb3e1c84da16",
+    "package-lock.json": "4b2f9b15b910f062f744e203d04f602901ac490c2afea90611383c7ec9d08158",
+    "tsconfig.base.json": "72c8229cbd45d3cfa56e86fffc50fbdbb8019a7da45f10400c7a3847bd58298e",
+    "packages/sdk/examples/minimal.mjs": "afaa937dc189bc8acbfc3e8b1f506e1cff381815bdb1ec9c779ce04bba3add3a",
+    "packages/sdk/package.json": "e2b34ceadde006dd47c8707672ba535f7962a461a05e30fe84483678de0a5df9",
+    "packages/sdk/README.md": "2b4542399345990e146bbc0c4257bad7436d6a92067fc27e29e420441118d650",
+    "packages/sdk/src/index.mts": "c862fcb56945fc00453685eaee3bc12c7a7ce3127b6cc002d5a00989dc46744c",
+    "packages/sdk/test/sdk-browser.mjs": "a69bfeb8457b5a68cd27126699df704ef9523f044bab934d4c04d9c2230573b1",
+    "packages/sdk/test/sdk.test.mjs": "8a4c513384cd0afee799ba22565ef9e1711edaa540176aa8661953f6afd572d2",
+    "packages/sdk/tsconfig.json": "b295463f39f199298301a577ce5272541552e9a39417469b26e39107874633b4",
+    "scripts/sdk-build.mjs": "d6f8ad3e095af02bf40a7a49c33761515d45cd62890364695cc80813b7b4b053",
+    "scripts/sdk-smoke.mjs": "677ea49a554a8dce3cefc453d2f0ee9a2bcc364b6d9adea0f423ee83f815fd8d",
+    "scripts/sdk-evidence.mjs": "da67a025df25676b9f0fce56dca6d739fd474cd89d891312edb13112b8878ecb",
+    "apps/extension/entrypoints/background.ts": "d72069d74211acb00640914c62512b880ee9e0387194cf40fb7da3d71a4336b5",
+    "apps/extension/entrypoints/sidepanel/App.tsx": "17c36571c61fa4bca5932d71deca21e985d5626ca2613239dc1eefd6ae2aea65",
+    "apps/extension/entrypoints/sidepanel/index.html": "a1403500f8765e64b5386588ce72f6b65b6865df001ec0eb22190fc74c9c0cff",
+    "apps/extension/entrypoints/sidepanel/main.tsx": "d9b5bd7780cbef91bb6f948f391254a033c6d04eb306754c61cba84ebbeea661",
+    "apps/extension/entrypoints/sidepanel/style.css": "fb4a157a56cc77b9a9215a70b5498803f37518227445e6e378fb311309f813ce",
+    "apps/extension/host/client.ts": "9600a195ed6041a7d6a432388e6f2dea82e68fcb6a2ca0319a4c1ed4df5fe92b",
+    "apps/extension/host/controller.mts": "8f072a3ea8e43abdcb9a6a34fbd30023443bfa5b568610c5dcd062d6eab0065b",
+    "apps/extension/host/protocol.mts": "94724f203a3cc98871fdac9790000f14ce691fd64acc1b7833f6fdecf9a7c2ad",
+    "apps/extension/package.json": "d19548461fb378959dd8341dcef2c8c8519260c4f5f3cce1bfd683a756a447ff",
+    "apps/extension/README.md": "f6ff5061fb1e6a91673e4f24826ecc8fc1b2c1ccc9a5647fce49b58d515db750",
+    "apps/extension/test/host.test.mjs": "30572546d07b76d740bee81a5c7a995f268b9df979ddac19f032c09664a96547",
+    "apps/extension/test/model-fixture.mjs": "2941f1cc315c400b8c9d472e16f43b9446558a21a813225aea39311957700565",
+    "apps/extension/test/panel-browser.mjs": "3733bc185dfb83bc698d32c2df5c452a07e84da66a7204f0589819a7f6738463",
+    "apps/extension/tsconfig.json": "ce69720394bcb3910e99922f3c3b887eaddc3c43c5618c484b4940e2d8fd9871",
+    "apps/extension/wxt.config.ts": "1d2c7dd7f227c7af6ebc5e8578091dec1efc5db274bd95d527237cac059b914d",
+    "apps/extension/.output/chrome-mv3/assets/sidepanel-DPOFbMSA.css": "fb4a157a56cc77b9a9215a70b5498803f37518227445e6e378fb311309f813ce",
+    "apps/extension/.output/chrome-mv3/background.js": "676c559277379a7b6859f5f4bd9f6a7ea0e2a9d8f9e2881d1ef1416f8e1d1bf3",
+    "apps/extension/.output/chrome-mv3/chunks/sidepanel-CFAhwZJb.js": "e32dad3b66fdb7a150df8475a4e1d0f3c6962fe5786bef2283f3e83f2e0f0556",
+    "apps/extension/.output/chrome-mv3/chunks/_virtual_wxt-plugins-ug37XS6-.js": "c9899b40923951d9c0eae5b7826ad4ddde96ac357b38705def1b4a00fce9d1f3",
+    "apps/extension/.output/chrome-mv3/manifest.json": "d2b375b7b7503b780effbd14cd71ae2f98d5268dc8a097328109bb59815a4319",
+    "apps/extension/.output/chrome-mv3/sidepanel.html": "467551121b2799e7bad7373cc34d223b7f611213588f7ad8229480a5e1dbd85b",
+    "scripts/panel-smoke.mjs": "6fed5b6e734fdfd503849b780f45605d28fbd1daf89dd162f1f7b4e238e2ee1a",
+    "scripts/panel-evidence.mjs": "3cf6f4f9feff8bb243cd4ac9e2c644a3ddcb9a41665954f697ee0fd5d9791846",
+    "scripts/record-panel-manual.mjs": "a4cbd4d6c4781e81bedbd8e99030e925ffb1dab0ffb45a81dba4580385939d1e",
+    "scripts/verify-build.mjs": "304fd2778c144be39bbd4c5466e76396bb708f6bf731b41d0a2e9e16ec0a1fc6",
+    "scripts/faults-evidence.mjs": "e6f7073123d487e1826c3e6e34be7c7c7d6d5dce17c61aded26c489d33029249",
+    "scripts/faults-smoke.mjs": "c5c6fd6544ab9ba3989677e223ec19035f4ca6a8637ad49b16bf8eff7f947c2b",
+    "scripts/validate-toolchain.mjs": "b6714321bf32e630f50a313a942728ca2fac8eb4f7a1ff2cf73a81d433d85c01",
+    "specs/001-browser-agent/fault-matrix.json": "2383af975c40100eee51a741d97794d464ea53813c86cd354437b7c8fe435464",
+    "scripts/record-release-manual.mjs": "9e36592de54781b2aba9fb590aa72ed9ef0f6d68368b38bd2c4c00cf83aaa0db",
+    "scripts/release-cases.mjs": "6dd32c6b93f35fd798ff42d574f9f4b6495d124cdd17abb32807a0856435bde6",
+    "scripts/release-chrome.mjs": "38b3553ddd8efed07011560438b19f9e96a7afa50c0fd1791768b27b3d0d2838",
+    "scripts/release-evidence.mjs": "225e66724c2a265429cea96ebcea4749593dae7f68d2c840c769ec0f5588051c",
+    "scripts/release-live.mjs": "e401f9a57f1fb637ad5ecda01de842d99c53b59e8b2ec6933c2f70691b48b63d",
+    "scripts/release-performance.mjs": "5f703014283997034b275b0b5e7b869a7d79c5bdde99059631e37492a106497b",
+    "scripts/release-run.mjs": "620898bb235b7a57f4a5d927f5f2d162c26550ba5da67090d0cd99fa86146f85",
+    "scripts/release-smoke.mjs": "df542a4642649f590f5c9558384ba19d70c6960efdbca687bdf03052fec1434c",
+    "scripts/reliability-browser.mjs": "939f6efd03fc50b7854ada2ee1eb68b1ab360e57e540d415492c0e9d493cf9d1",
+    "specs/001-browser-agent/reliability-v02.md": "ee8ce06388e8d0d400207a9e5bc12c3e78a8ac25cdd91a60a8dfea23e989adb5",
+    "specs/001-browser-agent/release-v01.md": "8a6c1e6e1f13fcacf86d6cdf50aa2bb62a4a5b91337a8be3557ac5d5e7938d7e",
+    "specs/001-browser-agent/release-manual.md": "425f208b834fea335c6860620a7477b96358c67695fabb3de07fe3085d4f484b"
+  },
+  "trials": [
+    {
+      "scenario": "search",
+      "iteration": 1,
+      "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+      "modelAttempts": 4,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 4,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 6811,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2920,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 10575,
+        "outputTokens": 1204,
+        "totalTokens": 11779
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:51.727Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:51.730Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:51.777Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:51.795Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:51.798Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 15,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5670,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5047,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:54.007Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2906,
+              "outputTokens": 341,
+              "totalTokens": 3247
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:54.009Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "311fcae6-3e14-440c-aeff-5a7315d5ed27"
+        },
+        {
+          "seq": 8,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:54.009Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "311fcae6-3e14-440c-aeff-5a7315d5ed27"
+        },
+        {
+          "seq": 9,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:54.103Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "311fcae6-3e14-440c-aeff-5a7315d5ed27"
+        },
+        {
+          "seq": 10,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:54.125Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:54.127Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 2345,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5833,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5053,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:56.508Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 5949,
+              "outputTokens": 462,
+              "totalTokens": 6411
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:56.508Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "1859e240-e8c1-4a56-9f77-aeae7a2171ca"
+        },
+        {
+          "seq": 14,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:56.508Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "1859e240-e8c1-4a56-9f77-aeae7a2171ca"
+        },
+        {
+          "seq": 15,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:56.619Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "1859e240-e8c1-4a56-9f77-aeae7a2171ca"
+        },
+        {
+          "seq": 16,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:56.627Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:56.628Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 4847,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2920,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:58.584Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1720,
+              "outputTokens": 401,
+              "totalTokens": 2121
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:58.591Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 20,
+          "runId": "421e9ea3-42b3-47f6-83c5-1b9b17298320",
+          "timestamp": "2026-10-18T15:34:58.592Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/fe2501dc-34e1-44d3-abbd-905d27315765",
+        "page": {
+          "url": "http://127.0.0.1:49769/s/fe2501dc-34e1-44d3-abbd-905d27315765/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/fe2501dc-34e1-44d3-abbd-905d27315765/records/W-104",
+                "documentId": "913c872e-f6ac-4ab5-b5ab-bd8a5ee7d05d",
+                "observationId": "ef9b096f-a275-4e0a-8033-2e1de5e2b446",
+                "capturedAt": "2026-10-18T15:34:58.590Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "text",
+                "url": "http://127.0.0.1:49769/s/fe2501dc-34e1-44d3-abbd-905d27315765/records/W-104",
+                "documentId": "913c872e-f6ac-4ab5-b5ab-bd8a5ee7d05d",
+                "observationId": "ef9b096f-a275-4e0a-8033-2e1de5e2b446",
+                "capturedAt": "2026-10-18T15:34:58.590Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/fe2501dc-34e1-44d3-abbd-905d27315765/records/W-104",
+                "documentId": "913c872e-f6ac-4ab5-b5ab-bd8a5ee7d05d",
+                "observationId": "ef9b096f-a275-4e0a-8033-2e1de5e2b446",
+                "capturedAt": "2026-10-18T15:34:58.590Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 6987.8109
+    },
+    {
+      "scenario": "search",
+      "iteration": 2,
+      "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 5231,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2920,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 7585,
+        "outputTokens": 790,
+        "totalTokens": 8375
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:34:58.712Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:34:58.712Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:34:58.728Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:34:58.735Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:34:58.736Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 7,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5669,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5047,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:00.706Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2895,
+              "outputTokens": 296,
+              "totalTokens": 3191
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:00.706Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "99e09c25-899e-44be-b30b-eae01b96562a"
+        },
+        {
+          "seq": 8,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:00.706Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "99e09c25-899e-44be-b30b-eae01b96562a"
+        },
+        {
+          "seq": 9,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:00.781Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "99e09c25-899e-44be-b30b-eae01b96562a"
+        },
+        {
+          "seq": 10,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:00.791Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:00.792Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 2063,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5833,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5053,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:02.275Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2964,
+              "outputTokens": 276,
+              "totalTokens": 3240
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:02.275Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "9910061a-22c3-4664-8b2d-b53279038335"
+        },
+        {
+          "seq": 14,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:02.275Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "9910061a-22c3-4664-8b2d-b53279038335"
+        },
+        {
+          "seq": 15,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:02.387Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "9910061a-22c3-4664-8b2d-b53279038335"
+        },
+        {
+          "seq": 16,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:02.394Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:02.395Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3666,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2920,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:03.954Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1726,
+              "outputTokens": 218,
+              "totalTokens": 1944
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:03.959Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 20,
+          "runId": "e0b0daa6-e26b-43ec-b2e2-d27f7e54ccd1",
+          "timestamp": "2026-10-18T15:35:03.959Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/de6cc369-2980-4811-be60-f4a48814b67c",
+        "page": {
+          "url": "http://127.0.0.1:49769/s/de6cc369-2980-4811-be60-f4a48814b67c/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/de6cc369-2980-4811-be60-f4a48814b67c/records/W-104",
+                "documentId": "c398de49-4d99-4a9b-8923-c21f0fce3b09",
+                "observationId": "75c93127-0cfe-48e2-ab02-fd0a86388d0d",
+                "capturedAt": "2026-10-18T15:35:03.958Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "text",
+                "url": "http://127.0.0.1:49769/s/de6cc369-2980-4811-be60-f4a48814b67c/records/W-104",
+                "documentId": "c398de49-4d99-4a9b-8923-c21f0fce3b09",
+                "observationId": "75c93127-0cfe-48e2-ab02-fd0a86388d0d",
+                "capturedAt": "2026-10-18T15:35:03.958Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/de6cc369-2980-4811-be60-f4a48814b67c/records/W-104",
+                "documentId": "c398de49-4d99-4a9b-8923-c21f0fce3b09",
+                "observationId": "75c93127-0cfe-48e2-ab02-fd0a86388d0d",
+                "capturedAt": "2026-10-18T15:35:03.958Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 5323.967500000001
+    },
+    {
+      "scenario": "search",
+      "iteration": 3,
+      "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 4775,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2920,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 7585,
+        "outputTokens": 831,
+        "totalTokens": 8416
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:04.082Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:04.083Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:04.099Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:04.109Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:04.110Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 10,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5670,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5047,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:06.092Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2897,
+              "outputTokens": 410,
+              "totalTokens": 3307
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:06.092Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "b2b4251a-26b1-4969-a668-be55aa6eae3b"
+        },
+        {
+          "seq": 8,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:06.092Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "b2b4251a-26b1-4969-a668-be55aa6eae3b"
+        },
+        {
+          "seq": 9,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:06.167Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "b2b4251a-26b1-4969-a668-be55aa6eae3b"
+        },
+        {
+          "seq": 10,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:06.177Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:06.179Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 2078,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5833,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5053,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:07.506Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2958,
+              "outputTokens": 224,
+              "totalTokens": 3182
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:07.506Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "22c396a3-4c89-4132-a2c7-7de615cdb034"
+        },
+        {
+          "seq": 14,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:07.506Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "22c396a3-4c89-4132-a2c7-7de615cdb034"
+        },
+        {
+          "seq": 15,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:07.622Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "22c396a3-4c89-4132-a2c7-7de615cdb034"
+        },
+        {
+          "seq": 16,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:07.629Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:07.629Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3529,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2920,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:08.869Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1730,
+              "outputTokens": 197,
+              "totalTokens": 1927
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:08.875Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 20,
+          "runId": "48361617-c2f3-483d-b8ff-75c80cd4ab2d",
+          "timestamp": "2026-10-18T15:35:08.875Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/44b15014-6cfd-4d70-8c11-bafd298364ed",
+        "page": {
+          "url": "http://127.0.0.1:49769/s/44b15014-6cfd-4d70-8c11-bafd298364ed/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/44b15014-6cfd-4d70-8c11-bafd298364ed/records/W-104",
+                "documentId": "9cfcc048-53a7-4e05-97cb-5882c67a378f",
+                "observationId": "0e89d035-249b-4551-bb5c-e7ce36c999b2",
+                "capturedAt": "2026-10-18T15:35:08.874Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "text",
+                "url": "http://127.0.0.1:49769/s/44b15014-6cfd-4d70-8c11-bafd298364ed/records/W-104",
+                "documentId": "9cfcc048-53a7-4e05-97cb-5882c67a378f",
+                "observationId": "0e89d035-249b-4551-bb5c-e7ce36c999b2",
+                "capturedAt": "2026-10-18T15:35:08.874Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/44b15014-6cfd-4d70-8c11-bafd298364ed/records/W-104",
+                "documentId": "9cfcc048-53a7-4e05-97cb-5882c67a378f",
+                "observationId": "0e89d035-249b-4551-bb5c-e7ce36c999b2",
+                "capturedAt": "2026-10-18T15:35:08.874Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 4875.015800000001
+    },
+    {
+      "scenario": "search",
+      "iteration": 4,
+      "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 3542,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2769,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 4561,
+        "outputTokens": 544,
+        "totalTokens": 5105
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:08.995Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:08.995Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:09.013Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:09.022Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:09.024Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5669,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5047,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:10.645Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2892,
+              "outputTokens": 325,
+              "totalTokens": 3217
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:10.646Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "5b814dcd-4452-4e97-9ca0-691f4691f646"
+        },
+        {
+          "seq": 8,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:10.646Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "5b814dcd-4452-4e97-9ca0-691f4691f646"
+        },
+        {
+          "seq": 9,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:10.771Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "5b814dcd-4452-4e97-9ca0-691f4691f646"
+        },
+        {
+          "seq": 10,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:10.777Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:10.778Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 1764,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2769,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:12.549Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1669,
+              "outputTokens": 219,
+              "totalTokens": 1888
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:12.555Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "2f2e5be2-f55a-4dea-9e2f-d730536bd8d9",
+          "timestamp": "2026-10-18T15:35:12.556Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/c83a1cf7-3576-466f-90f2-bb89e41a0fc4",
+        "page": {
+          "url": "http://127.0.0.1:49769/s/c83a1cf7-3576-466f-90f2-bb89e41a0fc4/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/c83a1cf7-3576-466f-90f2-bb89e41a0fc4/records/W-104",
+                "documentId": "f0eb3136-1bde-4413-abec-aefb2449b126",
+                "observationId": "493763c3-c265-45ed-b0cb-163c236f7ec4",
+                "capturedAt": "2026-10-18T15:35:12.554Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "text",
+                "url": "http://127.0.0.1:49769/s/c83a1cf7-3576-466f-90f2-bb89e41a0fc4/records/W-104",
+                "documentId": "f0eb3136-1bde-4413-abec-aefb2449b126",
+                "observationId": "493763c3-c265-45ed-b0cb-163c236f7ec4",
+                "capturedAt": "2026-10-18T15:35:12.554Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/c83a1cf7-3576-466f-90f2-bb89e41a0fc4/records/W-104",
+                "documentId": "f0eb3136-1bde-4413-abec-aefb2449b126",
+                "observationId": "493763c3-c265-45ed-b0cb-163c236f7ec4",
+                "capturedAt": "2026-10-18T15:35:12.554Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 3640.5989999999983
+    },
+    {
+      "scenario": "search",
+      "iteration": 5,
+      "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 4057,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2769,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 4560,
+        "outputTokens": 668,
+        "totalTokens": 5228
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:12.678Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:12.678Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:12.698Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:12.709Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:12.711Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 10,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5670,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5047,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:14.764Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2890,
+              "outputTokens": 294,
+              "totalTokens": 3184
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:14.764Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "56b3d167-49ca-4e3c-9c42-35387cbe2ca6"
+        },
+        {
+          "seq": 8,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:14.764Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "56b3d167-49ca-4e3c-9c42-35387cbe2ca6"
+        },
+        {
+          "seq": 9,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:14.890Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "56b3d167-49ca-4e3c-9c42-35387cbe2ca6"
+        },
+        {
+          "seq": 10,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:14.897Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:14.898Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 2197,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2769,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:16.748Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1670,
+              "outputTokens": 374,
+              "totalTokens": 2044
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:16.756Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "32ccc93d-2068-4d9d-bec9-69fd0ea35cd0",
+          "timestamp": "2026-10-18T15:35:16.756Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/22031dcd-94b4-4d6d-b313-9872975b87cf",
+        "page": {
+          "url": "http://127.0.0.1:49769/s/22031dcd-94b4-4d6d-b313-9872975b87cf/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/22031dcd-94b4-4d6d-b313-9872975b87cf/records/W-104",
+                "documentId": "93f24ad6-4812-4507-beef-4aadb967cc33",
+                "observationId": "c69c41a8-c08d-4b90-9b3e-c3e81d446137",
+                "capturedAt": "2026-10-18T15:35:16.754Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "text",
+                "url": "http://127.0.0.1:49769/s/22031dcd-94b4-4d6d-b313-9872975b87cf/records/W-104",
+                "documentId": "93f24ad6-4812-4507-beef-4aadb967cc33",
+                "observationId": "c69c41a8-c08d-4b90-9b3e-c3e81d446137",
+                "capturedAt": "2026-10-18T15:35:16.754Z",
+                "actual": "[REDACTED]"
+              },
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:49769/s/22031dcd-94b4-4d6d-b313-9872975b87cf/records/W-104",
+                "documentId": "93f24ad6-4812-4507-beef-4aadb967cc33",
+                "observationId": "c69c41a8-c08d-4b90-9b3e-c3e81d446137",
+                "capturedAt": "2026-10-18T15:35:16.754Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 4155.6747
+    },
+    {
+      "scenario": "table",
+      "iteration": 1,
+      "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+      "modelAttempts": 4,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 4,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 5352,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3574,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3144,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 8062,
+        "outputTokens": 799,
+        "totalTokens": 8861
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:16.899Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:16.901Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:16.925Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:16.935Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:16.936Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 10,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3845,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3246,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:18.159Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2045,
+              "outputTokens": 208,
+              "totalTokens": 2253
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:18.159Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "fae6beb5-947f-41b1-b1e1-b9fa0991a1b5"
+        },
+        {
+          "seq": 8,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:18.160Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "fae6beb5-947f-41b1-b1e1-b9fa0991a1b5"
+        },
+        {
+          "seq": 9,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:18.242Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "fae6beb5-947f-41b1-b1e1-b9fa0991a1b5"
+        },
+        {
+          "seq": 10,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:18.252Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:18.253Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 1327,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3960,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3201,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:19.732Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2061,
+              "outputTokens": 254,
+              "totalTokens": 2315
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:19.733Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "b2a848a1-2fac-4cb3-bdcd-d95d19f538bd"
+        },
+        {
+          "seq": 14,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:19.733Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "b2a848a1-2fac-4cb3-bdcd-d95d19f538bd"
+        },
+        {
+          "seq": 15,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:19.821Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "b2a848a1-2fac-4cb3-bdcd-d95d19f538bd"
+        },
+        {
+          "seq": 16,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:19.830Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:19.832Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 2905,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 4057,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3144,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:20.993Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2087,
+              "outputTokens": 99,
+              "totalTokens": 2186
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:22.261Z",
+          "type": "model.completed",
+          "reason": "EXTRACT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1869,
+              "outputTokens": 238,
+              "totalTokens": 2107
+            }
+          }
+        },
+        {
+          "seq": 20,
+          "runId": "1cf1d34c-0d12-4ef5-ba49-77a0d72fb39d",
+          "timestamp": "2026-10-18T15:35:22.278Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/1480f01c-a33d-43fc-a9c1-c1bbe609f9e4",
+        "page": {
+          "status": "pending",
+          "priority": "high",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "extraction": {
+              "data": {
+                "records": [
+                  {
+                    "id": "W-101",
+                    "title": "搜索索引重建",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-102",
+                    "title": "登录超时",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-103",
+                    "title": "CSV导出失败",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-104",
+                    "title": "报表访问异常",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-105",
+                    "title": "邮件队列阻塞",
+                    "status": "待处理",
+                    "priority": "高"
+                  }
+                ]
+              },
+              "source": [
+                {
+                  "kind": "url",
+                  "url": "http://127.0.0.1:49769/s/1480f01c-a33d-43fc-a9c1-c1bbe609f9e4/table",
+                  "documentId": "4225ed6d-0673-4938-b654-74d24cfd6132",
+                  "observationId": "503089c4-a211-4f70-8bc3-bf8b9ae7b83c",
+                  "capturedAt": "2026-10-18T15:35:19.828Z",
+                  "actual": "[REDACTED]"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "durationMs": 5468.790000000001
+    },
+    {
+      "scenario": "table",
+      "iteration": 2,
+      "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+      "modelAttempts": 5,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 5,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 8775,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3574,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3144,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 10148,
+        "outputTokens": 1350,
+        "totalTokens": 11498
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:22.415Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:22.415Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:22.436Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:22.446Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:22.448Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 10,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3845,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3246,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:25.244Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 4111,
+              "outputTokens": 415,
+              "totalTokens": 4526
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:25.245Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "9881aa86-12f6-4f56-a698-5c8436222c0d"
+        },
+        {
+          "seq": 8,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:25.245Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "9881aa86-12f6-4f56-a698-5c8436222c0d"
+        },
+        {
+          "seq": 9,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:25.338Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "9881aa86-12f6-4f56-a698-5c8436222c0d"
+        },
+        {
+          "seq": 10,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:25.348Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:25.349Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 2912,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3960,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3201,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:26.787Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2069,
+              "outputTokens": 258,
+              "totalTokens": 2327
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:26.787Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "18227d22-aed6-4d0e-af1b-551fa0fdd0c1"
+        },
+        {
+          "seq": 14,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:26.787Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "18227d22-aed6-4d0e-af1b-551fa0fdd0c1"
+        },
+        {
+          "seq": 15,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:26.874Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "18227d22-aed6-4d0e-af1b-551fa0fdd0c1"
+        },
+        {
+          "seq": 16,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:26.882Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:26.884Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 4446,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 4057,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3144,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:28.859Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2095,
+              "outputTokens": 269,
+              "totalTokens": 2364
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:31.196Z",
+          "type": "model.completed",
+          "reason": "EXTRACT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1873,
+              "outputTokens": 408,
+              "totalTokens": 2281
+            }
+          }
+        },
+        {
+          "seq": 20,
+          "runId": "1586e5bd-da42-4aff-a025-017f06f2a121",
+          "timestamp": "2026-10-18T15:35:31.212Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/36e5f56a-70d9-4dc7-9748-2ff196af95cf",
+        "page": {
+          "status": "pending",
+          "priority": "high",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "extraction": {
+              "data": {
+                "records": [
+                  {
+                    "id": "W-101",
+                    "title": "搜索索引重建",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-102",
+                    "title": "登录超时",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-103",
+                    "title": "CSV导出失败",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-104",
+                    "title": "报表访问异常",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-105",
+                    "title": "邮件队列阻塞",
+                    "status": "待处理",
+                    "priority": "高"
+                  }
+                ]
+              },
+              "source": [
+                {
+                  "kind": "url",
+                  "url": "http://127.0.0.1:49769/s/36e5f56a-70d9-4dc7-9748-2ff196af95cf/table",
+                  "documentId": "ad42cdd6-af73-4792-b1b3-975ccd368fa3",
+                  "observationId": "64760ed8-330c-4d45-8d91-aebbb7d8381d",
+                  "capturedAt": "2026-10-18T15:35:26.880Z",
+                  "actual": "[REDACTED]"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "durationMs": 8887.376400000001
+    },
+    {
+      "scenario": "table",
+      "iteration": 3,
+      "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+      "modelAttempts": 1,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "paused",
+      "reason": "ACTION_FAILED",
+      "budget": {
+        "steps": {
+          "used": 1,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 1,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 2286,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3845,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3246,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 2040,
+        "outputTokens": 411,
+        "totalTokens": 2451
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:31.339Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:31.340Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:31.359Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:31.371Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:31.372Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 12,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3845,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3246,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:33.645Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2040,
+              "outputTokens": 411,
+              "totalTokens": 2451
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:33.645Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "bebc95eb-2885-4f07-9ae9-3ddf1027fd4d"
+        },
+        {
+          "seq": 8,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:33.645Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "bebc95eb-2885-4f07-9ae9-3ddf1027fd4d"
+        },
+        {
+          "seq": 9,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:36.660Z",
+          "type": "run.state",
+          "reason": "ACTION_FAILED",
+          "actionId": null,
+          "state": "paused"
+        },
+        {
+          "seq": 10,
+          "runId": "19a21512-c1ea-4591-a322-b81e734c09b2",
+          "timestamp": "2026-10-18T15:35:36.660Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "bebc95eb-2885-4f07-9ae9-3ddf1027fd4d"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/62b51577-69da-4d4f-ad89-7d2482ab1a54",
+        "page": {
+          "status": "pending",
+          "priority": "all",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105",
+            "W-106",
+            "W-110",
+            "W-112"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "paused",
+          "result": {}
+        }
+      },
+      "durationMs": 5401.2500999999975
+    },
+    {
+      "scenario": "table",
+      "iteration": 4,
+      "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+      "modelAttempts": 5,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "completed",
+      "reason": "COMPLETED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 5,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 7664,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3574,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3144,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 10001,
+        "outputTokens": 1068,
+        "totalTokens": 11069
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:36.795Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:36.795Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:36.814Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:36.826Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:36.827Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 12,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3845,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3246,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:38.491Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2057,
+              "outputTokens": 210,
+              "totalTokens": 2267
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:38.491Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "4e0f9f76-54e2-4863-879c-d339a44d7e0f"
+        },
+        {
+          "seq": 8,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:38.491Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "4e0f9f76-54e2-4863-879c-d339a44d7e0f"
+        },
+        {
+          "seq": 9,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:38.578Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "4e0f9f76-54e2-4863-879c-d339a44d7e0f"
+        },
+        {
+          "seq": 10,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:38.589Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:38.590Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 1774,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3960,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3201,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:40.490Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2079,
+              "outputTokens": 306,
+              "totalTokens": 2385
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:40.491Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "2a959065-abc6-41a7-95c8-585f5224d266"
+        },
+        {
+          "seq": 14,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:40.491Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "2a959065-abc6-41a7-95c8-585f5224d266"
+        },
+        {
+          "seq": 15,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:40.577Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "2a959065-abc6-41a7-95c8-585f5224d266"
+        },
+        {
+          "seq": 16,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:40.584Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:40.585Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3770,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 4057,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3144,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:42.023Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2096,
+              "outputTokens": 157,
+              "totalTokens": 2253
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:44.462Z",
+          "type": "model.completed",
+          "reason": "EXTRACT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 3769,
+              "outputTokens": 395,
+              "totalTokens": 4164
+            }
+          }
+        },
+        {
+          "seq": 20,
+          "runId": "766447fb-4410-41f1-963e-64a14d36f507",
+          "timestamp": "2026-10-18T15:35:44.478Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/afbbb28b-62b6-4bd1-87c1-9aaca9d5ebf3",
+        "page": {
+          "status": "pending",
+          "priority": "high",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "extraction": {
+              "data": {
+                "records": [
+                  {
+                    "id": "W-101",
+                    "title": "搜索索引重建",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-102",
+                    "title": "登录超时",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-103",
+                    "title": "CSV导出失败",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-104",
+                    "title": "报表访问异常",
+                    "status": "待处理",
+                    "priority": "高"
+                  },
+                  {
+                    "id": "W-105",
+                    "title": "邮件队列阻塞",
+                    "status": "待处理",
+                    "priority": "高"
+                  }
+                ]
+              },
+              "source": [
+                {
+                  "kind": "url",
+                  "url": "http://127.0.0.1:49769/s/afbbb28b-62b6-4bd1-87c1-9aaca9d5ebf3/table",
+                  "documentId": "5af1bc83-0dab-4620-94ef-9c6e9c22c41f",
+                  "observationId": "58769108-b221-4c61-b569-4144e6271ba3",
+                  "capturedAt": "2026-10-18T15:35:40.582Z",
+                  "actual": "[REDACTED]"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "durationMs": 7773.357199999999
+    },
+    {
+      "scenario": "table",
+      "iteration": 5,
+      "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+      "modelAttempts": 6,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "failed",
+      "reason": "MODEL_INVALID_OUTPUT",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 6,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 5883,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3574,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3144,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 12078,
+        "outputTokens": 1288,
+        "totalTokens": 13366
+      },
+      "stopReason": "MODEL_INVALID_OUTPUT",
+      "failureCode": "MODEL_INVALID_OUTPUT",
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:44.605Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:44.605Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:44.625Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:44.634Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:44.635Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3844,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3246,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:47.744Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 4119,
+              "outputTokens": 444,
+              "totalTokens": 4563
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:47.744Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "faff9f6b-d116-4e85-a01f-aa484f9efd05"
+        },
+        {
+          "seq": 8,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:47.745Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "faff9f6b-d116-4e85-a01f-aa484f9efd05"
+        },
+        {
+          "seq": 9,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:47.827Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "faff9f6b-d116-4e85-a01f-aa484f9efd05"
+        },
+        {
+          "seq": 10,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:47.838Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:47.839Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3212,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3960,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3201,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:49.089Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2080,
+              "outputTokens": 250,
+              "totalTokens": 2330
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:49.090Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "cd17baa9-af95-4ed0-a94b-311a2aaf4312"
+        },
+        {
+          "seq": 14,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:49.090Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "cd17baa9-af95-4ed0-a94b-311a2aaf4312"
+        },
+        {
+          "seq": 15,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:49.169Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "cd17baa9-af95-4ed0-a94b-311a2aaf4312"
+        },
+        {
+          "seq": 16,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:49.178Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:49.179Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 4553,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 4057,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3144,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:50.508Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2102,
+              "outputTokens": 110,
+              "totalTokens": 2212
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:53.353Z",
+          "type": "model.completed",
+          "reason": "FAILED_ATTEMPT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1880,
+              "outputTokens": 296,
+              "totalTokens": 2176
+            }
+          }
+        },
+        {
+          "seq": 20,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:53.353Z",
+          "type": "model.completed",
+          "reason": "FAILED_ATTEMPT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1897,
+              "outputTokens": 188,
+              "totalTokens": 2085
+            }
+          }
+        },
+        {
+          "seq": 21,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:53.354Z",
+          "type": "budget.updated",
+          "reason": "STOP",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 6,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 5883,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3574,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3144,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 22,
+          "runId": "46ca1774-b82e-48b9-a000-1334a7c16930",
+          "timestamp": "2026-10-18T15:35:53.354Z",
+          "type": "run.state",
+          "reason": "FAILED",
+          "actionId": null,
+          "state": "failed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/f3d797d7-0dad-4673-b536-c1ddae1b27f3",
+        "page": {
+          "status": "pending",
+          "priority": "high",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "failed",
+          "result": {}
+        }
+      },
+      "durationMs": 8832.3511
+    },
+    {
+      "scenario": "form",
+      "iteration": 1,
+      "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 5642,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3909,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3101,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 5993,
+        "outputTokens": 996,
+        "totalTokens": 6989
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:53.471Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:53.471Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:53.487Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:53.493Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:53.494Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 5,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3589,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3080,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:55.443Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1934,
+              "outputTokens": 399,
+              "totalTokens": 2333
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:55.443Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "acea1110-dcd2-4ba5-88dc-eaa0f18b2981"
+        },
+        {
+          "seq": 8,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:55.443Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "acea1110-dcd2-4ba5-88dc-eaa0f18b2981"
+        },
+        {
+          "seq": 9,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:55.523Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "acea1110-dcd2-4ba5-88dc-eaa0f18b2981"
+        },
+        {
+          "seq": 10,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:55.528Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:55.529Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 2040,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3748,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3086,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:57.604Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1997,
+              "outputTokens": 426,
+              "totalTokens": 2423
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:57.604Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "113024f4-7c43-4f98-92ad-c643e8636c45"
+        },
+        {
+          "seq": 14,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:57.604Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "113024f4-7c43-4f98-92ad-c643e8636c45"
+        },
+        {
+          "seq": 15,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:57.689Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "113024f4-7c43-4f98-92ad-c643e8636c45"
+        },
+        {
+          "seq": 16,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:57.696Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:57.697Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 4208,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3909,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3101,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:59.130Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2062,
+              "outputTokens": 171,
+              "totalTokens": 2233
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:59.131Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "aa223645-1e0e-419e-8752-58c6e514a95e"
+        },
+        {
+          "seq": 20,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:59.131Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "aa223645-1e0e-419e-8752-58c6e514a95e"
+        },
+        {
+          "seq": 21,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:59.134Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:59.134Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "aa223645-1e0e-419e-8752-58c6e514a95e"
+        },
+        {
+          "seq": 23,
+          "runId": "57bdecb4-5f0b-4743-88ad-5feeb9b55f71",
+          "timestamp": "2026-10-18T15:35:59.134Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "aa223645-1e0e-419e-8752-58c6e514a95e"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/1f65e506-3492-4d81-917b-86ca84f9ee2c",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "decd1bd8-3933-4b4e-a0fc-634dd4673d08",
+            "actionId": "aa223645-1e0e-419e-8752-58c6e514a95e",
+            "documentId": "618c00cd-c16c-4f26-a302-ca5b1fbf4dde",
+            "origin": "http://127.0.0.1:49769",
+            "expiresAt": "2026-10-18T15:36:29.134Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 5731.426899999991
+    },
+    {
+      "scenario": "form",
+      "iteration": 2,
+      "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 6262,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3919,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3101,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 5995,
+        "outputTokens": 864,
+        "totalTokens": 6859
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:35:59.261Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:35:59.261Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:35:59.274Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:35:59.279Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:35:59.280Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 4,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3589,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3080,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:00.863Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1930,
+              "outputTokens": 223,
+              "totalTokens": 2153
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:00.864Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "4bfc5f39-4c14-4804-b09c-466f08a1b023"
+        },
+        {
+          "seq": 8,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:00.864Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "4bfc5f39-4c14-4804-b09c-466f08a1b023"
+        },
+        {
+          "seq": 9,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:00.956Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "4bfc5f39-4c14-4804-b09c-466f08a1b023"
+        },
+        {
+          "seq": 10,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:00.963Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:00.963Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 1688,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3753,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3086,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:02.822Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2001,
+              "outputTokens": 306,
+              "totalTokens": 2307
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:02.822Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "5f1651aa-056f-46d1-9041-f38cff1051fb"
+        },
+        {
+          "seq": 14,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:02.822Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "5f1651aa-056f-46d1-9041-f38cff1051fb"
+        },
+        {
+          "seq": 15,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:02.896Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "5f1651aa-056f-46d1-9041-f38cff1051fb"
+        },
+        {
+          "seq": 16,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:02.902Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:02.903Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3627,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3919,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3101,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:05.537Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2064,
+              "outputTokens": 335,
+              "totalTokens": 2399
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:05.537Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "a2e1e5e2-3ebb-4ee9-9ec9-69828e0e6a5c"
+        },
+        {
+          "seq": 20,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:05.537Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "a2e1e5e2-3ebb-4ee9-9ec9-69828e0e6a5c"
+        },
+        {
+          "seq": 21,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:05.541Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:05.541Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "a2e1e5e2-3ebb-4ee9-9ec9-69828e0e6a5c"
+        },
+        {
+          "seq": 23,
+          "runId": "645ed03b-0926-44c0-aba1-61e5822e2cbf",
+          "timestamp": "2026-10-18T15:36:05.541Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "a2e1e5e2-3ebb-4ee9-9ec9-69828e0e6a5c"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/79f36031-0068-457b-90e2-9fe0048db841",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "652f13d6-4cf8-4ae3-8144-6decf9796918",
+            "actionId": "a2e1e5e2-3ebb-4ee9-9ec9-69828e0e6a5c",
+            "documentId": "c166bfcb-6d30-4a75-810a-6daf2024ea2c",
+            "origin": "http://127.0.0.1:49769",
+            "expiresAt": "2026-10-18T15:36:35.540Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 6370.064900000012
+    },
+    {
+      "scenario": "form",
+      "iteration": 3,
+      "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+      "modelAttempts": 4,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 4,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 10141,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3914,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3101,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 8055,
+        "outputTokens": 1711,
+        "totalTokens": 9766
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:05.633Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:05.633Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:05.648Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:05.655Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:05.655Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 7,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3589,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3080,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:08.959Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1948,
+              "outputTokens": 530,
+              "totalTokens": 2478
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:08.960Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "34af39af-5328-4a99-9b3a-32a2ccc2ceb7"
+        },
+        {
+          "seq": 8,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:08.960Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "34af39af-5328-4a99-9b3a-32a2ccc2ceb7"
+        },
+        {
+          "seq": 9,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:09.033Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "34af39af-5328-4a99-9b3a-32a2ccc2ceb7"
+        },
+        {
+          "seq": 10,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:09.040Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:09.040Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3392,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3753,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3086,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:13.551Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 4031,
+              "outputTokens": 832,
+              "totalTokens": 4863
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:13.551Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "5a5f2c2a-84e7-4229-b91b-6ef4eacdfb80"
+        },
+        {
+          "seq": 14,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:13.551Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "5a5f2c2a-84e7-4229-b91b-6ef4eacdfb80"
+        },
+        {
+          "seq": 15,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:13.627Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "5a5f2c2a-84e7-4229-b91b-6ef4eacdfb80"
+        },
+        {
+          "seq": 16,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:13.632Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:13.633Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 7984,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3914,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3101,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:15.789Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2076,
+              "outputTokens": 349,
+              "totalTokens": 2425
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:15.789Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "02da3063-7ead-4bc6-baad-bf1c240bcdcf"
+        },
+        {
+          "seq": 20,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:15.789Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "02da3063-7ead-4bc6-baad-bf1c240bcdcf"
+        },
+        {
+          "seq": 21,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:15.793Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:15.793Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "02da3063-7ead-4bc6-baad-bf1c240bcdcf"
+        },
+        {
+          "seq": 23,
+          "runId": "69bfe1a3-e79f-4447-87dc-61d5bff0435a",
+          "timestamp": "2026-10-18T15:36:15.793Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "02da3063-7ead-4bc6-baad-bf1c240bcdcf"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/e87098bf-cf41-47a2-94c3-3f29fa27125f",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "1628a978-a46f-4770-bfbf-86388e99e0c0",
+            "actionId": "02da3063-7ead-4bc6-baad-bf1c240bcdcf",
+            "documentId": "485e56ac-f971-42e6-929e-c7d8228c16b9",
+            "origin": "http://127.0.0.1:49769",
+            "expiresAt": "2026-10-18T15:36:45.793Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 10203.7589
+    },
+    {
+      "scenario": "form",
+      "iteration": 4,
+      "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+      "modelAttempts": 4,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 4,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 7202,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3914,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3101,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 8017,
+        "outputTokens": 1209,
+        "totalTokens": 9226
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:15.875Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:15.875Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:15.893Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:15.902Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:15.903Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 8,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3589,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3080,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:19.196Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 3923,
+              "outputTokens": 526,
+              "totalTokens": 4449
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:19.196Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "5788ed10-b4c7-4de8-bfc1-5e27eb669c8f"
+        },
+        {
+          "seq": 8,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:19.196Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "5788ed10-b4c7-4de8-bfc1-5e27eb669c8f"
+        },
+        {
+          "seq": 9,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:19.279Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "5788ed10-b4c7-4de8-bfc1-5e27eb669c8f"
+        },
+        {
+          "seq": 10,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:19.284Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:19.285Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3390,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3753,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3086,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:21.508Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 2013,
+              "outputTokens": 466,
+              "totalTokens": 2479
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:21.509Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "8f536819-9443-4d26-acfb-54354ddfe0ea"
+        },
+        {
+          "seq": 14,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:21.509Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "8f536819-9443-4d26-acfb-54354ddfe0ea"
+        },
+        {
+          "seq": 15,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:21.592Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "8f536819-9443-4d26-acfb-54354ddfe0ea"
+        },
+        {
+          "seq": 16,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:21.597Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:21.598Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 5703,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3914,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3101,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:23.096Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2081,
+              "outputTokens": 217,
+              "totalTokens": 2298
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:23.097Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "e5de3aec-67cd-4d5e-afcb-193b703c3181"
+        },
+        {
+          "seq": 20,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:23.097Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "e5de3aec-67cd-4d5e-afcb-193b703c3181"
+        },
+        {
+          "seq": 21,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:23.100Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:23.100Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "e5de3aec-67cd-4d5e-afcb-193b703c3181"
+        },
+        {
+          "seq": 23,
+          "runId": "dabc2f4a-d805-4166-9e42-c882e2c68f9e",
+          "timestamp": "2026-10-18T15:36:23.100Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "e5de3aec-67cd-4d5e-afcb-193b703c3181"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/8b7363a4-763d-4968-bf0e-d0e23e9cbc6a",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "c9585523-6a9c-44b7-8723-695e69d03869",
+            "actionId": "e5de3aec-67cd-4d5e-afcb-193b703c3181",
+            "documentId": "010b2d1e-bb21-4d6e-8756-d2f0d48985dd",
+            "origin": "http://127.0.0.1:49769",
+            "expiresAt": "2026-10-18T15:36:53.100Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 7266.243900000001
+    },
+    {
+      "scenario": "form",
+      "iteration": 5,
+      "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 5643,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3909,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 3101,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 5983,
+        "outputTokens": 1079,
+        "totalTokens": 7062
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:23.180Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:23.180Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:23.193Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:23.198Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:23.198Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 5,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3589,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3080,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:24.830Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1932,
+              "outputTokens": 335,
+              "totalTokens": 2267
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:24.830Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "be68ee28-9bde-45dd-84b6-953910b58e0e"
+        },
+        {
+          "seq": 8,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:24.830Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "be68ee28-9bde-45dd-84b6-953910b58e0e"
+        },
+        {
+          "seq": 9,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:24.907Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "be68ee28-9bde-45dd-84b6-953910b58e0e"
+        },
+        {
+          "seq": 10,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:24.912Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:24.913Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 1719,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3748,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3086,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:26.942Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1992,
+              "outputTokens": 409,
+              "totalTokens": 2401
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:26.942Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "aab8809b-04e3-4bf6-a9a5-80233fe13773"
+        },
+        {
+          "seq": 14,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:26.942Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "aab8809b-04e3-4bf6-a9a5-80233fe13773"
+        },
+        {
+          "seq": 15,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:27.020Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "aab8809b-04e3-4bf6-a9a5-80233fe13773"
+        },
+        {
+          "seq": 16,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:27.026Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:27.027Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3833,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3909,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 3101,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:28.836Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 2059,
+              "outputTokens": 335,
+              "totalTokens": 2394
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:28.836Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "25871a75-7fb6-48e6-9f73-b90598ce280f"
+        },
+        {
+          "seq": 20,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:28.836Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "25871a75-7fb6-48e6-9f73-b90598ce280f"
+        },
+        {
+          "seq": 21,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:28.839Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:28.839Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "25871a75-7fb6-48e6-9f73-b90598ce280f"
+        },
+        {
+          "seq": 23,
+          "runId": "2e92f4ed-97fc-47ea-b6d9-da3bcd7887e6",
+          "timestamp": "2026-10-18T15:36:28.839Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "25871a75-7fb6-48e6-9f73-b90598ce280f"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:49769/s/007b48bb-1c16-4225-bc6a-b906023037a7",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "c066ea91-b618-4223-939c-b5378e78f43c",
+            "actionId": "25871a75-7fb6-48e6-9f73-b90598ce280f",
+            "documentId": "c1fcbf06-9629-4716-9302-b6f14f878814",
+            "origin": "http://127.0.0.1:49769",
+            "expiresAt": "2026-10-18T15:36:58.839Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 5700.907099999997
+    }
+  ],
+  "checks": [],
+  "configuration": {
+    "endpointSha256": "948f1ecb6b48f91adc4e110d0351cd172b16450e9936d358992e0dfad7b863f3",
+    "model": "deepseek-flash",
+    "jsonMode": true,
+    "promptSha256": "eb25552c933b0dccb20f56d0899594e8490d4757178a9ebe382028ce2b3191b7",
+    "taskVersion": "release-fixture-0.2",
+    "timeoutMs": 30000,
+    "limits": {
+      "maxSteps": 30,
+      "maxModelCalls": 40,
+      "maxDurationMs": 300000
+    }
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.35",
+    "revision": "@4befba4e8237fc6452fe5918001a01235180e6fc",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.16"
+  },
+  "fixtureVersion": "fixture-0.1",
+  "score": {
+    "counts": {
+      "search": 5,
+      "table": 3,
+      "form": 5
+    },
+    "complete": true,
+    "safe": true,
+    "passed": false
+  }
+}

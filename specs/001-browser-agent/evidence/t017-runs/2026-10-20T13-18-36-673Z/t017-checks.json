@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-10-20T13:15:42.168Z",
+  "kind": "local-reproducible-release-candidate",
+  "version": "0.1.0-rc.1",
+  "status": "incomplete",
+  "output": "E:\\Wisp\\.cache\\candidates\\0.1.0-rc.1-2026-10-20T13-15-42-165Z",
+  "installMode": "online",
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "checks": [
+    {
+      "name": "frozenAcceptance",
+      "passed": true,
+      "detail": {
+        "status": "passed",
+        "sha256": "3e4dfdb9f9366fa133625d9f8c96cfc557d1b7a1da3cbdba9dbf879753e978d6"
+      }
+    },
+    {
+      "name": "sourceSnapshot",
+      "passed": true,
+      "detail": {
+        "files": 271,
+        "sha256": "fad02bb3b8af6d72a934adced5deced7af0858f3d6174afbff405819f2235319",
+        "git": "No Git metadata; content-addressed source snapshot"
+      }
+    },
+    {
+      "name": "cleanInstall",
+      "passed": true,
+      "detail": {
+        "command": "npm ci --no-audit --no-fund --fetch-retries=0 --fetch-timeout=30000",
+        "cache": "Existing npm cache; no copied node_modules",
+        "network": "enabled",
+        "npm": "10.3.0"
+      }
+    },
+    {
+      "name": "check",
+      "passed": true,
+      "detail": {
+        "command": "node scripts/check.mjs",
+        "cwd": "clean source extraction"
+      }
+    },
+    {
+      "name": "tests",
+      "passed": true,
+      "detail": {
+        "command": "node scripts/test.mjs",
+        "cwd": "clean source extraction"
+      }
+    },
+    {
+      "name": "build",
+      "passed": true,
+      "detail": {
+        "command": "node scripts/build.mjs",
+        "cwd": "clean source extraction"
+      }
+    },
+    {
+      "name": "sdkExample",
+      "passed": true,
+      "detail": {
+        "command": "node packages/sdk/examples/minimal.mjs",
+        "cwd": "clean source extraction"
+      }
+    },
+    {
+      "name": "documentedSdkExample",
+      "passed": true,
+      "detail": {
+        "command": "node docs/examples/sdk-task.mjs",
+        "cwd": "clean source extraction"
+      }
+    },
+    {
+      "name": "reproducibleExtension",
+      "passed": false,
+      "error": "Clean build differs from accepted extension"
+    },
+    {
+      "name": "sourceAndAcceptanceUnchanged",
+      "passed": true,
+      "detail": {
+        "sourceFiles": 271
+      }
+    }
+  ],
+  "artifacts": {
+    "extension-manifest.json": "2d86dd7de5c5e77c5a3121115d570e55974b2f3bb7609edd204351e29a95f089",
+    "source-manifest.json": "b286af31bd8fe591882ef6503f2ab7d6464417beb8328aafd8dc1ba811ba9e63",
+    "wisp-0.1.0-rc.1-chrome-mv3.zip": "b9ab70b52a784df4d2956a4cad665209a760f3d9ff345f175dd32e84257bf4e8",
+    "wisp-0.1.0-rc.1-source.zip": "fad02bb3b8af6d72a934adced5deced7af0858f3d6174afbff405819f2235319"
+  },
+  "publication": "local-only",
+  "manualBrowserLoad": "not-run"
+}

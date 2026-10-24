@@ -1,0 +1,42 @@
+import {readFile,writeFile,readdir,mkdir,lstat} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import path from 'node:path';
+import {root} from './tools.mjs';
+import {sha256} from './closure-policy.mjs';
+import {zip} from './candidate-zip.mjs';
+const base='specs/001-browser-agent/',id='0.1.0-rc.1',stamp=new Date().toISOString().replace(/[:.]/g,'-');
+const online=process.argv.includes('--online');
+if(process.argv.slice(2).some(arg=>arg!=='--online'))throw Error('Only --online is supported');
+const output=path.join(root,'.cache','candidates',id+'-'+stamp),clean=path.join(output,'clean');
+await mkdir(clean,{recursive:true});
+const report={timestamp:new Date().toISOString(),kind:'local-reproducible-release-candidate',version:id,status:'pending',output,installMode:online?'online':'offline',environment:{node:process.version,platform:process.platform,arch:process.arch},checks:[],artifacts:{},publication:'local-only',manualBrowserLoad:'not-run'};
+async function check(name,fn){try{const detail=await fn();report.checks.push({name,passed:true,detail});console.log(name+': PASS');return true;}catch(error){report.checks.push({name,passed:false,error:String(error.message)});console.log(name+': FAIL');return false;}}
+const read=file=>readFile(path.join(root,file));
+const json=async file=>JSON.parse(await read(file));
+function requireThat(ok,message){if(!ok)throw Error(message);}
+const excluded=new Set(['node_modules','.git','.cache','.output','.wxt','dist','artifacts']);
+async function walk(directory,filter=()=>true){const result=[];async function visit(relative){for(const entry of await readdir(path.join(directory,relative),{withFileTypes:true})){const file=path.posix.join(relative,entry.name);if(entry.isSymbolicLink())throw Error('Symlink in snapshot: '+file);if(entry.isDirectory()){if(!excluded.has(entry.name)&&!entry.name.endsWith('-runs'))await visit(file);}else if(filter(file))result.push({name:file,bytes:await readFile(path.join(directory,file))});}}await visit('');return result.sort((a,b)=>a.name<b.name?-1:1);}
+async function sources(){const files=[];for(const name of ['README.md','.gitignore','package.json','package-lock.json','tsconfig.base.json'])files.push({name,bytes:await read(name)});for(const directory of ['apps','packages','scripts','docs','specs','fixtures','probes'])for(const file of await walk(path.join(root,directory),f=>/\.(?:md|json|mjs|mts|ts|tsx|html|css|svg|txt)$/.test(f)&&!f.endsWith('t017-checks.json')))files.push({name:directory+'/'+file.name,bytes:file.bytes});return files;}
+const manifest=files=>Object.fromEntries(files.map(f=>[f.name,sha256(f.bytes)]).sort(([a],[b])=>a<b?-1:1));
+function same(a,b){return JSON.stringify(a)===JSON.stringify(b);}
+const textArtifact=name=>/\.(?:m?js|json|html|css|map)$/.test(name);
+function normalizeBuild(files,buildRoot){const from=buildRoot.replace(/\\/g,'/');return files.map(f=>{if(!textArtifact(f.name))return f;const text=f.bytes.toString('utf8');const next=text.split(from).join('<WISP_BUILD_ROOT>');return next===text?f:{name:f.name,bytes:Buffer.from(next,'utf8')};});}
+function runNode(args,cwd=clean){execFileSync(process.execPath,args,{cwd,windowsHide:true,stdio:'pipe',timeout:300000});}
+let snapshot,extension;
+const gate=await check('frozenAcceptance',async()=>{const saved=await json(base+'evidence/t016-closure.json');requireThat(saved.status==='passed','T-016 not passed');for(const [file,hash] of Object.entries({...saved.inputs,...saved.implementationFiles}))requireThat(sha256(await read(file))===hash,'Stale acceptance: '+file);return {status:saved.status,sha256:sha256(await read(base+'evidence/t016-closure.json'))};});
+if(gate){
+    const prepared=await check('sourceSnapshot',async()=>{snapshot=await sources();extension=normalizeBuild(await walk(path.join(root,'apps/extension/.output/chrome-mv3')),root);requireThat(extension.some(f=>f.name==='manifest.json'),'Missing extension');const archive=zip(snapshot);requireThat(archive.equals(zip([...snapshot].reverse())),'ZIP order not deterministic');await writeFile(path.join(output,'wisp-'+id+'-source.zip'),archive);await writeFile(path.join(output,'source-manifest.json'),JSON.stringify(manifest(snapshot),null,2)+'\n');await writeFile(path.join(output,'wisp-'+id+'-chrome-mv3.zip'),zip(extension));await writeFile(path.join(output,'extension-manifest.json'),JSON.stringify(manifest(extension),null,2)+'\n');execFileSync('tar.exe',['-xf',path.join(output,'wisp-'+id+'-source.zip'),'-C',clean],{windowsHide:true,stdio:'pipe'});for(const file of snapshot)requireThat(sha256(await readFile(path.join(clean,file.name)))===sha256(file.bytes),'Extracted source mismatch: '+file.name);return {files:snapshot.length,sha256:sha256(archive),git:'No Git metadata; content-addressed source snapshot'};});
+    let installed=false;
+    if(prepared)installed=await check('cleanInstall',async()=>{try{await lstat(path.join(clean,'node_modules'));throw Error('Clean directory already has dependencies');}catch(error){if(error.code!=='ENOENT')throw error;}const commands=execFileSync('where.exe',['npm.cmd'],{encoding:'utf8',windowsHide:true}).trim().split(/\r?\n/);let cli;for(const command of commands){const candidate=path.join(path.dirname(command),'node_modules/npm/bin/npm-cli.js');try{await lstat(candidate);cli=candidate;break;}catch{}}requireThat(cli,'Cannot locate npm CLI');const log=execFileSync(process.execPath,[cli,'ci',...(online?[]:['--offline']),'--no-audit','--no-fund','--fetch-retries=0','--fetch-timeout=30000'],{cwd:clean,env:{...process.env,npm_config_cache:path.join(root,'.cache/npm')},encoding:'utf8',windowsHide:true,timeout:300000,stdio:'pipe'});await writeFile(path.join(output,'install.log'),log);return {command:'npm ci '+(online?'':'--offline ')+'--no-audit --no-fund --fetch-retries=0 --fetch-timeout=30000',cache:'Existing npm cache; no copied node_modules',network:online?'enabled':'disabled',npm:execFileSync(process.execPath,[cli,'--version'],{encoding:'utf8',windowsHide:true}).trim()};});
+    if(installed){
+        for(const [name,args] of [['check',['scripts/check.mjs']],['tests',['scripts/test.mjs']],['build',['scripts/build.mjs']],['sdkExample',['packages/sdk/examples/minimal.mjs']],['documentedSdkExample',['docs/examples/sdk-task.mjs']]])await check(name,()=>{runNode(args);return {command:'node '+args.join(' '),cwd:'clean source extraction'};});
+        await check('reproducibleExtension',async()=>{const directory=path.join(clean,'apps/extension/.output/chrome-mv3'),first=manifest(normalizeBuild(await walk(directory),clean));requireThat(same(first,manifest(extension)),'Clean build differs from accepted extension');runNode(['scripts/build.mjs']);requireThat(same(first,manifest(normalizeBuild(await walk(directory),clean))),'Second clean build differs');const bytes=zip(extension);await writeFile(path.join(output,'wisp-'+id+'-chrome-mv3.zip'),bytes);await writeFile(path.join(output,'extension-manifest.json'),JSON.stringify(first,null,2)+'\n');return {files:extension.length,cleanMatchesAccepted:true,twoBuildsMatch:true,sha256:sha256(bytes)};});
+    }
+    await check('sourceAndAcceptanceUnchanged',async()=>{requireThat(same(manifest(snapshot),manifest(await sources())),'Source changed during packaging');const saved=await json(base+'evidence/t016-closure.json');for(const [file,hash] of Object.entries({...saved.inputs,...saved.implementationFiles}))requireThat(sha256(await read(file))===hash,'Acceptance changed: '+file);return {sourceFiles:snapshot.length};});
+}
+report.status=report.checks.length===10&&report.checks.every(c=>c.passed)?'passed':'incomplete';
+for(const name of (await readdir(output)).filter(n=>n.endsWith('.zip')||n.endsWith('-manifest.json')))report.artifacts[name]=sha256(await readFile(path.join(output,name)));
+await writeFile(path.join(output,'SHA256SUMS'),Object.entries(report.artifacts).map(([name,hash])=>hash+'  '+name).join('\n')+'\n');
+await writeFile(path.join(output,'candidate-report.json'),JSON.stringify(report,null,2)+'\n');
+const target=base+'evidence/t017-checks.json';try{const previous=await read(target),archive=base+'evidence/t017-runs/'+stamp;await mkdir(path.join(root,archive),{recursive:true});await writeFile(path.join(root,archive,'t017-checks.json'),previous);}catch(error){if(error.code!=='ENOENT')throw error;}
+await writeFile(path.join(root,target),JSON.stringify(report,null,2)+'\n');console.log(target+': '+report.status);console.log('Output: '+output);if(report.status!=='passed')process.exitCode=1;

@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "browser": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/156.0.8078.35",
+      "revision": "@4befba4e8237fc6452fe5918001a01235180e6fc",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "jsVersion": "15.6.75.16"
+    }
+  },
+  "attempts": [
+    {
+      "timestamp": "2026-10-18T02:09:56.785Z",
+      "flags": [
+        "headless=new"
+      ],
+      "extensionLoaded": true,
+      "error": "{\"code\":-32000,\"message\":\"Target crashed\"}",
+      "checks": []
+    },
+    {
+      "timestamp": "2026-10-18T02:11:39.334Z",
+      "flags": [
+        "headless=new",
+        "disable-gpu",
+        "disable-software-rasterizer"
+      ],
+      "extensionLoaded": false,
+      "error": "Timeout: Extensions.loadUnpacked",
+      "checks": [],
+      "gpuFailure": "GPU process exit_code=-1073741790; GPU process is not usable"
+    },
+    {
+      "timestamp": "2026-10-18T02:17:28.317Z",
+      "flags": [
+        "headless=new",
+        "disable-gpu",
+        "disable-software-rasterizer"
+      ],
+      "extensionLoaded": false,
+      "error": "Chrome exited",
+      "checks": [],
+      "gpuFailure": "GPU process exit_code=-1073741790; GPU process is not usable"
+    },
+    {
+      "timestamp": "2026-10-18T02:29:51.957Z",
+      "note": "Same probe, same flags as the blocked attempts; the GPU subprocess failure did not reproduce. Root cause of the earlier failure is unconfirmed and treated as a transient host-environment issue.",
+      "flags": [
+        "headless=new",
+        "disable-gpu",
+        "disable-software-rasterizer",
+        "no-first-run",
+        "no-default-browser-check",
+        "enable-unsafe-extension-debugging",
+        "remote-debugging-pipe"
+      ],
+      "extensionLoaded": true,
+      "extensionId": "bhfnblokpmfbjgfdiimbolojdnodpnmo",
+      "checks": [
+        {
+          "name": "debugger.attach",
+          "pass": true,
+          "detail": "attached"
+        },
+        {
+          "name": "reference.unrelatedMutation",
+          "pass": true,
+          "detail": "same node stays valid"
+        },
+        {
+          "name": "reference.replacedNodeRejected",
+          "pass": true,
+          "detail": "old node disconnected"
+        },
+        {
+          "name": "input.nativeEvent",
+          "pass": true,
+          "detail": "input listener reflected text"
+        },
+        {
+          "name": "input.contenteditable",
+          "pass": true,
+          "detail": "text inserted"
+        },
+        {
+          "name": "input.openShadow",
+          "pass": true,
+          "detail": "shadow button clicked"
+        },
+        {
+          "name": "input.reactControlled",
+          "pass": true,
+          "detail": "CDP trusted input drove React 18 controlled state through onChange"
+        },
+        {
+          "name": "input.reactControlledSemantics",
+          "pass": true,
+          "detail": "{\"afterBypassChange\":\"bypass\",\"afterPlainChange\":\"React input\",\"before\":\"React input\",\"hasTracker\":true}"
+        },
+        {
+          "name": "checkpoint.persisted",
+          "pass": true,
+          "detail": "storage.local probe only; production IndexedDB pending"
+        },
+        {
+          "name": "navigation.invalidatesContext",
+          "pass": true,
+          "detail": "old isolated world rejected"
+        },
+        {
+          "name": "worker.restart",
+          "pass": true,
+          "detail": "new boot ID after stopAllWorkers"
+        },
+        {
+          "name": "worker.unknownCheckpoint",
+          "pass": true,
+          "detail": "checkpoint retained; no action replay implemented"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "No Chrome 125/126/127 binary available on this host; the minimum_chrome_version=125 baseline is declared but not binary-tested",
+    "Extensions.loadUnpacked is a test-harness CDP command; production loads the extension via normal install",
+    "Persistence verified with chrome.storage.local only; production uses IndexedDB, not implemented here",
+    "No real model endpoint exercised",
+    "React verification pins React 18.3.1 UMD; other framework versions not covered"
+  ],
+  "files": {
+    "probes/t001/run.mjs": "fb0e8e35b21cf0be91c5ba22b224e48246239ff9150ed8dde1ae0f672c5c78db",
+    "probes/t001/fixture.html": "56f2c435ceba8a4a1c2495a3175cc5947edf5080c512d8f619adc66eb3647ec7",
+    "probes/t001/extension/background.js": "4342f489b97b587ceb5d4dc2f0c76982af2c025bc61edf59f099091d4b68d28c",
+    "probes/t001/extension/manifest.json": "53f9b578d91dc3b5072ca2335ed57b59f6f8d4131d812a9f38841a8cd0cb2d05",
+    "probes/t001/extension/runner.html": "57515776bcc658cd3521af58233a54f3b4a129747a3cb48429a70892820950e0",
+    "probes/t001/vendor/react.production.min.js": "react@18.3.1 umd production",
+    "probes/t001/vendor/react-dom.production.min.js": "react-dom@18.3.1 umd production"
+  }
+}

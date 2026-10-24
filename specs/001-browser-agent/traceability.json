@@ -1,0 +1,774 @@
+{
+  "version": "0.1",
+  "requirements": [
+    {
+      "id": "US-01",
+      "implementation": [
+        "packages/browser-chrome/src/adapter.mts",
+        "packages/sdk/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-sdk-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "独立控制层与受信任SDK；文档示例是确定性宿主。"
+    },
+    {
+      "id": "US-02",
+      "implementation": [
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        }
+      ],
+      "documentation": [
+        "docs/getting-started.md"
+      ],
+      "scope": "deepseek-flash搜索5/5；限定fixture。"
+    },
+    {
+      "id": "US-03",
+      "implementation": [
+        "packages/runtime/src/loop.mts",
+        "packages/models/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-reliability.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "实际筛选/五条完整数据与来源；schema为受限子集。"
+    },
+    {
+      "id": "US-04",
+      "implementation": [
+        "packages/policy/src/index.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "实际填写5/5，终点为提交确认，无自动提交。"
+    },
+    {
+      "id": "US-05",
+      "implementation": [
+        "packages/runtime/src/runtime.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-runtime-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "中断暂停/unknown核对；Q-005输入来源不保证识别。"
+    },
+    {
+      "id": "FR-001",
+      "implementation": [
+        "packages/browser-chrome/src/index.mts",
+        "packages/sdk/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-sdk-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "独立导入，私有workspace包尚未公开发布。"
+    },
+    {
+      "id": "FR-002",
+      "implementation": [
+        "packages/browser-chrome/src/document.mts",
+        "packages/protocol/src/observation.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-observer-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-reliability.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "有界观察、普通值和选项；敏感字段不暴露值。"
+    },
+    {
+      "id": "FR-003",
+      "implementation": [
+        "packages/browser-chrome/src/adapter.mts",
+        "packages/browser-chrome/src/control-document.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-reliability.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "五基础动作及原生单选selectOption；自定义/多选不保证。"
+    },
+    {
+      "id": "FR-004",
+      "implementation": [
+        "packages/browser-chrome/src/references.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-observer-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "身份引用不按同名节点重绑，普通无关变更不全部失效。"
+    },
+    {
+      "id": "FR-005",
+      "implementation": [
+        "packages/protocol/src/runtime.mts",
+        "packages/models/src/index.mts",
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-loop-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "严格动作schema/单步，提示注入不承诺绝对防护。"
+    },
+    {
+      "id": "FR-006",
+      "implementation": [
+        "packages/browser-chrome/src/adapter.mts",
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-loop-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "区分派发/响应/验证，加载与任意DOM变化不算成功。"
+    },
+    {
+      "id": "FR-007",
+      "implementation": [
+        "packages/models/src/index.mts",
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-reliability.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "提取schema校验与来源绑定；非完整JSON Schema。"
+    },
+    {
+      "id": "FR-008",
+      "implementation": [
+        "packages/policy/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-policy-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "未知/写入确认，敏感操作接管。"
+    },
+    {
+      "id": "FR-009",
+      "implementation": [
+        "packages/policy/src/index.mts",
+        "apps/extension/entrypoints/sidepanel/App.tsx"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-policy-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "一次性批准绑定动作/页面；不提供自动批准。"
+    },
+    {
+      "id": "FR-010",
+      "implementation": [
+        "packages/runtime/src/runtime.mts",
+        "packages/sdk/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-sdk-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-performance.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "停止阻止后续动作，已派发动作不可保证撤销。"
+    },
+    {
+      "id": "FR-011",
+      "implementation": [
+        "packages/runtime/src/runtime.mts",
+        "packages/runtime/src/store.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-runtime-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "MV3/IndexedDB四检查点及旧宿主屏障。"
+    },
+    {
+      "id": "FR-012",
+      "implementation": [
+        "packages/runtime/src/runtime.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-runtime-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-panel-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "租约/重复去重；输入未知需可信宿主通知或显式接管，Q-005保留。"
+    },
+    {
+      "id": "FR-013",
+      "implementation": [
+        "packages/models/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t009-model-live.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "真实DeepSeek兼容端点；其他提供方/CORS配置需复验。"
+    },
+    {
+      "id": "FR-014",
+      "implementation": [
+        "apps/extension/entrypoints/sidepanel/App.tsx",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-panel-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/getting-started.md"
+      ],
+      "scope": "真实SIDE_PANEL、权限、确认、接管、暂停/停止。"
+    },
+    {
+      "id": "FR-015",
+      "implementation": [
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-checks.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "30步/5分钟/40调用/上下文及无进展限制；完整确定性测试覆盖。"
+    },
+    {
+      "id": "FR-016",
+      "implementation": [
+        "packages/policy/src/index.mts",
+        "packages/browser-chrome/src/adapter.mts",
+        "apps/extension/entrypoints/background.ts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-policy-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "精确origin与能力边界；不保证所有不支持页面有自动接管说明。"
+    },
+    {
+      "id": "FR-017",
+      "implementation": [
+        "packages/browser-chrome/src/control-document.mts",
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-reliability.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "有界条件及宿主条件并集；未验证不算完成。"
+    },
+    {
+      "id": "NFR-001",
+      "implementation": [
+        "packages/protocol/src/actions.mts",
+        "packages/models/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-checks.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-policy-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "模型不能执行任意JS；合成select代码固定在受信任实现。"
+    },
+    {
+      "id": "NFR-002",
+      "implementation": [
+        "packages/browser-chrome/src/document.mts",
+        "packages/browser-chrome/src/sanitize.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-observer-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-reliability.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "识别敏感字段过滤；普通目标/结果可能含业务数据。"
+    },
+    {
+      "id": "NFR-003",
+      "implementation": [
+        "apps/extension/host/controller.mts",
+        "apps/extension/entrypoints/background.ts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-panel-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "session密钥与原生sender；第三方SDK宿主自行负责保管。"
+    },
+    {
+      "id": "NFR-004",
+      "implementation": [
+        "packages/runtime/src/store.mts",
+        "packages/sdk/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-sdk-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "稳定事件与有界journal/任务与动作时间/可用用量，默认非全量DOM/截图；费用未知时不估造。"
+    },
+    {
+      "id": "NFR-005",
+      "implementation": [
+        "packages/runtime/src/loop.mts",
+        "scripts/release-live.mjs"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-faults.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        }
+      ],
+      "documentation": [
+        "docs/verification.md"
+      ],
+      "scope": "137断言、实际三类各5/5、零未授权副作用；不外推任意网站。"
+    },
+    {
+      "id": "NFR-006",
+      "implementation": [
+        "scripts/release-performance.mjs"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-performance.json"
+        }
+      ],
+      "documentation": [
+        "docs/verification.md"
+      ],
+      "scope": "200可见候选、30样本、p95≤500ms；预算允许返回少于200。"
+    },
+    {
+      "id": "NFR-007",
+      "implementation": [
+        "packages/sdk/src/index.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-performance.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "本地cancel与UI时限分别验证，外部已发请求仅尽力中止。"
+    },
+    {
+      "id": "AC-01",
+      "implementation": [
+        "packages/browser-chrome/src/adapter.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-observer-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "label/禁用/遮挡/open Shadow/输入与滚动。"
+    },
+    {
+      "id": "AC-02",
+      "implementation": [
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-loop-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/verification.md"
+      ],
+      "scope": "搜索实际5/5、URL/标题证据与单步。"
+    },
+    {
+      "id": "AC-03",
+      "implementation": [
+        "packages/models/src/index.mts",
+        "packages/runtime/src/loop.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-checks.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "表格筛选实际5/5、独立真值/来源及非法schema拒绝。"
+    },
+    {
+      "id": "AC-04",
+      "implementation": [
+        "packages/browser-chrome/src/references.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-observer-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "旧引用拒绝，无关计数器不全部废弃。"
+    },
+    {
+      "id": "AC-05",
+      "implementation": [
+        "packages/browser-chrome/src/control-document.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-control-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "加载、失败/超时不误报成功。"
+    },
+    {
+      "id": "AC-06",
+      "implementation": [
+        "packages/policy/src/index.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-policy-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-live.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "批准/拒绝/过期/字段或导航变化；准确摘要人工核查。"
+    },
+    {
+      "id": "AC-07",
+      "implementation": [
+        "packages/sdk/src/index.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-sdk-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-panel-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "取消/关闭恢复/接管；Q-005边界如上。"
+    },
+    {
+      "id": "AC-08",
+      "implementation": [
+        "packages/runtime/src/runtime.mts",
+        "packages/runtime/src/store.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-runtime-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "四检查点实际Worker中断与存活旧宿主回应。"
+    },
+    {
+      "id": "AC-09",
+      "implementation": [
+        "packages/runtime/src/runtime.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-runtime-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-panel-browser.json"
+        }
+      ],
+      "documentation": [
+        "docs/sdk.md"
+      ],
+      "scope": "同tab租约、并发/重放去重。"
+    },
+    {
+      "id": "AC-10",
+      "implementation": [
+        "packages/protocol/src/actions.mts",
+        "packages/policy/src/index.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t013-policy-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-reliability.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "敏感/越权/伪造sender/能力错误；不保证提示注入绝对防御。"
+    },
+    {
+      "id": "AC-11",
+      "implementation": [
+        "packages/runtime/src/loop.mts",
+        "packages/models/src/index.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-checks.json"
+        }
+      ],
+      "documentation": [
+        "docs/support.md"
+      ],
+      "scope": "畸形输出、有限纠正/超时、取消/预算/无进展由290项确定性测试覆盖。"
+    },
+    {
+      "id": "AC-12",
+      "implementation": [
+        "packages/runtime/src/runtime.mts",
+        "apps/extension/host/controller.mts"
+      ],
+      "evidence": [
+        {
+          "file": "specs/001-browser-agent/evidence/t014-performance.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t013-panel-browser.json"
+        },
+        {
+          "file": "specs/001-browser-agent/evidence/t014-manual.json"
+        }
+      ],
+      "documentation": [
+        "docs/security.md"
+      ],
+      "scope": "30样本/保留清理/历史删除/trace；非后台7天定时删除。"
+    }
+  ]
+}

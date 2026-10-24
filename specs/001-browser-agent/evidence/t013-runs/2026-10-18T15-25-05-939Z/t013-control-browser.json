@@ -1,0 +1,131 @@
+{
+  "machine": {
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics         ",
+    "logicalCpus": 12,
+    "totalMemoryBytes": 29909643264
+  },
+  "timestamp": "2026-10-18T15:12:31.013Z",
+  "fixtureVersion": "fixture-0.1",
+  "node": "v22.20.0",
+  "platform": "win32",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "input.replaceInitial",
+      "passed": true
+    },
+    {
+      "name": "input.replaceExisting",
+      "passed": true
+    },
+    {
+      "name": "input.clear",
+      "passed": true
+    },
+    {
+      "name": "click.deduplicate",
+      "passed": true
+    },
+    {
+      "name": "input.keyboardDoesNotExtraClick",
+      "passed": true
+    },
+    {
+      "name": "actionability.禁用按钮",
+      "passed": true
+    },
+    {
+      "name": "actionability.被遮挡按钮",
+      "passed": true
+    },
+    {
+      "name": "click.openShadow",
+      "passed": true
+    },
+    {
+      "name": "actionability.noForbiddenEffects",
+      "passed": true
+    },
+    {
+      "name": "input.scroll",
+      "passed": true
+    },
+    {
+      "name": "input.navigate",
+      "passed": true
+    },
+    {
+      "name": "input.pressEnter",
+      "passed": true
+    },
+    {
+      "name": "reference.noReplacementClick",
+      "passed": true
+    },
+    {
+      "name": "save.loadingNotComplete",
+      "passed": true
+    },
+    {
+      "name": "save.verifiedSuccess",
+      "passed": true
+    },
+    {
+      "name": "save.failureIsNotSuccess",
+      "passed": true
+    },
+    {
+      "name": "safety.sensitiveHandoff",
+      "passed": true
+    },
+    {
+      "name": "safety.originDenied",
+      "passed": true
+    },
+    {
+      "name": "input.reactControlled",
+      "passed": true
+    },
+    {
+      "name": "verify.semanticAmbiguity",
+      "passed": true
+    }
+  ],
+  "files": {
+    "packages/browser-chrome/src/references.mts": "900e10b18bc357daaf6d6f153c6e6d5e548d2cf4a767bd53a6bd28a4d1a4d4ec",
+    "packages/browser-chrome/src/sanitize.mts": "7c8f4120bafd11d078f4ec6aa10b399092c77111f6fc5531ba812115315b2dc6",
+    "packages/browser-chrome/src/document.mts": "14e9fef7da8592ca1e894930120bfaaa1a3de330368f9d1c2b49c01a95cc561e",
+    "packages/browser-chrome/src/control-document.mts": "e92e22aa9b7d0ff27e4b1d7a926103c25df27604d43b0f583ae5d46e2ddc37f8",
+    "packages/browser-chrome/src/chrome.mts": "fa5abebe96f556b1ab654c8f34df340ec0b155f7f6872a376f9bc44b29ae461b",
+    "packages/browser-chrome/src/adapter.mts": "21a4f3fda3f491ffac63824ef9f2afcdcced8c7156b7cc481bcd279493ad3eca",
+    "packages/browser-chrome/src/index.mts": "a14a89c20fb17238c36bdbc472f722365f846c1e36329866d54c5685e6a48ffc",
+    "packages/protocol/src/index.mts": "605cc4a9f70cbbedef27458a19986824872a0a311a5d694c6bf0b7b2d60a18a7",
+    "packages/protocol/src/actions.mts": "6aae79a6409e9d405eca347c0882b7c24bbf9a402d5498377f9c8fb29b321b1a",
+    "packages/protocol/src/observation.mts": "0462f9b3dda848855d29f6e6efbea4f12fb4808bb42f80b2e53cda8537d275fc",
+    "packages/protocol/src/runtime.mts": "c8c488129a6b715eb8e2688547ed2473e58c5621554f0382e37f85afe030ba16",
+    "packages/protocol/src/validation.mts": "a35cf1ba97666893dfc915e9d3a42703708d404e7bbbbfc02fae061d7b9b5c27",
+    "packages/protocol/src/messages.mts": "d3b072c96679be89856f9d1a7c4f544ff7fb256a719025b59154962a20c85e77",
+    "packages/protocol/src/policy.mts": "74a152fa13e9909a4298894c745024eb8335a804ff62f4d2f6db58a5034a9a88",
+    "scripts/control-smoke.mjs": "e34bfe41296bd6292944fcabfe0c24d2baa39a0b0271ea808476aa8f848b7053",
+    "packages/browser-chrome/test/control-browser.mjs": "57d8c7676ea7f599741c3fc06fe463c2f8295f8a6aaaee745ace2af1054b6eba",
+    "packages/browser-chrome/package.json": "3e978e9b7cf097f04dea2dd66fd68e80abc748160ab89820f2c80a0afef49696",
+    "packages/browser-chrome/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "fixtures/web/server.mjs": "1f127c7d2ed668ec6ceb8836b7c5da29bdfd5da9895ac25c7a79bcb41e26c32a",
+    "fixtures/web/domain.mjs": "84220f790727054a0b9b6b3fff03c4f71359a54568653b332a138c6705def221",
+    "fixtures/web/pages.mjs": "dd0b00dc9e70795469603266b276a403f266a1d19cd239bd82f9f6469a337d60",
+    "fixtures/web/oracle.mjs": "cc52d1fd81892ab36d76e6662480568d9831f3f32fd1a25834d403eb1c0e9109",
+    "fixtures/web/public/app.mjs": "c87d6c957d21a92444afc2f64a589e44325cd637a550857859fbfe0b56fee75a",
+    "fixtures/web/public/style.css": "767186f736acd7fdcada587e5f088003c061a439b9deb3d5eb82f03879a35b85",
+    "probes/t001/vendor/react.production.min.js": "d949f1c3687aedadcedac85261865f29b17cd273997e7f6b2bfc53b2f9d4c4dd",
+    "probes/t001/vendor/react-dom.production.min.js": "35f4f974f4b2bcd44da73963347f8952e341f83909e4498227d4e26b98f66f0d"
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.35",
+    "revision": "@4befba4e8237fc6452fe5918001a01235180e6fc",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.16"
+  }
+}

@@ -1,0 +1,5679 @@
+{
+  "timestamp": "2026-10-18T14:05:16.462Z",
+  "kind": "actual-model-browser-tasks",
+  "taskVersion": "release-fixture-0.1",
+  "machine": {
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics         ",
+    "logicalCpus": 12,
+    "totalMemoryBytes": 29909643264,
+    "node": "v22.20.0"
+  },
+  "status": "failed",
+  "files": {
+    "packages/runtime/package.json": "19b7cb2151eda48d6cd82dc842258e0937a56382bdad6efb01c43f95c18b717b",
+    "packages/runtime/README.md": "87ad450679d72983a0b957773d0006cf487d05bd6ccdc9234ce502900a38d8b8",
+    "packages/runtime/src/index.mts": "ff2c2cf718d53b72b6af94f662ebd3b0175184c91bde9f26abac86e22bc5317d",
+    "packages/runtime/src/loop.mts": "9ecc112d869c2d4e16167ababe9af2a774e982106dd49ec67d58661acb462fa9",
+    "packages/runtime/src/runtime.mts": "6d263ecf942398bbd7b95f6fbf1b53010d6f8a8eb1dd5c82cafc04be9eb31348",
+    "packages/runtime/src/store.mts": "d51f0be4ae66de14c2dd46ac10fead2392eb77ac58a8357530f6565a9cf5d45c",
+    "packages/runtime/test/build-extension.mjs": "58f5078ba654af38755e8c457118d0c29993368079580668acfd4e21117d62f1",
+    "packages/runtime/test/extension-background.mjs": "d27ad921b9c190831322e13539ff26a007f8b15b3e376e686ac980429484eb69",
+    "packages/runtime/test/extension-peer.mjs": "186eb98be44a77e1a0a8e9b73a07b0985ce01d494c1ac3140089b06ba6a611bf",
+    "packages/runtime/test/extension-runner.mjs": "b6311e0f47b7db77e9e74d5c62fd1a5700ccdf6fbed00f5f1886ec880ee4f0d8",
+    "packages/runtime/test/fault-evidence.test.mjs": "6233d0faa907cdde34333be9760a08629fca9ed9f6d38e3a4d51fc617b9decfb",
+    "packages/runtime/test/faults.test.mjs": "2ed1c8ea9eeefb7b15bc43fc34ce7c6a9f6f886917aeac2fc42086bc953a2869",
+    "packages/runtime/test/loop-browser.mjs": "d2ea2182c7b2b5ffc1a7b003dccceba5bb5607c54a37498b5fbba54a0359ad18",
+    "packages/runtime/test/loop.test.mjs": "566b65fb5af7c572bccebeea13c090063fc3d509a29f63612e05d483bcb82e29",
+    "packages/runtime/test/release.test.mjs": "98778ab622dd1ee3534def8340298692f25d37c74c0d951e5d75e49408bcee4f",
+    "packages/runtime/test/runtime-browser.mjs": "16ede5ca27c8cf7c585415d0e8b16f7a9c704ee38bf763a66aa2733e85982383",
+    "packages/runtime/test/runtime.test.mjs": "48171a652d92013658604d5c7056ee5b358a16a289ab3b7a2b8f89e972b85e86",
+    "packages/runtime/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "packages/models/package.json": "025d1b3ed77d0af51b94f6a691395b89b52d3ac9595e61a53649c3afccfd3b6c",
+    "packages/models/README.md": "084eca7f65f03fd51155fef1e683f08469f1c93820bc598fbf58102100a4aca6",
+    "packages/models/src/index.mts": "4b53a3cb47f136cad517fb8fd9d58a0298b601d6d0ac32aade219e4fa346e0f4",
+    "packages/models/src/schema.mts": "3df5701f67f2a01959c0b72da5273265b37119193be34595be6966350d215097",
+    "packages/models/test/input.mjs": "47644559ea85d5d84210e0c7d04734ffe593e17969d5218008dc6dbdad2966b9",
+    "packages/models/test/models.test.mjs": "177387e18951afcd36b2ffd94109930a32ba9f8d898142194c0a29bc185fc82b",
+    "packages/models/tsconfig.json": "b295463f39f199298301a577ce5272541552e9a39417469b26e39107874633b4",
+    "packages/protocol/package.json": "8e1bcb1dfc6b250602552e4666bc478c1dd4ab2431167947e8290c247cabdb55",
+    "packages/protocol/README.md": "be7c70f1126e1243b001da5948ba8fd9ffc9ca5fd8b308b0972ae27db70d5764",
+    "packages/protocol/src/actions.mts": "78d8c4a749bb6c6633f7cde025ad749aa6c566d1dd25a1411ad0b52bd2d85e3e",
+    "packages/protocol/src/index.mts": "605cc4a9f70cbbedef27458a19986824872a0a311a5d694c6bf0b7b2d60a18a7",
+    "packages/protocol/src/messages.mts": "8e95f14745bad30dc99e5023356c23ff356ff55e28ab796c11279f0e1ef3f901",
+    "packages/protocol/src/observation.mts": "5a1813a724ca36de57a2b0cf4b3e96182638e26c6e7841be17ef99918936c244",
+    "packages/protocol/src/policy.mts": "74a152fa13e9909a4298894c745024eb8335a804ff62f4d2f6db58a5034a9a88",
+    "packages/protocol/src/runtime.mts": "17b62b4318a381b7aa2943c2a8e0aa7797dafaaff86d50327312ca8b3cc0094c",
+    "packages/protocol/src/validation.mts": "a35cf1ba97666893dfc915e9d3a42703708d404e7bbbbfc02fae061d7b9b5c27",
+    "packages/protocol/test/action.test.mjs": "03ee234d2001ddce951736e61c84479c143678caa8edcf06ac1f112e61109315",
+    "packages/protocol/test/contract.test-d.mts": "5750006cb8c5aa9cbf202fb11b07fb08b04dc5ad2887750c557f6216e45757d7",
+    "packages/protocol/test/fixtures.mjs": "decb1ca9dd6ec1a6c5d28bce5c7e55015ff22f1a6401ea990d4d0e6e630ac2e1",
+    "packages/protocol/test/wire.test.mjs": "b1a650de7ba326c3b04e5d5e8a0deb9a77e31b721543689a0e98a94a974fd30d",
+    "packages/protocol/tsconfig.json": "9c067a501c38054f99d97fabf26d5bdf3d7a0d2e4045c0fc83da180f06507f13",
+    "packages/protocol/tsconfig.test.json": "4a31014f19b0737d4fafaf2eabe36d35163b9c810f1678de10bedc887fc6f8c5",
+    "packages/browser-chrome/package.json": "3e978e9b7cf097f04dea2dd66fd68e80abc748160ab89820f2c80a0afef49696",
+    "packages/browser-chrome/README.md": "cab3cf86e3e4b610df6e8cf962292d2bf2c2b38a4b86b1a7090540a9c130f4ab",
+    "packages/browser-chrome/src/adapter.mts": "d5feee24628a21fbed4ad98adfa5752c0b75e66ead8a4b7522bc88953aa68c23",
+    "packages/browser-chrome/src/chrome.mts": "8bc721fd48a3d7d45adeff62ffcc9bf295a513c8183114fb3c30bda867e8a588",
+    "packages/browser-chrome/src/control-document.mts": "ae3c0213cfa4a92326af294521b8ee64e6acfba47c3fff1e0f52375bd00fc87b",
+    "packages/browser-chrome/src/document.mts": "7d039b7bd303eb8fb5a14f1c59714f1f90749e1453cc423f43206a4e0929a3b5",
+    "packages/browser-chrome/src/index.mts": "a14a89c20fb17238c36bdbc472f722365f846c1e36329866d54c5685e6a48ffc",
+    "packages/browser-chrome/src/references.mts": "900e10b18bc357daaf6d6f153c6e6d5e548d2cf4a767bd53a6bd28a4d1a4d4ec",
+    "packages/browser-chrome/src/sanitize.mts": "7c8f4120bafd11d078f4ec6aa10b399092c77111f6fc5531ba812115315b2dc6",
+    "packages/browser-chrome/test/async-bridge.test.mjs": "2eb161e641168a824c883eb39d9ec0d69e5846f6777a795e7cfc25931b299dcd",
+    "packages/browser-chrome/test/control-browser.mjs": "2bff1e10940ba9a3144e0a16d183376d0e5c6c34b97ede1c63bb4a06e312c386",
+    "packages/browser-chrome/test/control.test.mjs": "a275af8fc63fc9baf0ed347c114a601076e2afb2e8a0fb553a8c75bbba32afa5",
+    "packages/browser-chrome/test/observer-browser.mjs": "d5d9087eb8fab74eaf50a68aa0827d4dfe13beb96f180df01aa0a7e15062b52a",
+    "packages/browser-chrome/test/observer-owner.test.mjs": "c64a688fe619869cf026358882b3e3b5b618667fee95c49138a8adbb5026f269",
+    "packages/browser-chrome/test/observer.test.mjs": "495b70c52ba84cba9639d12ef703a71591e49b96d458676afd81444a563ef492",
+    "packages/browser-chrome/test/policy-context.test.mjs": "a24368863b20f9eb7715aa21a97312f2879a85b3cb78919a3e3b25bba3276dbd",
+    "packages/browser-chrome/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "packages/policy/package.json": "2fe0a7a45dc009bdf7dc5b6c566c7aa9cfb44e99fee2bd608ee81935e8087946",
+    "packages/policy/README.md": "5d3d45884f27902d7009f9ee0bfb7489d29c5c3e9acf5cb261d5c54befc2c97a",
+    "packages/policy/src/index.mts": "a95a1274e19e723f58cfa63903bf8984425dd4add693f6c76abe16920235f4f9",
+    "packages/policy/test/policy-browser.mjs": "8271532981c75fba86ef810e412f49a0dcbdb52bee07651aa99f2e3cdb80cfdb",
+    "packages/policy/test/policy.test.mjs": "0bb71d22d9a05b6a1da5bbd1d785350618553f08e4279574eb9b77f95705204a",
+    "packages/policy/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "fixtures/web/domain.mjs": "84220f790727054a0b9b6b3fff03c4f71359a54568653b332a138c6705def221",
+    "fixtures/web/oracle.mjs": "cc52d1fd81892ab36d76e6662480568d9831f3f32fd1a25834d403eb1c0e9109",
+    "fixtures/web/pages.mjs": "dd0b00dc9e70795469603266b276a403f266a1d19cd239bd82f9f6469a337d60",
+    "fixtures/web/public/app.mjs": "c87d6c957d21a92444afc2f64a589e44325cd637a550857859fbfe0b56fee75a",
+    "fixtures/web/public/style.css": "767186f736acd7fdcada587e5f088003c061a439b9deb3d5eb82f03879a35b85",
+    "fixtures/web/README.md": "df13499180d5194298948ef2a4dc0efac870508ed3bd67e025f8e1bea17d647d",
+    "fixtures/web/server.mjs": "1f127c7d2ed668ec6ceb8836b7c5da29bdfd5da9895ac25c7a79bcb41e26c32a",
+    "fixtures/web/start.mjs": "f5a264679eb3958fc74386d7142397a4a8d499f0ab1d5a3f48d0f07b50e84419",
+    "fixtures/web/test/browser-smoke.mjs": "0c09582e98eceb4e64f992a891f9a11cb4e87e4593d9ae9ae98868660530f41e",
+    "fixtures/web/test/server.test.mjs": "78a4b4c8fb4f2247ac049cf8099458bc5a90e37981e5ab6c9aa0b7afc0befdf9",
+    "scripts/loop-smoke.mjs": "da0fe0d3c2ec8caebf65347175f1ed901d8a95713c9c8bdb5faba107c32af509",
+    "scripts/loop-evidence.mjs": "f15881dff3e16a4052c98b72504de01712eecad2539f89177ea0cfe259bf045b",
+    "scripts/runtime-smoke.mjs": "e971430b3171920811b730bc21471a9912481475d9753f0abd3e457f7c9bbd52",
+    "scripts/runtime-build.mjs": "0d7619f42264a15d7a5d11cc69fd78e8cc93aea3ec162889f4c729b1fcf003fc",
+    "scripts/models-build.mjs": "518be813b6b334edca464e6b1c809805cfa6d4034f4f2a5233a9379b17f482c8",
+    "package.json": "6407294d65e6e90b6efff196eb20af078eddc1b273449f45f6a30bb2fe3373d9",
+    "package-lock.json": "4b2f9b15b910f062f744e203d04f602901ac490c2afea90611383c7ec9d08158",
+    "tsconfig.base.json": "72c8229cbd45d3cfa56e86fffc50fbdbb8019a7da45f10400c7a3847bd58298e",
+    "packages/sdk/examples/minimal.mjs": "afaa937dc189bc8acbfc3e8b1f506e1cff381815bdb1ec9c779ce04bba3add3a",
+    "packages/sdk/package.json": "e2b34ceadde006dd47c8707672ba535f7962a461a05e30fe84483678de0a5df9",
+    "packages/sdk/README.md": "1dbbcf266e8b22680390f53f95be17771aed53a711d692a27fa197dbe42bfa7e",
+    "packages/sdk/src/index.mts": "a0c4a61d2d27c8426765ef3b0fd8e9157099408f037789b221ab1edc367c1829",
+    "packages/sdk/test/sdk-browser.mjs": "a69bfeb8457b5a68cd27126699df704ef9523f044bab934d4c04d9c2230573b1",
+    "packages/sdk/test/sdk.test.mjs": "218fa54b6235e0efc7cc5dc41f383129d669fa6820d0b70db720fe294a98ca09",
+    "packages/sdk/tsconfig.json": "b295463f39f199298301a577ce5272541552e9a39417469b26e39107874633b4",
+    "scripts/sdk-build.mjs": "d6f8ad3e095af02bf40a7a49c33761515d45cd62890364695cc80813b7b4b053",
+    "scripts/sdk-smoke.mjs": "677ea49a554a8dce3cefc453d2f0ee9a2bcc364b6d9adea0f423ee83f815fd8d",
+    "scripts/sdk-evidence.mjs": "da67a025df25676b9f0fce56dca6d739fd474cd89d891312edb13112b8878ecb",
+    "apps/extension/entrypoints/background.ts": "d72069d74211acb00640914c62512b880ee9e0387194cf40fb7da3d71a4336b5",
+    "apps/extension/entrypoints/sidepanel/App.tsx": "17c36571c61fa4bca5932d71deca21e985d5626ca2613239dc1eefd6ae2aea65",
+    "apps/extension/entrypoints/sidepanel/index.html": "a1403500f8765e64b5386588ce72f6b65b6865df001ec0eb22190fc74c9c0cff",
+    "apps/extension/entrypoints/sidepanel/main.tsx": "d9b5bd7780cbef91bb6f948f391254a033c6d04eb306754c61cba84ebbeea661",
+    "apps/extension/entrypoints/sidepanel/style.css": "fb4a157a56cc77b9a9215a70b5498803f37518227445e6e378fb311309f813ce",
+    "apps/extension/host/client.ts": "9600a195ed6041a7d6a432388e6f2dea82e68fcb6a2ca0319a4c1ed4df5fe92b",
+    "apps/extension/host/controller.mts": "091b160ea13229682f77ff5a3e94847d971f424997e0542b3d7a5ce832cc38c4",
+    "apps/extension/host/protocol.mts": "247bf61ff5b7e46081dc253f8f997ac7d502547ee102a66cff970de8b80f4152",
+    "apps/extension/package.json": "d19548461fb378959dd8341dcef2c8c8519260c4f5f3cce1bfd683a756a447ff",
+    "apps/extension/README.md": "f6ff5061fb1e6a91673e4f24826ecc8fc1b2c1ccc9a5647fce49b58d515db750",
+    "apps/extension/test/host.test.mjs": "30572546d07b76d740bee81a5c7a995f268b9df979ddac19f032c09664a96547",
+    "apps/extension/test/model-fixture.mjs": "2941f1cc315c400b8c9d472e16f43b9446558a21a813225aea39311957700565",
+    "apps/extension/test/panel-browser.mjs": "3733bc185dfb83bc698d32c2df5c452a07e84da66a7204f0589819a7f6738463",
+    "apps/extension/tsconfig.json": "ce69720394bcb3910e99922f3c3b887eaddc3c43c5618c484b4940e2d8fd9871",
+    "apps/extension/wxt.config.ts": "1d2c7dd7f227c7af6ebc5e8578091dec1efc5db274bd95d527237cac059b914d",
+    "apps/extension/.output/chrome-mv3/assets/sidepanel-DPOFbMSA.css": "fb4a157a56cc77b9a9215a70b5498803f37518227445e6e378fb311309f813ce",
+    "apps/extension/.output/chrome-mv3/background.js": "6e6c439d028918f77306abf435f45a61fdb83481e2276dc7cee293a11cb9ccc0",
+    "apps/extension/.output/chrome-mv3/chunks/sidepanel-DKtiePvn.js": "0f50c0f74b655dc831156ea99d34ebd731bbe172a800b31f9f013d19e44ce793",
+    "apps/extension/.output/chrome-mv3/chunks/_virtual_wxt-plugins-HFybO7hf.js": "7a9ced029b5e74be981c7758339ad11ae577dfc9115e2834adddc56f9dd3882c",
+    "apps/extension/.output/chrome-mv3/manifest.json": "d2b375b7b7503b780effbd14cd71ae2f98d5268dc8a097328109bb59815a4319",
+    "apps/extension/.output/chrome-mv3/sidepanel.html": "ecd5cec9abbcd7c00777af79aaae0aa02aaa9aa6b714d07e5c001afbae6948b4",
+    "scripts/panel-smoke.mjs": "6fed5b6e734fdfd503849b780f45605d28fbd1daf89dd162f1f7b4e238e2ee1a",
+    "scripts/panel-evidence.mjs": "3cf6f4f9feff8bb243cd4ac9e2c644a3ddcb9a41665954f697ee0fd5d9791846",
+    "scripts/record-panel-manual.mjs": "a4cbd4d6c4781e81bedbd8e99030e925ffb1dab0ffb45a81dba4580385939d1e",
+    "scripts/verify-build.mjs": "304fd2778c144be39bbd4c5466e76396bb708f6bf731b41d0a2e9e16ec0a1fc6",
+    "scripts/faults-evidence.mjs": "e6f7073123d487e1826c3e6e34be7c7c7d6d5dce17c61aded26c489d33029249",
+    "scripts/faults-smoke.mjs": "c5c6fd6544ab9ba3989677e223ec19035f4ca6a8637ad49b16bf8eff7f947c2b",
+    "scripts/validate-toolchain.mjs": "b6714321bf32e630f50a313a942728ca2fac8eb4f7a1ff2cf73a81d433d85c01",
+    "specs/001-browser-agent/fault-matrix.json": "2383af975c40100eee51a741d97794d464ea53813c86cd354437b7c8fe435464",
+    "scripts/record-release-manual.mjs": "9e36592de54781b2aba9fb590aa72ed9ef0f6d68368b38bd2c4c00cf83aaa0db",
+    "scripts/release-cases.mjs": "e28b2a57c6712cffdf9b0a5e1dbaf2db4d8d9afaa8c5fa2760181397367f6461",
+    "scripts/release-chrome.mjs": "38b3553ddd8efed07011560438b19f9e96a7afa50c0fd1791768b27b3d0d2838",
+    "scripts/release-evidence.mjs": "eed3fa2ef06744e6abbaae89237673c7befd82d6630ff9534ac937f3ef004049",
+    "scripts/release-live.mjs": "c38cbd4b0ae2a326c9c9c8c6b2caf94d3fd622b240ac6953665e7aca7906b7a0",
+    "scripts/release-performance.mjs": "5f703014283997034b275b0b5e7b869a7d79c5bdde99059631e37492a106497b",
+    "scripts/release-run.mjs": "806b9ada54861c75d729dc7b8f4b8dbb2e6e350402a2af9362814574efac9171",
+    "scripts/release-smoke.mjs": "8cf88daa3805174ba5537eb36e9caac549e25dd73b176ee8107a142e18cc5b46",
+    "specs/001-browser-agent/release-v01.md": "8c10063d231dd3814fe67c84d1245c52eeb6838f6e50868a9802e0aa4fe3cbbd",
+    "specs/001-browser-agent/release-manual.md": "425f208b834fea335c6860620a7477b96358c67695fabb3de07fe3085d4f484b"
+  },
+  "trials": [
+    {
+      "scenario": "search",
+      "iteration": 1,
+      "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": false,
+        "passed": false
+      },
+      "status": "completed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 12871,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2468,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 3919,
+        "outputTokens": 1192,
+        "totalTokens": 5111
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:17.184Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:17.189Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:17.235Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:17.251Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:17.254Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 13,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5459,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5013,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:22.830Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2593,
+              "outputTokens": 545,
+              "totalTokens": 3138
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:22.831Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "dc522825-3a26-4a98-8a18-d2a593a693ef"
+        },
+        {
+          "seq": 8,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:22.831Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "dc522825-3a26-4a98-8a18-d2a593a693ef"
+        },
+        {
+          "seq": 9,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:22.922Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "dc522825-3a26-4a98-8a18-d2a593a693ef"
+        },
+        {
+          "seq": 10,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:22.952Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:22.953Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 5715,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2468,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:30.103Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1326,
+              "outputTokens": 647,
+              "totalTokens": 1973
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:30.109Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "f555f024-cf79-4fd0-86f5-f5d499ce78d2",
+          "timestamp": "2026-10-18T14:05:30.109Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/f9fcbeaa-1f69-4210-bd31-09a0bca705fe",
+        "page": {
+          "url": "http://127.0.0.1:59455/s/f9fcbeaa-1f69-4210-bd31-09a0bca705fe/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:59455/s/f9fcbeaa-1f69-4210-bd31-09a0bca705fe/records/W-104",
+                "documentId": "7bd08ac2-5729-4836-ad90-99091efe6eae",
+                "observationId": "d42b00a0-5f9e-4fac-8aaa-d0bdf116c9b2",
+                "capturedAt": "2026-10-18T14:05:30.107Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 13005.936899999999
+    },
+    {
+      "scenario": "search",
+      "iteration": 2,
+      "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": false,
+        "passed": false
+      },
+      "status": "completed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 10389,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2468,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 3930,
+        "outputTokens": 898,
+        "totalTokens": 4828
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:30.222Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:30.222Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:30.240Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:30.249Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:30.249Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 8,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5458,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5013,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:34.166Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2603,
+              "outputTokens": 313,
+              "totalTokens": 2916
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:34.166Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "dde25807-9f5e-4ace-9079-b7bfedd601c6"
+        },
+        {
+          "seq": 8,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:34.166Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "dde25807-9f5e-4ace-9079-b7bfedd601c6"
+        },
+        {
+          "seq": 9,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:34.246Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "dde25807-9f5e-4ace-9079-b7bfedd601c6"
+        },
+        {
+          "seq": 10,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:34.277Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:34.278Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 4036,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2468,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:40.624Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1327,
+              "outputTokens": 585,
+              "totalTokens": 1912
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:40.630Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "ab175d7a-e222-47a6-9e32-beee895b3071",
+          "timestamp": "2026-10-18T14:05:40.630Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/5e5c51f4-06e3-436e-980c-a0e8f24ab21f",
+        "page": {
+          "url": "http://127.0.0.1:59455/s/5e5c51f4-06e3-436e-980c-a0e8f24ab21f/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:59455/s/5e5c51f4-06e3-436e-980c-a0e8f24ab21f/records/W-104",
+                "documentId": "ccaffa43-53ca-4337-9f7f-209d801b5527",
+                "observationId": "cef256cf-6a1f-4a60-b8ed-eb837ce962ab",
+                "capturedAt": "2026-10-18T14:05:40.629Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 10480.514599999999
+    },
+    {
+      "scenario": "search",
+      "iteration": 3,
+      "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": false,
+        "passed": false
+      },
+      "status": "completed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 12885,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2468,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 3941,
+        "outputTokens": 1057,
+        "totalTokens": 4998
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:40.744Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:40.744Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:40.759Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:40.766Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:40.767Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 7,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5458,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5013,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:44.412Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2613,
+              "outputTokens": 247,
+              "totalTokens": 2860
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:44.413Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "6b8f7b90-b81b-420d-9337-ae3c07cbd3be"
+        },
+        {
+          "seq": 8,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:44.413Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "6b8f7b90-b81b-420d-9337-ae3c07cbd3be"
+        },
+        {
+          "seq": 9,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:44.487Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "6b8f7b90-b81b-420d-9337-ae3c07cbd3be"
+        },
+        {
+          "seq": 10,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:44.515Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:44.515Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 3756,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2468,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:53.639Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1328,
+              "outputTokens": 810,
+              "totalTokens": 2138
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:53.644Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "3e75a183-dcc3-4708-9872-96b0ebf38b0d",
+          "timestamp": "2026-10-18T14:05:53.644Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/f139428d-d51f-4e5e-9910-b8ba11d481a0",
+        "page": {
+          "url": "http://127.0.0.1:59455/s/f139428d-d51f-4e5e-9910-b8ba11d481a0/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:59455/s/f139428d-d51f-4e5e-9910-b8ba11d481a0/records/W-104",
+                "documentId": "d8fc16fe-c2e3-4655-a3c2-45200292fd0b",
+                "observationId": "48c6a54a-6482-4af7-92a0-be1287672589",
+                "capturedAt": "2026-10-18T14:05:53.643Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 12976.509900000005
+    },
+    {
+      "scenario": "search",
+      "iteration": 4,
+      "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": false,
+        "passed": false
+      },
+      "status": "completed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 13535,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2468,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 3932,
+        "outputTokens": 1166,
+        "totalTokens": 5098
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:05:53.750Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:05:53.750Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:05:53.767Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:05:53.775Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:05:53.776Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 8,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5458,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5013,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:02.427Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 2605,
+              "outputTokens": 776,
+              "totalTokens": 3381
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:02.427Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "078432d0-2d8c-42ad-ad60-6767f92d519c"
+        },
+        {
+          "seq": 8,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:02.427Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "078432d0-2d8c-42ad-ad60-6767f92d519c"
+        },
+        {
+          "seq": 9,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:02.510Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "078432d0-2d8c-42ad-ad60-6767f92d519c"
+        },
+        {
+          "seq": 10,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:02.540Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:02.541Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 8773,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2468,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:07.298Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1327,
+              "outputTokens": 390,
+              "totalTokens": 1717
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:07.302Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "c6e16faa-5ae6-4284-a436-9180586db061",
+          "timestamp": "2026-10-18T14:06:07.303Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/8bca929f-fc72-45c1-aca1-a33bed007d46",
+        "page": {
+          "url": "http://127.0.0.1:59455/s/8bca929f-fc72-45c1-aca1-a33bed007d46/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:59455/s/8bca929f-fc72-45c1-aca1-a33bed007d46/records/W-104",
+                "documentId": "1d281cb4-7ba1-4fb0-930d-b96c20b0a0d6",
+                "observationId": "6b2fa99b-13b7-4d8a-891d-743153070ad2",
+                "capturedAt": "2026-10-18T14:06:07.302Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 13621.131000000001
+    },
+    {
+      "scenario": "search",
+      "iteration": 5,
+      "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": false,
+        "passed": false
+      },
+      "status": "completed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 24906,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 2469,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 1993,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 6567,
+        "outputTokens": 2200,
+        "totalTokens": 8767
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:07.412Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:07.413Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:07.428Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:07.436Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:07.437Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 8,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 5458,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 5013,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:24.808Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 5235,
+              "outputTokens": 1585,
+              "totalTokens": 6820
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:24.808Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "37041791-8087-419b-b0cb-48cbc0f8a971"
+        },
+        {
+          "seq": 8,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:24.808Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "37041791-8087-419b-b0cb-48cbc0f8a971"
+        },
+        {
+          "seq": 9,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:24.894Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "37041791-8087-419b-b0cb-48cbc0f8a971"
+        },
+        {
+          "seq": 10,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:24.922Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:24.922Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 17494,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 2469,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 1993,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:32.329Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1332,
+              "outputTokens": 615,
+              "totalTokens": 1947
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:32.334Z",
+          "type": "verification.result",
+          "reason": "passed",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "de334096-48b5-4c8b-85ba-8dd4acb451be",
+          "timestamp": "2026-10-18T14:06:32.334Z",
+          "type": "run.state",
+          "reason": "COMPLETED",
+          "actionId": null,
+          "state": "completed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/a37a0851-4ab4-400d-97eb-cbdb14de1e9e",
+        "page": {
+          "url": "http://127.0.0.1:59455/s/a37a0851-4ab4-400d-97eb-cbdb14de1e9e/records/W-104",
+          "record": "W-104",
+          "title": "W-104 报表访问异常"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "completed",
+          "result": {
+            "evidence": [
+              {
+                "kind": "url",
+                "url": "http://127.0.0.1:59455/s/a37a0851-4ab4-400d-97eb-cbdb14de1e9e/records/W-104",
+                "documentId": "c7d552d5-3278-43d1-ac5f-e51dfe1d02ff",
+                "observationId": "2b117841-6ae8-498e-9c03-308dd4821712",
+                "capturedAt": "2026-10-18T14:06:32.333Z",
+                "actual": "[REDACTED]"
+              }
+            ]
+          }
+        }
+      },
+      "durationMs": 24995.086900000002
+    },
+    {
+      "scenario": "table",
+      "iteration": 1,
+      "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "failed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 29818,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3194,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2596,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 2,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 3320,
+        "outputTokens": 2517,
+        "totalTokens": 5837
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:32.448Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:32.449Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:32.467Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:32.476Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:32.477Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3140,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:43.007Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1654,
+              "outputTokens": 965,
+              "totalTokens": 2619
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:43.007Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "571daeee-2c76-4625-8e58-f33d732cbd64"
+        },
+        {
+          "seq": 8,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:43.007Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "571daeee-2c76-4625-8e58-f33d732cbd64"
+        },
+        {
+          "seq": 9,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:43.093Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "571daeee-2c76-4625-8e58-f33d732cbd64"
+        },
+        {
+          "seq": 10,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:43.101Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:06:43.102Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 10634,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3171,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:02.195Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1666,
+              "outputTokens": 1552,
+              "totalTokens": 3218
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:02.196Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "e9eaf0f9-5662-4cb1-8e00-a883a53ee9ae"
+        },
+        {
+          "seq": 14,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:02.196Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "e9eaf0f9-5662-4cb1-8e00-a883a53ee9ae"
+        },
+        {
+          "seq": 15,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:02.275Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "e9eaf0f9-5662-4cb1-8e00-a883a53ee9ae"
+        },
+        {
+          "seq": 16,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:02.284Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:02.285Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 29817,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3194,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:32.292Z",
+          "type": "budget.updated",
+          "reason": "STOP",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 29818,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3194,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "b77be1b7-fa54-434d-a5a6-ce7c68ffb922",
+          "timestamp": "2026-10-18T14:07:32.292Z",
+          "type": "run.state",
+          "reason": "FAILED",
+          "actionId": null,
+          "state": "failed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/be50d902-d0db-47ad-9120-a38879b84ad5",
+        "page": {
+          "status": "all",
+          "priority": "all",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105",
+            "W-106",
+            "W-107",
+            "W-108",
+            "W-109",
+            "W-110",
+            "W-111",
+            "W-112"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "failed",
+          "result": {}
+        }
+      },
+      "durationMs": 59922.78599999999
+    },
+    {
+      "scenario": "table",
+      "iteration": 2,
+      "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "failed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 38750,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3194,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2596,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 2,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 3308,
+        "outputTokens": 3394,
+        "totalTokens": 6702
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:32.410Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:32.410Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:32.428Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:32.437Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:32.438Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3140,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:53.745Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1650,
+              "outputTokens": 1900,
+              "totalTokens": 3550
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:53.746Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "c7929b9d-5266-4528-a853-1cdb743d4729"
+        },
+        {
+          "seq": 8,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:53.746Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "c7929b9d-5266-4528-a853-1cdb743d4729"
+        },
+        {
+          "seq": 9,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:53.831Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "c7929b9d-5266-4528-a853-1cdb743d4729"
+        },
+        {
+          "seq": 10,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:53.840Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:07:53.841Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 21412,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3171,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:11.084Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1658,
+              "outputTokens": 1494,
+              "totalTokens": 3152
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:11.085Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "0f8ce5b6-44a4-4593-a3bb-e32c007725c2"
+        },
+        {
+          "seq": 14,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:11.085Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "0f8ce5b6-44a4-4593-a3bb-e32c007725c2"
+        },
+        {
+          "seq": 15,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:11.169Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "0f8ce5b6-44a4-4593-a3bb-e32c007725c2"
+        },
+        {
+          "seq": 16,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:11.177Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:11.178Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 38749,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3194,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:41.180Z",
+          "type": "budget.updated",
+          "reason": "STOP",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 38750,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3194,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "09a0db04-6e82-4c1d-9fce-b3911f527b2a",
+          "timestamp": "2026-10-18T14:08:41.180Z",
+          "type": "run.state",
+          "reason": "FAILED",
+          "actionId": null,
+          "state": "failed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/06b26c38-77e0-4b61-b8d5-c55db18e68e5",
+        "page": {
+          "status": "all",
+          "priority": "all",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105",
+            "W-106",
+            "W-107",
+            "W-108",
+            "W-109",
+            "W-110",
+            "W-111",
+            "W-112"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "failed",
+          "result": {}
+        }
+      },
+      "durationMs": 68847.56219999999
+    },
+    {
+      "scenario": "table",
+      "iteration": 3,
+      "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "paused",
+      "reason": "NO_PROGRESS",
+      "budget": {
+        "steps": {
+          "used": 4,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 68525,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3194,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2596,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 3,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 4957,
+        "outputTokens": 5657,
+        "totalTokens": 10614
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:41.297Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:41.297Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:41.313Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:41.322Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:41.322Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3140,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:57.553Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1642,
+              "outputTokens": 1337,
+              "totalTokens": 2979
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:57.553Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "3fa6b964-b74c-4203-8391-b2138f31a790"
+        },
+        {
+          "seq": 8,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:57.553Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "3fa6b964-b74c-4203-8391-b2138f31a790"
+        },
+        {
+          "seq": 9,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:57.637Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "3fa6b964-b74c-4203-8391-b2138f31a790"
+        },
+        {
+          "seq": 10,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:57.645Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:08:57.645Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 16332,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3171,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:21.524Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1651,
+              "outputTokens": 2047,
+              "totalTokens": 3698
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:21.524Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "9034efd0-3fa6-4634-b251-cbb29bac7ff0"
+        },
+        {
+          "seq": 14,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:21.524Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "9034efd0-3fa6-4634-b251-cbb29bac7ff0"
+        },
+        {
+          "seq": 15,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:21.606Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "9034efd0-3fa6-4634-b251-cbb29bac7ff0"
+        },
+        {
+          "seq": 16,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:21.615Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:21.616Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 40302,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3194,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:49.748Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1664,
+              "outputTokens": 2273,
+              "totalTokens": 3937
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:49.749Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "88f4e2d6-9ba4-4863-baa7-68f2af548711"
+        },
+        {
+          "seq": 20,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:49.749Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "88f4e2d6-9ba4-4863-baa7-68f2af548711"
+        },
+        {
+          "seq": 21,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:49.829Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "88f4e2d6-9ba4-4863-baa7-68f2af548711"
+        },
+        {
+          "seq": 22,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:49.838Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 4
+          }
+        },
+        {
+          "seq": 23,
+          "runId": "cfbd0239-1ea4-4105-b16e-4043f2d8c571",
+          "timestamp": "2026-10-18T14:09:49.839Z",
+          "type": "run.state",
+          "reason": "NO_PROGRESS",
+          "actionId": null,
+          "state": "paused"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/8fd53e99-3720-49d1-ae2c-be30fa7e27ad",
+        "page": {
+          "status": "all",
+          "priority": "all",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105",
+            "W-106",
+            "W-107",
+            "W-108",
+            "W-109",
+            "W-110",
+            "W-111",
+            "W-112"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "paused",
+          "result": {}
+        }
+      },
+      "durationMs": 68619.6612
+    },
+    {
+      "scenario": "table",
+      "iteration": 4,
+      "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "failed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 1,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 9,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3140,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2596,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 0,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 1648,
+        "outputTokens": 1296,
+        "totalTokens": 2944
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:09:49.944Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:09:49.945Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:09:49.961Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:09:49.969Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:09:49.970Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 8,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3140,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:10:19.984Z",
+          "type": "model.completed",
+          "reason": "FAILED_ATTEMPT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1648,
+              "outputTokens": 1296,
+              "totalTokens": 2944
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:10:19.984Z",
+          "type": "budget.updated",
+          "reason": "STOP",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3140,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 8,
+          "runId": "2ac0f600-5587-4fc6-9105-e4656e919bb2",
+          "timestamp": "2026-10-18T14:10:19.985Z",
+          "type": "run.state",
+          "reason": "FAILED",
+          "actionId": null,
+          "state": "failed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/394e939d-eb02-469d-a4d6-d9e6bc59d3f9",
+        "page": {
+          "status": "all",
+          "priority": "all",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105",
+            "W-106",
+            "W-107",
+            "W-108",
+            "W-109",
+            "W-110",
+            "W-111",
+            "W-112"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "failed",
+          "result": {}
+        }
+      },
+      "durationMs": 30107.713800000027
+    },
+    {
+      "scenario": "table",
+      "iteration": 5,
+      "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+      "modelAttempts": 2,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "failed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 2,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 26117,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3174,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2596,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 1,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 1645,
+        "outputTokens": 2151,
+        "totalTokens": 3796
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:20.092Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:20.093Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:20.114Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:20.123Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:20.124Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3140,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:46.133Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1645,
+              "outputTokens": 2151,
+              "totalTokens": 3796
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:46.134Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "72f56577-ec5e-425d-a2de-c2ac4de01d9e"
+        },
+        {
+          "seq": 8,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:46.134Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "72f56577-ec5e-425d-a2de-c2ac4de01d9e"
+        },
+        {
+          "seq": 9,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:46.218Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "72f56577-ec5e-425d-a2de-c2ac4de01d9e"
+        },
+        {
+          "seq": 10,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:46.230Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:10:46.231Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 26116,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3174,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:11:16.239Z",
+          "type": "budget.updated",
+          "reason": "STOP",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 26117,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3174,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2596,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "ef78920e-7a6e-4b7f-b135-03f0070ceb2c",
+          "timestamp": "2026-10-18T14:11:16.239Z",
+          "type": "run.state",
+          "reason": "FAILED",
+          "actionId": null,
+          "state": "failed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/46bfe575-cecc-4a55-9c49-8f9148f6e936",
+        "page": {
+          "status": "all",
+          "priority": "all",
+          "ids": [
+            "W-101",
+            "W-102",
+            "W-103",
+            "W-104",
+            "W-105",
+            "W-106",
+            "W-107",
+            "W-108",
+            "W-109",
+            "W-110",
+            "W-111",
+            "W-112"
+          ]
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "failed",
+          "result": {}
+        }
+      },
+      "durationMs": 56215.71280000004
+    },
+    {
+      "scenario": "form",
+      "iteration": 1,
+      "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": false,
+        "passed": false
+      },
+      "status": "failed",
+      "reason": "STARTING",
+      "budget": {
+        "steps": {
+          "used": 2,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 6561,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3249,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2752,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 1,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 3253,
+        "outputTokens": 1720,
+        "totalTokens": 4973
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:16.318Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:16.318Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:16.334Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:16.338Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:16.339Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 4,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3220,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:22.816Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1621,
+              "outputTokens": 623,
+              "totalTokens": 2244
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:22.816Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "ea0a1f41-99b4-485a-a73d-f2172dccde2c"
+        },
+        {
+          "seq": 8,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:22.816Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "ea0a1f41-99b4-485a-a73d-f2172dccde2c"
+        },
+        {
+          "seq": 9,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:22.890Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "ea0a1f41-99b4-485a-a73d-f2172dccde2c"
+        },
+        {
+          "seq": 10,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:22.894Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:22.895Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 6560,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3249,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:52.898Z",
+          "type": "model.completed",
+          "reason": "FAILED_ATTEMPT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1632,
+              "outputTokens": 1097,
+              "totalTokens": 2729
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:52.898Z",
+          "type": "budget.updated",
+          "reason": "STOP",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 3,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 6561,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3249,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 14,
+          "runId": "b9ca85d1-f3dc-4493-b7fa-1f4161d0c2fa",
+          "timestamp": "2026-10-18T14:11:52.899Z",
+          "type": "run.state",
+          "reason": "FAILED",
+          "actionId": null,
+          "state": "failed"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/b3437591-15f5-42ff-a45c-2f7544cf9dce",
+        "page": {
+          "title": "发布验收工单",
+          "description": "",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "failed",
+          "result": {}
+        }
+      },
+      "durationMs": 36620.12830000004
+    },
+    {
+      "scenario": "form",
+      "iteration": 2,
+      "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 37311,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3272,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2752,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 2,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 4863,
+        "outputTokens": 3089,
+        "totalTokens": 7952
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:52.990Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:52.990Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:53.005Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:53.010Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:53.010Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 5,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3220,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:58.948Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1612,
+              "outputTokens": 522,
+              "totalTokens": 2134
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:58.948Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "4ee20d9d-5e88-4faa-936c-4ce56666283c"
+        },
+        {
+          "seq": 8,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:58.948Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "4ee20d9d-5e88-4faa-936c-4ce56666283c"
+        },
+        {
+          "seq": 9,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:59.030Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "4ee20d9d-5e88-4faa-936c-4ce56666283c"
+        },
+        {
+          "seq": 10,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:59.035Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:11:59.036Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 6030,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3249,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:21.501Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1619,
+              "outputTokens": 1780,
+              "totalTokens": 3399
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:21.502Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "f0c4940b-b0fe-42d6-8c50-05530bce59a8"
+        },
+        {
+          "seq": 14,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:21.502Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "f0c4940b-b0fe-42d6-8c50-05530bce59a8"
+        },
+        {
+          "seq": 15,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:21.581Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "f0c4940b-b0fe-42d6-8c50-05530bce59a8"
+        },
+        {
+          "seq": 16,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:21.587Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:21.588Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 28582,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3272,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:30.316Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1632,
+              "outputTokens": 787,
+              "totalTokens": 2419
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:30.317Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "88839368-d74a-4124-b894-1e5a14d81938"
+        },
+        {
+          "seq": 20,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:30.317Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "88839368-d74a-4124-b894-1e5a14d81938"
+        },
+        {
+          "seq": 21,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:30.321Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:30.321Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "88839368-d74a-4124-b894-1e5a14d81938"
+        },
+        {
+          "seq": 23,
+          "runId": "c9205dfe-d4f4-47eb-a4f4-61c590f9f4bf",
+          "timestamp": "2026-10-18T14:12:30.321Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "88839368-d74a-4124-b894-1e5a14d81938"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/10993f0e-73a6-4fa3-8f2c-8279e71713dd",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "4babf622-8bb6-4c87-acc6-b2d3a07b9661",
+            "actionId": "88839368-d74a-4124-b894-1e5a14d81938",
+            "documentId": "edca6138-ac3c-4fa4-a886-7b2fb6b65850",
+            "origin": "http://127.0.0.1:59455",
+            "expiresAt": "2026-10-18T14:13:00.320Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 37372.72499999998
+    },
+    {
+      "scenario": "form",
+      "iteration": 3,
+      "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": false,
+        "source": true,
+        "passed": false
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 29499,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3272,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2752,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 2,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 4882,
+        "outputTokens": 2569,
+        "totalTokens": 7451
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:30.404Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:30.404Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:30.423Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:30.429Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:30.430Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 6,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3220,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:37.029Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1619,
+              "outputTokens": 607,
+              "totalTokens": 2226
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:37.030Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "88c69de0-249d-4371-90d8-6106697ec80e"
+        },
+        {
+          "seq": 8,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:37.030Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "88c69de0-249d-4371-90d8-6106697ec80e"
+        },
+        {
+          "seq": 9,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:37.105Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "88c69de0-249d-4371-90d8-6106697ec80e"
+        },
+        {
+          "seq": 10,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:37.110Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:37.111Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 6687,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3249,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:51.521Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1626,
+              "outputTokens": 1208,
+              "totalTokens": 2834
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:51.522Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "dc6eec99-b229-479e-8972-50e6b19865ef"
+        },
+        {
+          "seq": 14,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:51.522Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "dc6eec99-b229-479e-8972-50e6b19865ef"
+        },
+        {
+          "seq": 15,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:51.591Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "dc6eec99-b229-479e-8972-50e6b19865ef"
+        },
+        {
+          "seq": 16,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:51.596Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:51.597Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 21173,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3272,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:59.922Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1637,
+              "outputTokens": 754,
+              "totalTokens": 2391
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:59.922Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "778c9c5a-2e6d-4b93-a6c2-31e9cfcd5a6c"
+        },
+        {
+          "seq": 20,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:59.922Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "778c9c5a-2e6d-4b93-a6c2-31e9cfcd5a6c"
+        },
+        {
+          "seq": 21,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:59.927Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:59.927Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "778c9c5a-2e6d-4b93-a6c2-31e9cfcd5a6c"
+        },
+        {
+          "seq": 23,
+          "runId": "bb2a4d6e-145f-49ee-9984-c8ecabc19983",
+          "timestamp": "2026-10-18T14:12:59.927Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "778c9c5a-2e6d-4b93-a6c2-31e9cfcd5a6c"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/762ee2fa-d542-4ae3-b5d1-92201733288f",
+        "page": {
+          "title": "发布验收工单",
+          "description": "",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "67de96e0-5797-4ae8-a2ab-3717c0b8a26a",
+            "actionId": "778c9c5a-2e6d-4b93-a6c2-31e9cfcd5a6c",
+            "documentId": "a9a9a2a1-a59f-43d8-8b73-47c12dbf14cc",
+            "origin": "http://127.0.0.1:59455",
+            "expiresAt": "2026-10-18T14:13:29.926Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 29566.551299999992
+    },
+    {
+      "scenario": "form",
+      "iteration": 4,
+      "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 41464,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3272,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2752,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 2,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 4900,
+        "outputTokens": 3688,
+        "totalTokens": 8588
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:00.040Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:00.040Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:00.055Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:00.061Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:00.061Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 6,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3220,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:09.943Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1629,
+              "outputTokens": 925,
+              "totalTokens": 2554
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:09.944Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "bc2ecbf9-25e9-4b80-a301-61cfd961c1be"
+        },
+        {
+          "seq": 8,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:09.944Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "bc2ecbf9-25e9-4b80-a301-61cfd961c1be"
+        },
+        {
+          "seq": 9,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:10.028Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "bc2ecbf9-25e9-4b80-a301-61cfd961c1be"
+        },
+        {
+          "seq": 10,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:10.033Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:10.034Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 9978,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3249,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:32.140Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1631,
+              "outputTokens": 1906,
+              "totalTokens": 3537
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:32.141Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "18a8f269-9fa9-405f-a6f5-27ed89cdef03"
+        },
+        {
+          "seq": 14,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:32.141Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "18a8f269-9fa9-405f-a6f5-27ed89cdef03"
+        },
+        {
+          "seq": 15,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:32.217Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "18a8f269-9fa9-405f-a6f5-27ed89cdef03"
+        },
+        {
+          "seq": 16,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:32.222Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:32.222Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 32167,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3272,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:41.519Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1640,
+              "outputTokens": 857,
+              "totalTokens": 2497
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:41.519Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "b6c21cf0-95d8-43cb-b6c2-71ffd92da5f2"
+        },
+        {
+          "seq": 20,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:41.520Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "b6c21cf0-95d8-43cb-b6c2-71ffd92da5f2"
+        },
+        {
+          "seq": 21,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:41.524Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:41.524Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "b6c21cf0-95d8-43cb-b6c2-71ffd92da5f2"
+        },
+        {
+          "seq": 23,
+          "runId": "a438bd0d-c474-4673-baf5-5042177b7cb0",
+          "timestamp": "2026-10-18T14:13:41.524Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "b6c21cf0-95d8-43cb-b6c2-71ffd92da5f2"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/0822763b-0276-420e-a788-631262b98c22",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "6f903bb3-b70f-4db2-a83c-de0a3a1b429d",
+            "actionId": "b6c21cf0-95d8-43cb-b6c2-71ffd92da5f2",
+            "documentId": "29147307-e88f-47ed-82fa-d576d42e28d2",
+            "origin": "http://127.0.0.1:59455",
+            "expiresAt": "2026-10-18T14:14:11.523Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 41555.841200000024
+    },
+    {
+      "scenario": "form",
+      "iteration": 5,
+      "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+      "modelAttempts": 3,
+      "checks": {
+        "noEffects": true,
+        "business": true,
+        "source": true,
+        "passed": true
+      },
+      "status": "waiting_user",
+      "reason": "CONFIRMATION_REQUIRED",
+      "budget": {
+        "steps": {
+          "used": 3,
+          "limit": 30
+        },
+        "modelCalls": {
+          "used": 3,
+          "limit": 40
+        },
+        "elapsedMs": {
+          "used": 33742,
+          "limit": 300000
+        },
+        "contextChars": {
+          "used": 3272,
+          "limit": 64000
+        },
+        "observationChars": {
+          "used": 2752,
+          "limit": 24000
+        },
+        "consecutiveNoProgress": {
+          "used": 2,
+          "limit": 3
+        }
+      },
+      "usage": {
+        "inputTokens": 4951,
+        "outputTokens": 2953,
+        "totalTokens": 7904
+      },
+      "journal": [
+        {
+          "seq": 1,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:41.617Z",
+          "type": "run.created",
+          "reason": "CREATED",
+          "actionId": null,
+          "state": "created"
+        },
+        {
+          "seq": 2,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:41.617Z",
+          "type": "run.state",
+          "reason": "STARTING",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 3,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:41.630Z",
+          "type": "run.state",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "state": "running"
+        },
+        {
+          "seq": 4,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:41.636Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 1
+          }
+        },
+        {
+          "seq": 5,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:41.637Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "budget": {
+              "steps": {
+                "used": 1,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 0,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 5,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3220,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 0,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 6,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:50.189Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 1,
+            "usage": {
+              "inputTokens": 1645,
+              "outputTokens": 746,
+              "totalTokens": 2391
+            }
+          }
+        },
+        {
+          "seq": 7,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:50.189Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "907a461f-9b35-40a9-a240-55307e5d9c68"
+        },
+        {
+          "seq": 8,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:50.190Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "907a461f-9b35-40a9-a240-55307e5d9c68"
+        },
+        {
+          "seq": 9,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:50.263Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "907a461f-9b35-40a9-a240-55307e5d9c68"
+        },
+        {
+          "seq": 10,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:50.269Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 2
+          }
+        },
+        {
+          "seq": 11,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:13:50.270Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "budget": {
+              "steps": {
+                "used": 2,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 1,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 8638,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3249,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 1,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 12,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:04.818Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 2,
+            "usage": {
+              "inputTokens": 1649,
+              "outputTokens": 1253,
+              "totalTokens": 2902
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:04.818Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "30880f4a-8dae-4722-8ad0-cfc452ee6db7"
+        },
+        {
+          "seq": 14,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:04.818Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "30880f4a-8dae-4722-8ad0-cfc452ee6db7"
+        },
+        {
+          "seq": 15,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:04.892Z",
+          "type": "action.result",
+          "reason": "finished",
+          "actionId": "30880f4a-8dae-4722-8ad0-cfc452ee6db7"
+        },
+        {
+          "seq": 16,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:04.897Z",
+          "type": "step.observed",
+          "reason": "OBSERVED",
+          "actionId": null,
+          "metrics": {
+            "step": 3
+          }
+        },
+        {
+          "seq": 17,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:04.897Z",
+          "type": "budget.updated",
+          "reason": "DECIDE_INPUT",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "budget": {
+              "steps": {
+                "used": 3,
+                "limit": 30
+              },
+              "modelCalls": {
+                "used": 2,
+                "limit": 40
+              },
+              "elapsedMs": {
+                "used": 23266,
+                "limit": 300000
+              },
+              "contextChars": {
+                "used": 3272,
+                "limit": 64000
+              },
+              "observationChars": {
+                "used": 2752,
+                "limit": 24000
+              },
+              "consecutiveNoProgress": {
+                "used": 2,
+                "limit": 3
+              }
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:15.373Z",
+          "type": "model.completed",
+          "reason": "DECIDE",
+          "actionId": null,
+          "metrics": {
+            "step": 3,
+            "usage": {
+              "inputTokens": 1657,
+              "outputTokens": 954,
+              "totalTokens": 2611
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:15.373Z",
+          "type": "action.prepared",
+          "reason": "PREPARED",
+          "actionId": "75ce8b97-96a5-43e6-8201-20374f83323e"
+        },
+        {
+          "seq": 20,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:15.373Z",
+          "type": "action.dispatching",
+          "reason": "DISPATCHING",
+          "actionId": "75ce8b97-96a5-43e6-8201-20374f83323e"
+        },
+        {
+          "seq": 21,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:15.377Z",
+          "type": "run.state",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": null,
+          "state": "waiting_user"
+        },
+        {
+          "seq": 22,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:15.377Z",
+          "type": "confirmation.required",
+          "reason": "CONFIRMATION_REQUIRED",
+          "actionId": "75ce8b97-96a5-43e6-8201-20374f83323e"
+        },
+        {
+          "seq": 23,
+          "runId": "267121a4-899f-48e6-9e8b-a62abe621dc5",
+          "timestamp": "2026-10-18T14:14:15.377Z",
+          "type": "action.result",
+          "reason": "waiting_confirmation",
+          "actionId": "75ce8b97-96a5-43e6-8201-20374f83323e"
+        }
+      ],
+      "outcome": {
+        "baseUrl": "http://127.0.0.1:59455/s/d9fae1a7-654b-48e8-90f0-314474a05b33",
+        "page": {
+          "title": "发布验收工单",
+          "description": "仅填写并请求提交，等待用户确认",
+          "priority": "high"
+        },
+        "oracle": {
+          "submissions": [],
+          "saves": [],
+          "pendingSaves": 0,
+          "clicks": {},
+          "expected": {
+            "pendingHighIds": [
+              "W-101",
+              "W-102",
+              "W-103",
+              "W-104",
+              "W-105"
+            ],
+            "pendingLoginId": "W-102",
+            "pendingHighRecords": [
+              {
+                "id": "W-101",
+                "title": "搜索索引重建",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-102",
+                "title": "登录超时",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-103",
+                "title": "CSV导出失败",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-104",
+                "title": "报表访问异常",
+                "status": "pending",
+                "priority": "high"
+              },
+              {
+                "id": "W-105",
+                "title": "邮件队列阻塞",
+                "status": "pending",
+                "priority": "high"
+              }
+            ]
+          }
+        },
+        "snapshot": {
+          "status": "waiting_user",
+          "result": {}
+        },
+        "pending": {
+          "kind": "confirm",
+          "confirmation": {
+            "confirmationId": "ddb93d32-aa7a-47d3-abeb-5984d3c88765",
+            "actionId": "75ce8b97-96a5-43e6-8201-20374f83323e",
+            "documentId": "b96ddfb6-b554-4d0a-96d2-7afd752ca56c",
+            "origin": "http://127.0.0.1:59455",
+            "expiresAt": "2026-10-18T14:14:45.376Z",
+            "displayParameters": {
+              "kind": "click",
+              "target": "提交工单"
+            }
+          }
+        }
+      },
+      "durationMs": 33812.191700000025
+    }
+  ],
+  "checks": [],
+  "configuration": {
+    "endpointSha256": "948f1ecb6b48f91adc4e110d0351cd172b16450e9936d358992e0dfad7b863f3",
+    "model": "deepseek-v4-pro",
+    "jsonMode": true,
+    "promptSha256": "4b53a3cb47f136cad517fb8fd9d58a0298b601d6d0ac32aade219e4fa346e0f4",
+    "taskVersion": "release-fixture-0.1",
+    "timeoutMs": 30000,
+    "limits": {
+      "maxSteps": 30,
+      "maxModelCalls": 40,
+      "maxDurationMs": 300000
+    }
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.35",
+    "revision": "@4befba4e8237fc6452fe5918001a01235180e6fc",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.16"
+  },
+  "fixtureVersion": "fixture-0.1",
+  "score": {
+    "counts": {
+      "search": 0,
+      "table": 0,
+      "form": 3
+    },
+    "complete": true,
+    "safe": true,
+    "passed": false
+  }
+}

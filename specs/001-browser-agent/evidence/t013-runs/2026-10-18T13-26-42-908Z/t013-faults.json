@@ -1,0 +1,725 @@
+{
+  "timestamp": "2026-10-18T13:24:30.343Z",
+  "status": "incomplete",
+  "files": {
+    "packages/runtime/package.json": "19b7cb2151eda48d6cd82dc842258e0937a56382bdad6efb01c43f95c18b717b",
+    "packages/runtime/README.md": "87ad450679d72983a0b957773d0006cf487d05bd6ccdc9234ce502900a38d8b8",
+    "packages/runtime/src/index.mts": "ff2c2cf718d53b72b6af94f662ebd3b0175184c91bde9f26abac86e22bc5317d",
+    "packages/runtime/src/loop.mts": "9ecc112d869c2d4e16167ababe9af2a774e982106dd49ec67d58661acb462fa9",
+    "packages/runtime/src/runtime.mts": "6d263ecf942398bbd7b95f6fbf1b53010d6f8a8eb1dd5c82cafc04be9eb31348",
+    "packages/runtime/src/store.mts": "d51f0be4ae66de14c2dd46ac10fead2392eb77ac58a8357530f6565a9cf5d45c",
+    "packages/runtime/test/build-extension.mjs": "58f5078ba654af38755e8c457118d0c29993368079580668acfd4e21117d62f1",
+    "packages/runtime/test/extension-background.mjs": "d27ad921b9c190831322e13539ff26a007f8b15b3e376e686ac980429484eb69",
+    "packages/runtime/test/extension-peer.mjs": "186eb98be44a77e1a0a8e9b73a07b0985ce01d494c1ac3140089b06ba6a611bf",
+    "packages/runtime/test/extension-runner.mjs": "b6311e0f47b7db77e9e74d5c62fd1a5700ccdf6fbed00f5f1886ec880ee4f0d8",
+    "packages/runtime/test/fault-evidence.test.mjs": "6233d0faa907cdde34333be9760a08629fca9ed9f6d38e3a4d51fc617b9decfb",
+    "packages/runtime/test/faults.test.mjs": "2ed1c8ea9eeefb7b15bc43fc34ce7c6a9f6f886917aeac2fc42086bc953a2869",
+    "packages/runtime/test/loop-browser.mjs": "d2ea2182c7b2b5ffc1a7b003dccceba5bb5607c54a37498b5fbba54a0359ad18",
+    "packages/runtime/test/loop.test.mjs": "566b65fb5af7c572bccebeea13c090063fc3d509a29f63612e05d483bcb82e29",
+    "packages/runtime/test/runtime-browser.mjs": "16ede5ca27c8cf7c585415d0e8b16f7a9c704ee38bf763a66aa2733e85982383",
+    "packages/runtime/test/runtime.test.mjs": "48171a652d92013658604d5c7056ee5b358a16a289ab3b7a2b8f89e972b85e86",
+    "packages/runtime/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "packages/models/package.json": "025d1b3ed77d0af51b94f6a691395b89b52d3ac9595e61a53649c3afccfd3b6c",
+    "packages/models/README.md": "084eca7f65f03fd51155fef1e683f08469f1c93820bc598fbf58102100a4aca6",
+    "packages/models/src/index.mts": "4b53a3cb47f136cad517fb8fd9d58a0298b601d6d0ac32aade219e4fa346e0f4",
+    "packages/models/src/schema.mts": "3df5701f67f2a01959c0b72da5273265b37119193be34595be6966350d215097",
+    "packages/models/test/input.mjs": "47644559ea85d5d84210e0c7d04734ffe593e17969d5218008dc6dbdad2966b9",
+    "packages/models/test/models.test.mjs": "177387e18951afcd36b2ffd94109930a32ba9f8d898142194c0a29bc185fc82b",
+    "packages/models/tsconfig.json": "b295463f39f199298301a577ce5272541552e9a39417469b26e39107874633b4",
+    "packages/protocol/package.json": "8e1bcb1dfc6b250602552e4666bc478c1dd4ab2431167947e8290c247cabdb55",
+    "packages/protocol/README.md": "be7c70f1126e1243b001da5948ba8fd9ffc9ca5fd8b308b0972ae27db70d5764",
+    "packages/protocol/src/actions.mts": "78d8c4a749bb6c6633f7cde025ad749aa6c566d1dd25a1411ad0b52bd2d85e3e",
+    "packages/protocol/src/index.mts": "605cc4a9f70cbbedef27458a19986824872a0a311a5d694c6bf0b7b2d60a18a7",
+    "packages/protocol/src/messages.mts": "8e95f14745bad30dc99e5023356c23ff356ff55e28ab796c11279f0e1ef3f901",
+    "packages/protocol/src/observation.mts": "5a1813a724ca36de57a2b0cf4b3e96182638e26c6e7841be17ef99918936c244",
+    "packages/protocol/src/policy.mts": "74a152fa13e9909a4298894c745024eb8335a804ff62f4d2f6db58a5034a9a88",
+    "packages/protocol/src/runtime.mts": "17b62b4318a381b7aa2943c2a8e0aa7797dafaaff86d50327312ca8b3cc0094c",
+    "packages/protocol/src/validation.mts": "a35cf1ba97666893dfc915e9d3a42703708d404e7bbbbfc02fae061d7b9b5c27",
+    "packages/protocol/test/action.test.mjs": "03ee234d2001ddce951736e61c84479c143678caa8edcf06ac1f112e61109315",
+    "packages/protocol/test/contract.test-d.mts": "5750006cb8c5aa9cbf202fb11b07fb08b04dc5ad2887750c557f6216e45757d7",
+    "packages/protocol/test/fixtures.mjs": "decb1ca9dd6ec1a6c5d28bce5c7e55015ff22f1a6401ea990d4d0e6e630ac2e1",
+    "packages/protocol/test/wire.test.mjs": "b1a650de7ba326c3b04e5d5e8a0deb9a77e31b721543689a0e98a94a974fd30d",
+    "packages/protocol/tsconfig.json": "9c067a501c38054f99d97fabf26d5bdf3d7a0d2e4045c0fc83da180f06507f13",
+    "packages/protocol/tsconfig.test.json": "4a31014f19b0737d4fafaf2eabe36d35163b9c810f1678de10bedc887fc6f8c5",
+    "packages/browser-chrome/package.json": "3e978e9b7cf097f04dea2dd66fd68e80abc748160ab89820f2c80a0afef49696",
+    "packages/browser-chrome/README.md": "cab3cf86e3e4b610df6e8cf962292d2bf2c2b38a4b86b1a7090540a9c130f4ab",
+    "packages/browser-chrome/src/adapter.mts": "d5feee24628a21fbed4ad98adfa5752c0b75e66ead8a4b7522bc88953aa68c23",
+    "packages/browser-chrome/src/chrome.mts": "8bc721fd48a3d7d45adeff62ffcc9bf295a513c8183114fb3c30bda867e8a588",
+    "packages/browser-chrome/src/control-document.mts": "ae3c0213cfa4a92326af294521b8ee64e6acfba47c3fff1e0f52375bd00fc87b",
+    "packages/browser-chrome/src/document.mts": "7d039b7bd303eb8fb5a14f1c59714f1f90749e1453cc423f43206a4e0929a3b5",
+    "packages/browser-chrome/src/index.mts": "a14a89c20fb17238c36bdbc472f722365f846c1e36329866d54c5685e6a48ffc",
+    "packages/browser-chrome/src/references.mts": "900e10b18bc357daaf6d6f153c6e6d5e548d2cf4a767bd53a6bd28a4d1a4d4ec",
+    "packages/browser-chrome/src/sanitize.mts": "7c8f4120bafd11d078f4ec6aa10b399092c77111f6fc5531ba812115315b2dc6",
+    "packages/browser-chrome/test/async-bridge.test.mjs": "2eb161e641168a824c883eb39d9ec0d69e5846f6777a795e7cfc25931b299dcd",
+    "packages/browser-chrome/test/control-browser.mjs": "2bff1e10940ba9a3144e0a16d183376d0e5c6c34b97ede1c63bb4a06e312c386",
+    "packages/browser-chrome/test/control.test.mjs": "a275af8fc63fc9baf0ed347c114a601076e2afb2e8a0fb553a8c75bbba32afa5",
+    "packages/browser-chrome/test/observer-browser.mjs": "d5d9087eb8fab74eaf50a68aa0827d4dfe13beb96f180df01aa0a7e15062b52a",
+    "packages/browser-chrome/test/observer-owner.test.mjs": "c64a688fe619869cf026358882b3e3b5b618667fee95c49138a8adbb5026f269",
+    "packages/browser-chrome/test/observer.test.mjs": "495b70c52ba84cba9639d12ef703a71591e49b96d458676afd81444a563ef492",
+    "packages/browser-chrome/test/policy-context.test.mjs": "a24368863b20f9eb7715aa21a97312f2879a85b3cb78919a3e3b25bba3276dbd",
+    "packages/browser-chrome/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "packages/policy/package.json": "2fe0a7a45dc009bdf7dc5b6c566c7aa9cfb44e99fee2bd608ee81935e8087946",
+    "packages/policy/README.md": "5d3d45884f27902d7009f9ee0bfb7489d29c5c3e9acf5cb261d5c54befc2c97a",
+    "packages/policy/src/index.mts": "a95a1274e19e723f58cfa63903bf8984425dd4add693f6c76abe16920235f4f9",
+    "packages/policy/test/policy-browser.mjs": "8271532981c75fba86ef810e412f49a0dcbdb52bee07651aa99f2e3cdb80cfdb",
+    "packages/policy/test/policy.test.mjs": "0bb71d22d9a05b6a1da5bbd1d785350618553f08e4279574eb9b77f95705204a",
+    "packages/policy/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "fixtures/web/domain.mjs": "84220f790727054a0b9b6b3fff03c4f71359a54568653b332a138c6705def221",
+    "fixtures/web/oracle.mjs": "cc52d1fd81892ab36d76e6662480568d9831f3f32fd1a25834d403eb1c0e9109",
+    "fixtures/web/pages.mjs": "dd0b00dc9e70795469603266b276a403f266a1d19cd239bd82f9f6469a337d60",
+    "fixtures/web/public/app.mjs": "c87d6c957d21a92444afc2f64a589e44325cd637a550857859fbfe0b56fee75a",
+    "fixtures/web/public/style.css": "767186f736acd7fdcada587e5f088003c061a439b9deb3d5eb82f03879a35b85",
+    "fixtures/web/README.md": "df13499180d5194298948ef2a4dc0efac870508ed3bd67e025f8e1bea17d647d",
+    "fixtures/web/server.mjs": "1f127c7d2ed668ec6ceb8836b7c5da29bdfd5da9895ac25c7a79bcb41e26c32a",
+    "fixtures/web/start.mjs": "f5a264679eb3958fc74386d7142397a4a8d499f0ab1d5a3f48d0f07b50e84419",
+    "fixtures/web/test/browser-smoke.mjs": "0c09582e98eceb4e64f992a891f9a11cb4e87e4593d9ae9ae98868660530f41e",
+    "fixtures/web/test/server.test.mjs": "78a4b4c8fb4f2247ac049cf8099458bc5a90e37981e5ab6c9aa0b7afc0befdf9",
+    "scripts/loop-smoke.mjs": "da0fe0d3c2ec8caebf65347175f1ed901d8a95713c9c8bdb5faba107c32af509",
+    "scripts/loop-evidence.mjs": "f15881dff3e16a4052c98b72504de01712eecad2539f89177ea0cfe259bf045b",
+    "scripts/runtime-smoke.mjs": "e971430b3171920811b730bc21471a9912481475d9753f0abd3e457f7c9bbd52",
+    "scripts/runtime-build.mjs": "0d7619f42264a15d7a5d11cc69fd78e8cc93aea3ec162889f4c729b1fcf003fc",
+    "scripts/models-build.mjs": "518be813b6b334edca464e6b1c809805cfa6d4034f4f2a5233a9379b17f482c8",
+    "package.json": "82be4833a727991821866fd7db4d642f7876842dc76a64412d1a5f08e7f612a8",
+    "package-lock.json": "4b2f9b15b910f062f744e203d04f602901ac490c2afea90611383c7ec9d08158",
+    "tsconfig.base.json": "72c8229cbd45d3cfa56e86fffc50fbdbb8019a7da45f10400c7a3847bd58298e",
+    "packages/sdk/examples/minimal.mjs": "afaa937dc189bc8acbfc3e8b1f506e1cff381815bdb1ec9c779ce04bba3add3a",
+    "packages/sdk/package.json": "e2b34ceadde006dd47c8707672ba535f7962a461a05e30fe84483678de0a5df9",
+    "packages/sdk/README.md": "1dbbcf266e8b22680390f53f95be17771aed53a711d692a27fa197dbe42bfa7e",
+    "packages/sdk/src/index.mts": "a0c4a61d2d27c8426765ef3b0fd8e9157099408f037789b221ab1edc367c1829",
+    "packages/sdk/test/sdk-browser.mjs": "a69bfeb8457b5a68cd27126699df704ef9523f044bab934d4c04d9c2230573b1",
+    "packages/sdk/test/sdk.test.mjs": "218fa54b6235e0efc7cc5dc41f383129d669fa6820d0b70db720fe294a98ca09",
+    "packages/sdk/tsconfig.json": "b295463f39f199298301a577ce5272541552e9a39417469b26e39107874633b4",
+    "scripts/sdk-build.mjs": "d6f8ad3e095af02bf40a7a49c33761515d45cd62890364695cc80813b7b4b053",
+    "scripts/sdk-smoke.mjs": "677ea49a554a8dce3cefc453d2f0ee9a2bcc364b6d9adea0f423ee83f815fd8d",
+    "scripts/sdk-evidence.mjs": "da67a025df25676b9f0fce56dca6d739fd474cd89d891312edb13112b8878ecb",
+    "apps/extension/entrypoints/background.ts": "d72069d74211acb00640914c62512b880ee9e0387194cf40fb7da3d71a4336b5",
+    "apps/extension/entrypoints/sidepanel/App.tsx": "17c36571c61fa4bca5932d71deca21e985d5626ca2613239dc1eefd6ae2aea65",
+    "apps/extension/entrypoints/sidepanel/index.html": "a1403500f8765e64b5386588ce72f6b65b6865df001ec0eb22190fc74c9c0cff",
+    "apps/extension/entrypoints/sidepanel/main.tsx": "d9b5bd7780cbef91bb6f948f391254a033c6d04eb306754c61cba84ebbeea661",
+    "apps/extension/entrypoints/sidepanel/style.css": "fb4a157a56cc77b9a9215a70b5498803f37518227445e6e378fb311309f813ce",
+    "apps/extension/host/client.ts": "9600a195ed6041a7d6a432388e6f2dea82e68fcb6a2ca0319a4c1ed4df5fe92b",
+    "apps/extension/host/controller.mts": "091b160ea13229682f77ff5a3e94847d971f424997e0542b3d7a5ce832cc38c4",
+    "apps/extension/host/protocol.mts": "247bf61ff5b7e46081dc253f8f997ac7d502547ee102a66cff970de8b80f4152",
+    "apps/extension/package.json": "d19548461fb378959dd8341dcef2c8c8519260c4f5f3cce1bfd683a756a447ff",
+    "apps/extension/README.md": "f6ff5061fb1e6a91673e4f24826ecc8fc1b2c1ccc9a5647fce49b58d515db750",
+    "apps/extension/test/host.test.mjs": "30572546d07b76d740bee81a5c7a995f268b9df979ddac19f032c09664a96547",
+    "apps/extension/test/model-fixture.mjs": "2941f1cc315c400b8c9d472e16f43b9446558a21a813225aea39311957700565",
+    "apps/extension/test/panel-browser.mjs": "3733bc185dfb83bc698d32c2df5c452a07e84da66a7204f0589819a7f6738463",
+    "apps/extension/tsconfig.json": "ce69720394bcb3910e99922f3c3b887eaddc3c43c5618c484b4940e2d8fd9871",
+    "apps/extension/wxt.config.ts": "1d2c7dd7f227c7af6ebc5e8578091dec1efc5db274bd95d527237cac059b914d",
+    "apps/extension/.output/chrome-mv3/assets/sidepanel-DPOFbMSA.css": "fb4a157a56cc77b9a9215a70b5498803f37518227445e6e378fb311309f813ce",
+    "apps/extension/.output/chrome-mv3/background.js": "6e6c439d028918f77306abf435f45a61fdb83481e2276dc7cee293a11cb9ccc0",
+    "apps/extension/.output/chrome-mv3/chunks/sidepanel-DKtiePvn.js": "0f50c0f74b655dc831156ea99d34ebd731bbe172a800b31f9f013d19e44ce793",
+    "apps/extension/.output/chrome-mv3/chunks/_virtual_wxt-plugins-HFybO7hf.js": "7a9ced029b5e74be981c7758339ad11ae577dfc9115e2834adddc56f9dd3882c",
+    "apps/extension/.output/chrome-mv3/manifest.json": "d2b375b7b7503b780effbd14cd71ae2f98d5268dc8a097328109bb59815a4319",
+    "apps/extension/.output/chrome-mv3/sidepanel.html": "ecd5cec9abbcd7c00777af79aaae0aa02aaa9aa6b714d07e5c001afbae6948b4",
+    "scripts/panel-smoke.mjs": "6fed5b6e734fdfd503849b780f45605d28fbd1daf89dd162f1f7b4e238e2ee1a",
+    "scripts/panel-evidence.mjs": "3cf6f4f9feff8bb243cd4ac9e2c644a3ddcb9a41665954f697ee0fd5d9791846",
+    "scripts/record-panel-manual.mjs": "a4cbd4d6c4781e81bedbd8e99030e925ffb1dab0ffb45a81dba4580385939d1e",
+    "scripts/verify-build.mjs": "304fd2778c144be39bbd4c5466e76396bb708f6bf731b41d0a2e9e16ec0a1fc6",
+    "scripts/faults-evidence.mjs": "e6f7073123d487e1826c3e6e34be7c7c7d6d5dce17c61aded26c489d33029249",
+    "scripts/faults-smoke.mjs": "c5c6fd6544ab9ba3989677e223ec19035f4ca6a8637ad49b16bf8eff7f947c2b",
+    "scripts/validate-toolchain.mjs": "4e7071178367b53b3006454bdc8dc76f42864b80bb41df735e55b7d091409f6a",
+    "specs/001-browser-agent/fault-matrix.json": "2383af975c40100eee51a741d97794d464ea53813c86cd354437b7c8fe435464"
+  },
+  "suites": {
+    "observer": {
+      "status": "environment-blocked",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-observer-browser.json",
+      "sha256": "06c9168b5a79f77df9709817bf33e24c4fb5a5cd9c1a8623d17bc419e1bb2b1e"
+    },
+    "control": {
+      "status": "environment-blocked",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-control-browser.json",
+      "sha256": "8197bedfc74a81d7d839068b7756226cd31d3e3c30b28f5e49158bd55c452c1e"
+    },
+    "policy": {
+      "status": "environment-blocked",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-policy-browser.json",
+      "sha256": "837e3cab97b789146f59b9e1ae1b21255bd26b371a83c105a4897155e3110d6a"
+    },
+    "runtime": {
+      "status": "environment-blocked",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-runtime-browser.json",
+      "sha256": "50ede6ca217b7132b1e6fab6576cd499af9326a23de1f4b33c3c23c79de19cb2"
+    },
+    "loop": {
+      "status": "environment-blocked",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-loop-browser.json",
+      "sha256": "808dab17f5ff045a3474c4ece062552e06fc54ed684733007038f332fc875db2"
+    },
+    "sdk": {
+      "status": "environment-blocked",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-sdk-browser.json",
+      "sha256": "79229002f56ab76b3656cff6ddf4cd5e731702566f45a1352b91246a3a2c5637"
+    },
+    "panel": {
+      "status": "environment-blocked",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-panel-browser.json",
+      "sha256": "4a391b0d2e1c5550938afc9da988ddadf82e62972a8cee0312bab4efab5a9a36"
+    },
+    "deterministic": {
+      "status": "passed",
+      "sourceHashesMatch": true,
+      "evidence": "specs/001-browser-agent/evidence/t013-deterministic.json",
+      "sha256": "9abde9879d0eb8b915ca0c953222ebf3a4330c91ad5e2459ffbd8fb7d7b6c112"
+    }
+  },
+  "checks": [
+    {
+      "name": "observer:observe.semanticControls",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.disabled",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.openShadow",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.redaction",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.incompleteScanSuppressesText",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.budget",
+      "passed": false
+    },
+    {
+      "name": "observer:reference.unrelatedRender",
+      "passed": false
+    },
+    {
+      "name": "observer:reference.replacement",
+      "passed": false
+    },
+    {
+      "name": "observer:reference.sameObjectReinsert",
+      "passed": false
+    },
+    {
+      "name": "observer:reference.scopeExpiry",
+      "passed": false
+    },
+    {
+      "name": "observer:reference.navigation",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.unsupportedFrame",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.originGate",
+      "passed": false
+    },
+    {
+      "name": "observer:observe.performance",
+      "passed": false
+    },
+    {
+      "name": "control:input.replaceInitial",
+      "passed": false
+    },
+    {
+      "name": "control:input.replaceExisting",
+      "passed": false
+    },
+    {
+      "name": "control:input.clear",
+      "passed": false
+    },
+    {
+      "name": "control:click.deduplicate",
+      "passed": false
+    },
+    {
+      "name": "control:input.keyboardDoesNotExtraClick",
+      "passed": false
+    },
+    {
+      "name": "control:actionability.禁用按钮",
+      "passed": false
+    },
+    {
+      "name": "control:actionability.被遮挡按钮",
+      "passed": false
+    },
+    {
+      "name": "control:click.openShadow",
+      "passed": false
+    },
+    {
+      "name": "control:actionability.noForbiddenEffects",
+      "passed": false
+    },
+    {
+      "name": "control:input.scroll",
+      "passed": false
+    },
+    {
+      "name": "control:input.navigate",
+      "passed": false
+    },
+    {
+      "name": "control:input.pressEnter",
+      "passed": false
+    },
+    {
+      "name": "control:reference.noReplacementClick",
+      "passed": false
+    },
+    {
+      "name": "control:save.loadingNotComplete",
+      "passed": false
+    },
+    {
+      "name": "control:save.verifiedSuccess",
+      "passed": false
+    },
+    {
+      "name": "control:save.failureIsNotSuccess",
+      "passed": false
+    },
+    {
+      "name": "control:safety.sensitiveHandoff",
+      "passed": false
+    },
+    {
+      "name": "control:safety.originDenied",
+      "passed": false
+    },
+    {
+      "name": "control:input.reactControlled",
+      "passed": false
+    },
+    {
+      "name": "control:verify.semanticAmbiguity",
+      "passed": false
+    },
+    {
+      "name": "policy:authorization.noImplicitGrant",
+      "passed": false
+    },
+    {
+      "name": "policy:policy.plainFillAllowed",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.required",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.pageSenderRejected",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.rejectNoSubmit",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.approvedOnce",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.replayRejected",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.changedFieldRejected",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.expiredRejected",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.revokedRejected",
+      "passed": false
+    },
+    {
+      "name": "policy:confirmation.navigationRejected",
+      "passed": false
+    },
+    {
+      "name": "policy:authorization.formOverrideDenied",
+      "passed": false
+    },
+    {
+      "name": "policy:authorization.enterSubmitOverrideDenied",
+      "passed": false
+    },
+    {
+      "name": "policy:policy.sensitiveFormHandoff",
+      "passed": false
+    },
+    {
+      "name": "policy:authorization.crossOriginLinkDenied",
+      "passed": false
+    },
+    {
+      "name": "policy:authorization.explicitNavigationDenied",
+      "passed": false
+    },
+    {
+      "name": "policy:oracle.exactlyOneApprovedSubmission",
+      "passed": false
+    },
+    {
+      "name": "runtime:idb.atomicRollback",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.prepared.restarted",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.prepared.paused",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.prepared.stage",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.prepared.noReplay",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.dispatching.restarted",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.dispatching.paused",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.dispatching.stage",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.dispatching.noReplay",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.dispatching.unknownBarrier",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.responded.restarted",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.responded.paused",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.responded.stage",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.responded.noReplay",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.responded.unknownBarrier",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.responded.reconciled",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.finished.restarted",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.finished.paused",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.finished.stage",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.finished.noReplay",
+      "passed": false
+    },
+    {
+      "name": "runtime:lease.twoWorkersOneOwner",
+      "passed": false
+    },
+    {
+      "name": "runtime:input.trustedCannotProveUser",
+      "passed": false
+    },
+    {
+      "name": "runtime:input.unknownPauses",
+      "passed": false
+    },
+    {
+      "name": "runtime:oracle.onlyRecordedEffects",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.survivor.recoveredPaused",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.survivor.oldReplyIgnored",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.survivor.noReplay",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.survivor.unknownBarrier",
+      "passed": false
+    },
+    {
+      "name": "runtime:worker.survivor.reconciled",
+      "passed": false
+    },
+    {
+      "name": "loop:search.completedWithProof",
+      "passed": false
+    },
+    {
+      "name": "loop:search.actualDetail",
+      "passed": false
+    },
+    {
+      "name": "loop:search.singleActions",
+      "passed": false
+    },
+    {
+      "name": "loop:search.modelAccounting",
+      "passed": false
+    },
+    {
+      "name": "loop:extract.completed",
+      "passed": false
+    },
+    {
+      "name": "loop:extract.oracleFiveRows",
+      "passed": false
+    },
+    {
+      "name": "loop:extract.boundSource",
+      "passed": false
+    },
+    {
+      "name": "loop:policy.confirmationStopsLoop",
+      "passed": false
+    },
+    {
+      "name": "loop:policy.noUnapprovedWrites",
+      "passed": false
+    },
+    {
+      "name": "loop:finish.unverifiedRemainsRunning",
+      "passed": false
+    },
+    {
+      "name": "sdk:handle.immediate",
+      "passed": false
+    },
+    {
+      "name": "sdk:result.verified",
+      "passed": false
+    },
+    {
+      "name": "sdk:events.ordered",
+      "passed": false
+    },
+    {
+      "name": "sdk:events.stableIds",
+      "passed": false
+    },
+    {
+      "name": "sdk:events.metadataOnly",
+      "passed": false
+    },
+    {
+      "name": "sdk:reopen.result",
+      "passed": false
+    },
+    {
+      "name": "sdk:wait.resultPending",
+      "passed": false
+    },
+    {
+      "name": "sdk:resume.completes",
+      "passed": false
+    },
+    {
+      "name": "sdk:cancel.immediate",
+      "passed": false
+    },
+    {
+      "name": "sdk:cancel.noLateNavigation",
+      "passed": false
+    },
+    {
+      "name": "sdk:oracle.noWrites",
+      "passed": false
+    },
+    {
+      "name": "panel:sender.regularExtensionTabDenied",
+      "passed": false
+    },
+    {
+      "name": "panel:sender.nativeSidePanel",
+      "passed": false
+    },
+    {
+      "name": "panel:session.inputCleared",
+      "passed": false
+    },
+    {
+      "name": "panel:session.keyNotInResponse",
+      "passed": false
+    },
+    {
+      "name": "panel:grant.exactOrigin",
+      "passed": false
+    },
+    {
+      "name": "panel:worker.realReadCompleted",
+      "passed": false
+    },
+    {
+      "name": "panel:result.actualEvidence",
+      "passed": false
+    },
+    {
+      "name": "panel:events.versioned",
+      "passed": false
+    },
+    {
+      "name": "panel:request.replaySameRun",
+      "passed": false
+    },
+    {
+      "name": "panel:request.noExtraCall",
+      "passed": false
+    },
+    {
+      "name": "panel:confirm.noWriteBeforeApproval",
+      "passed": false
+    },
+    {
+      "name": "panel:confirm.originBound",
+      "passed": false
+    },
+    {
+      "name": "panel:confirm.exactlyOneEffect",
+      "passed": false
+    },
+    {
+      "name": "panel:confirm.finishVerified",
+      "passed": false
+    },
+    {
+      "name": "panel:confirm.replayRejected",
+      "passed": false
+    },
+    {
+      "name": "panel:stop.underOneSecond",
+      "passed": false
+    },
+    {
+      "name": "panel:stop.noExtraEffects",
+      "passed": false
+    },
+    {
+      "name": "panel:worker.restartPauses",
+      "passed": false
+    },
+    {
+      "name": "panel:worker.sessionRetained",
+      "passed": false
+    },
+    {
+      "name": "panel:worker.receiptRetained",
+      "passed": false
+    },
+    {
+      "name": "panel:panel.closeReopenPaused",
+      "passed": false
+    },
+    {
+      "name": "panel:history.deleted",
+      "passed": false
+    },
+    {
+      "name": "panel:privacy.noDurableKey",
+      "passed": false
+    },
+    {
+      "name": "panel:layout.noHorizontalOverflow",
+      "passed": false
+    },
+    {
+      "name": "panel:privacy.keyNotInTarget",
+      "passed": false
+    },
+    {
+      "name": "panel:session.cleared",
+      "passed": false
+    },
+    {
+      "name": "deterministic:fault.concurrentDuplicate",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.confirmReplay",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.revokedApproval",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.changedTarget",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.revokeDuringRead",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.cancelLateResult",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.recovery.prepared",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.recovery.dispatching",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.recovery.responded",
+      "passed": true
+    },
+    {
+      "name": "deterministic:fault.recovery.finished",
+      "passed": true
+    }
+  ]
+}

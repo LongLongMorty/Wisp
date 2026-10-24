@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-10-20T13:02:34.829Z",
+  "kind": "local-reproducible-release-candidate",
+  "version": "0.1.0-rc.1",
+  "status": "incomplete",
+  "output": "E:\\Wisp\\.cache\\candidates\\0.1.0-rc.1-2026-10-20T13-02-34-825Z",
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "checks": [
+    {
+      "name": "frozenAcceptance",
+      "passed": true,
+      "detail": {
+        "status": "passed",
+        "sha256": "fd2384fd9b30dcead218803173c025c54e1832735cb6874272ed3e08911b19c1"
+      }
+    },
+    {
+      "name": "sourceSnapshot",
+      "passed": true,
+      "detail": {
+        "files": 271,
+        "sha256": "c7abd20f8d8ef1c117a1f0a7f1fd82eb9b9430a1528dee57066008cb616252ca",
+        "git": "No Git metadata; content-addressed source snapshot"
+      }
+    },
+    {
+      "name": "cleanInstall",
+      "passed": false,
+      "error": "Command failed: D:\\nodejs\\node.exe D:\\nodejs\\node_global\\node_modules\\npm\\bin\\npm-cli.js ci --offline --no-audit --no-fund\nnpm WARN cleanup Failed to remove some directories [\nnpm WARN cleanup   [\nnpm WARN cleanup     '\\\\\\\\?\\\\E:\\\\Wisp\\\\.cache\\\\candidates\\\\0.1.0-rc.1-2026-10-20T13-02-34-825Z\\\\clean\\\\node_modules',\nnpm WARN cleanup     [Error: EPERM: operation not permitted, rmdir 'E:\\Wisp\\.cache\\candidates\\0.1.0-rc.1-2026-10-20T13-02-34-825Z\\clean\\node_modules\\strip-literal'] {\nnpm WARN cleanup       errno: -4048,\nnpm WARN cleanup       code: 'EPERM',\nnpm WARN cleanup       syscall: 'rmdir',\nnpm WARN cleanup       path: 'E:\\\\Wisp\\\\.cache\\\\candidates\\\\0.1.0-rc.1-2026-10-20T13-02-34-825Z\\\\clean\\\\node_modules\\\\strip-literal'\nnpm WARN cleanup     }\nnpm WARN cleanup   ]\nnpm WARN cleanup ]\nnpm ERR! code ENOTCACHED\nnpm ERR! request to https://registry.npmmirror.com/vite/-/vite-7.1.7.tgz failed: cache mode is 'only-if-cached' but no cached response is available.\n\nnpm ERR! A complete log of this run can be found in: E:\\Wisp\\.cache\\npm\\_logs\\2026-10-20T13_02_40_368Z-debug-0.log\n"
+    },
+    {
+      "name": "sourceAndAcceptanceUnchanged",
+      "passed": true,
+      "detail": {
+        "sourceFiles": 271
+      }
+    }
+  ],
+  "artifacts": {
+    "source-manifest.json": "518520cdecd96f3605995673bb31f867e4532f4de1d0e54d4493a532266aec02",
+    "wisp-0.1.0-rc.1-source.zip": "c7abd20f8d8ef1c117a1f0a7f1fd82eb9b9430a1528dee57066008cb616252ca"
+  },
+  "publication": "local-only",
+  "manualBrowserLoad": "not-run"
+}

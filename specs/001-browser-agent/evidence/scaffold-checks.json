@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-10-18T02:20:38.177Z",
+  "status": "partial-milestone",
+  "tasksCompleted": [
+    "T-002a",
+    "T-003a"
+  ],
+  "pending": [
+    "T-001",
+    "T-002b",
+    "T-003b"
+  ],
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "browser": "Chrome/156.0.8078.35"
+  },
+  "checks": [
+    {
+      "command": "check",
+      "stdout": "ESM syntax, JSON and extension entry paths: PASS\nType declarations have not been checked by the TypeScript compiler.\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "command": "test",
+      "stdout": "TAP version 13\n# Subtest: valid actions survive JSON decoding without sharing input references\nok 1 - valid actions survive JSON decoding without sharing input references\n  ---\n  duration_ms: 3.0663\n  type: 'test'\n  ...\n# Subtest: unknown action and executable fields are rejected\nok 2 - unknown action and executable fields are rejected\n  ---\n  duration_ms: 0.6144\n  type: 'test'\n  ...\n# Subtest: all target identity scopes are mandatory\nok 3 - all target identity scopes are mandatory\n  ---\n  duration_ms: 0.271\n  type: 'test'\n  ...\n# Subtest: navigation disallows script URLs, credentials and malformed URLs\nok 4 - navigation disallows script URLs, credentials and malformed URLs\n  ---\n  duration_ms: 0.3583\n  type: 'test'\n  ...\n# Subtest: timeouts and scrolling reject unbounded, fractional and nonfinite values\nok 5 - timeouts and scrolling reject unbounded, fractional and nonfinite values\n  ---\n  duration_ms: 0.4279\n  type: 'test'\n  ...\n# Subtest: fill values are bounded and errors do not expose the submitted value\nok 6 - fill values are bounded and errors do not expose the submitted value\n  ---\n  duration_ms: 0.2213\n  type: 'test'\n  ...\n# Subtest: key allowlist excludes browser shortcuts\nok 7 - key allowlist excludes browser shortcuts\n  ---\n  duration_ms: 0.2873\n  type: 'test'\n  ...\n# Subtest: conditions validate strictly including empty comparison values\nok 8 - conditions validate strictly including empty comparison values\n  ---\n  duration_ms: 0.4601\n  type: 'test'\n  ...\n# Subtest: wire payload uses UTF-8 byte limit before JSON parsing\nok 9 - wire payload uses UTF-8 byte limit before JSON parsing\n  ---\n  duration_ms: 0.6462\n  type: 'test'\n  ...\n# Subtest: prototype fields, arrays and nonplain request objects are rejected\nok 10 - prototype fields, arrays and nonplain request objects are rejected\n  ---\n  duration_ms: 0.5714\n  type: 'test'\n  ...\n1..10\n# tests 10\n# suites 0\n# pass 10\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 103.165\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "command": "build",
+      "stdout": "Native MV3 scaffold built: E:\\Wisp\\dist\\extension\nCopy build only; WXT/TypeScript compilation and browser acceptance remain pending.\n",
+      "stderr": "",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "TypeScript compiler not installed or run",
+    "WXT/React/Vitest not installed",
+    "Chrome GPU subprocess failure blocks browser validation",
+    "npm run scripts fail in current shell; direct Node equivalents passed",
+    "npm registry connection rejected with EACCES"
+  ],
+  "files": {
+    "package.json": "00f95c2c69bb861ada58eb12e5150c829d358e80f0f97773e1833fe4ec1ed24d",
+    "packages/protocol/package.json": "95588d92f1d7bb32a7b97435beea43361887caa2646dd314d7c414e71cb1a654",
+    "packages/browser-chrome/README.md": "8e48fed97fb964a70aacaf53a73210e256ae1b885251e2a721f3b7aa59cc81b6",
+    "packages/runtime/README.md": "d882dd20b26fd44e3a1e76d3ef1367fa71700c92e17f46c17e31e632ed70dd14",
+    "packages/models/README.md": "204e8d4af358a4f8995184ded1783b0fd33014e37136a4e7dabde120e90c9cfe",
+    "packages/policy/README.md": "b6c9fc0d66eff8592de58fbb159c39031efb5f25a372c652fb0f3af49c44f055",
+    "packages/sdk/README.md": "ebfc68f1d1bead6fc08c7bf7d1093847a53e9c925b674c506a672869fdf60879",
+    "packages/protocol/src/index.mjs": "3d8ada625f92ac54f9f00ed5fd236b25717dc85ae046b78a4f4fb0fb6107c9cb",
+    "packages/protocol/src/index.d.ts": "fccc5c2a6e797596b02585af25900ce85a2ce46d856cff57feb6941bf2f44c64",
+    "apps/extension/package.json": "7b56f6b7d52011d2457353cdbf1d112f7f144848ea2ef0b5af0ea1a551794cee",
+    "apps/extension/manifest.json": "65e37136bf3b6bacd8cd5eabf52e389a13638a6c71ef31764359ddae2955451c",
+    "apps/extension/entrypoints/background.mjs": "5a5c184c42ec80f01e214adf270b02cc7b15b81f18014b7847066ac7130a2e7d",
+    "apps/extension/entrypoints/sidepanel/index.html": "5fe2e2a2c84539228b218f745c8c12a29f52fcecada10abad28c2d855e8cf115",
+    "scripts/build.mjs": "590af6f21d27d3f67d611afd6cb81f8743cbb22ca2a1613090a17e53f31904aa",
+    "scripts/check.mjs": "327d4b78976f1dd98a3c9aebaac91e7f1e851913a87be4bb28c96294cd0ed4f2",
+    "packages/protocol/test/action.test.mjs": "0faa63062253a2d98673b279e3a49041ff15eb7f56e0d479ad81ca0600c472c8"
+  }
+}

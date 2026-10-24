@@ -1,0 +1,147 @@
+{
+  "timestamp": "2026-10-20T13:02:09.096Z",
+  "kind": "documentation-and-traceability-review",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "localLinks",
+      "passed": true,
+      "detail": {
+        "documents": 12,
+        "links": 326
+      }
+    },
+    {
+      "name": "requirementTraceability",
+      "passed": true,
+      "detail": {
+        "requirements": 41,
+        "counts": {
+          "US": 5,
+          "FR": 17,
+          "NFR": 7,
+          "AC": 12
+        }
+      }
+    },
+    {
+      "name": "static",
+      "passed": true,
+      "detail": {
+        "command": "D:\\nodejs\\node.exe scripts/static-check.mjs"
+      }
+    },
+    {
+      "name": "build",
+      "passed": true,
+      "detail": {
+        "command": "D:\\nodejs\\node.exe scripts/build.mjs"
+      }
+    },
+    {
+      "name": "sdkExample",
+      "passed": true,
+      "detail": {
+        "command": "D:\\nodejs\\node.exe packages/sdk/examples/minimal.mjs"
+      }
+    },
+    {
+      "name": "documentedSdkExample",
+      "passed": true,
+      "detail": {
+        "command": "D:\\nodejs\\node.exe docs/examples/sdk-task.mjs"
+      }
+    },
+    {
+      "name": "releaseEvidenceReview",
+      "passed": true,
+      "detail": {
+        "strictReleaseStatus": "incomplete",
+        "originalToolchainStatus": "incomplete",
+        "suites": {
+          "live": {
+            "status": "passed",
+            "implementationHashesMatch": true,
+            "strictSourceHashesMatch": false,
+            "statusLineOnly": true,
+            "differences": [
+              "specs/001-browser-agent/release-v01.md"
+            ]
+          },
+          "performance": {
+            "status": "passed",
+            "implementationHashesMatch": true,
+            "strictSourceHashesMatch": false,
+            "statusLineOnly": true,
+            "differences": [
+              "specs/001-browser-agent/release-v01.md"
+            ]
+          },
+          "manual": {
+            "status": "passed",
+            "implementationHashesMatch": true,
+            "strictSourceHashesMatch": true,
+            "statusLineOnly": false,
+            "differences": []
+          },
+          "reliability": {
+            "status": "passed",
+            "implementationHashesMatch": true,
+            "strictSourceHashesMatch": false,
+            "statusLineOnly": true,
+            "differences": [
+              "specs/001-browser-agent/release-v01.md"
+            ]
+          }
+        },
+        "faultMatrix": {
+          "status": "passed",
+          "sourceHashesMatch": true
+        },
+        "reviewScope": "Independent documentation review; original t014 aggregate and fingerprints are not rewritten"
+      }
+    },
+    {
+      "name": "originalEvidenceUnchanged",
+      "passed": true,
+      "detail": {
+        "reports": 16,
+        "sha256": {
+          "specs/001-browser-agent/evidence/t013-observer-browser.json": "00efef9b3db8ed03251ad2084f2644042783cd2e636dd115cb0228d3005f5d59",
+          "specs/001-browser-agent/evidence/t013-control-browser.json": "e5a5374ba5fcf61f6fcacce26ea4bc1b79e5cdbda9f93117eef913bf6dc9234e",
+          "specs/001-browser-agent/evidence/t013-policy-browser.json": "314a1d97ff2c23e1eacc0630a808895202cfb4f76de114c7b21bf92223455b8d",
+          "specs/001-browser-agent/evidence/t013-runtime-browser.json": "e3379ccbe9c0601f5c01faade7f305051b4d37e4f2075f545b3cde2717d25864",
+          "specs/001-browser-agent/evidence/t013-loop-browser.json": "3c06155a7dff9aad74345a7754f11cd9167abb56f2d27bd08d5a0854d1aba10a",
+          "specs/001-browser-agent/evidence/t013-sdk-browser.json": "67b2b7f67c03f863a7a7362eac7b15f496f834e08e9b230e345a4186bb31f59c",
+          "specs/001-browser-agent/evidence/t013-panel-browser.json": "73c666b365a64ed08eec96b8d2408f25086ba5dabde10a3493565ccb3ff6d2eb",
+          "specs/001-browser-agent/evidence/t013-deterministic.json": "778f59daa8e924cb105b413729369f3ad7f37230090d37c2f7a24d7850c5773d",
+          "specs/001-browser-agent/evidence/t013-faults.json": "d94697a0e289040468ddb52483eff3ffc4866f5b17875d122d73c8429f94e4e9",
+          "specs/001-browser-agent/evidence/t013-checks.json": "f24444238b8cf7d429b6a525822658744cef24b572b3967d42c544616674e11a",
+          "specs/001-browser-agent/evidence/t014-live.json": "ceab81ce63e0a128841f4d70dab24ac588abb4be5bfabf61b45d94c3293adadf",
+          "specs/001-browser-agent/evidence/t014-performance.json": "c93d36ea9f195e619251a17faa1c62141d9adae4cd89511867b141bb5cdb5b6c",
+          "specs/001-browser-agent/evidence/t014-manual.json": "49894f41389e5f47f9d8c0855455ad3bd5b5b9bd4fb85e49e7c6b6d90c6c4d5e",
+          "specs/001-browser-agent/evidence/t014-reliability.json": "eddbdc7f4ee31ca106107377f2309860581bb9a2532a6bdc228b2afea7671f91",
+          "specs/001-browser-agent/evidence/t014-acceptance.json": "c930ca49cbf3e8ccd77484c172e2f65767b908f8bffebfe9868b4c1310672579",
+          "specs/001-browser-agent/evidence/t014-checks.json": "f7be12ea4721c6492b1681bac4c53ed644b3087dcdc7e9ae39f530d886b7d593"
+        }
+      }
+    }
+  ],
+  "files": {
+    "README.md": "f06eec06b057b9f22bb2806571c9e4d76cbdc7fbd7513f00610912960f17d176",
+    "specs/001-browser-agent/README.md": "92364507ed0cd660d0561cda3710462045230e110d3dba33453093a0ae6ca5eb",
+    "specs/001-browser-agent/documentation-v01.md": "cfc62c586593c276def4782604e34b59f11d27ced35e49e163b560866cbe2d6f",
+    "specs/001-browser-agent/traceability.md": "da276edd96c20f69aae481a2c74b0b3b8db2bf5c4df9da0a2d3fefa150935483",
+    "specs/001-browser-agent/tasks.md": "8ef1863e8d744aaaffc5818480d196def31b4adbf14537a46c3de107545568ef",
+    "specs/001-browser-agent/t015-report.md": "b6d75ffb29f1b4e2190c643bcca5773208ba700981300562533d1c144a2185f2",
+    "docs/changelog.md": "24ca7e51a8d19a0018619b98ba475cb156ee779002fd9af8b04ccd76124394a8",
+    "docs/getting-started.md": "02af980eec47cab73274d8a5341a6012867706adcba2b9ff122a9d29ffdd481a",
+    "docs/sdk.md": "0f6bca1c14163b0af5e2bbbe07760dd7bfbd73b1816ab3a57a803465491005b5",
+    "docs/security.md": "0c733e0c25a47512d220ab22586162f31e4333dc362d5075c1834037b7e92e01",
+    "docs/support.md": "b1743ec3f21e402e90dbba53f2af5c42194a22b1c7f504ea4f12f30512b9a388",
+    "docs/verification.md": "cc30ca25b972a7d49d9215e7255a7507e5611c860f75ed92d3be43932094b88c",
+    "docs/examples/sdk-task.mjs": "ecdd65d1c560e7739cc179df6385e9f99d9fb086642636ce18f45455ea5eff17",
+    "specs/001-browser-agent/traceability.json": "1f3982ddfb7dfa43855bc00475c5423906bd2bb51fa4e8164fd6444b88ec0971",
+    "scripts/validate-docs.mjs": "7a258b9c9070bb818ebee8565b472c4a0f08151ff60a71da5de9a524e4621ff1"
+  }
+}

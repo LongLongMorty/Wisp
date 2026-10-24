@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "types": [],
+    "rewriteRelativeImportExtensions": true
+  },
+  "include": [
+    "src/**/*.mts"
+  ]
+}

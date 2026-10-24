@@ -1,0 +1,104 @@
+{
+  "machine": {
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics         ",
+    "logicalCpus": 12,
+    "totalMemoryBytes": 29909643264
+  },
+  "timestamp": "2026-10-18T15:12:29.340Z",
+  "fixtureVersion": "fixture-0.1",
+  "node": "v22.20.0",
+  "platform": "win32",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "observe.semanticControls",
+      "passed": true
+    },
+    {
+      "name": "observe.disabled",
+      "passed": true
+    },
+    {
+      "name": "observe.openShadow",
+      "passed": true
+    },
+    {
+      "name": "observe.redaction",
+      "passed": true
+    },
+    {
+      "name": "observe.incompleteScanSuppressesText",
+      "passed": true
+    },
+    {
+      "name": "observe.budget",
+      "passed": true
+    },
+    {
+      "name": "reference.unrelatedRender",
+      "passed": true
+    },
+    {
+      "name": "reference.replacement",
+      "passed": true
+    },
+    {
+      "name": "reference.sameObjectReinsert",
+      "passed": true
+    },
+    {
+      "name": "reference.scopeExpiry",
+      "passed": true
+    },
+    {
+      "name": "reference.navigation",
+      "passed": true
+    },
+    {
+      "name": "observe.unsupportedFrame",
+      "passed": true
+    },
+    {
+      "name": "observe.originGate",
+      "passed": true
+    },
+    {
+      "name": "observe.performance",
+      "passed": true
+    }
+  ],
+  "files": {
+    "packages/browser-chrome/src/references.mts": "900e10b18bc357daaf6d6f153c6e6d5e548d2cf4a767bd53a6bd28a4d1a4d4ec",
+    "packages/browser-chrome/src/sanitize.mts": "7c8f4120bafd11d078f4ec6aa10b399092c77111f6fc5531ba812115315b2dc6",
+    "packages/browser-chrome/src/document.mts": "14e9fef7da8592ca1e894930120bfaaa1a3de330368f9d1c2b49c01a95cc561e",
+    "packages/browser-chrome/src/chrome.mts": "fa5abebe96f556b1ab654c8f34df340ec0b155f7f6872a376f9bc44b29ae461b",
+    "packages/browser-chrome/src/control-document.mts": "e92e22aa9b7d0ff27e4b1d7a926103c25df27604d43b0f583ae5d46e2ddc37f8",
+    "packages/browser-chrome/src/index.mts": "a14a89c20fb17238c36bdbc472f722365f846c1e36329866d54c5685e6a48ffc",
+    "packages/browser-chrome/test/observer-browser.mjs": "d5d9087eb8fab74eaf50a68aa0827d4dfe13beb96f180df01aa0a7e15062b52a",
+    "packages/browser-chrome/package.json": "3e978e9b7cf097f04dea2dd66fd68e80abc748160ab89820f2c80a0afef49696",
+    "packages/browser-chrome/tsconfig.json": "a207ce668121ea41417cfa6765668c348418c9e9607c31bf6f16436178a26e43",
+    "fixtures/web/domain.mjs": "84220f790727054a0b9b6b3fff03c4f71359a54568653b332a138c6705def221",
+    "fixtures/web/server.mjs": "1f127c7d2ed668ec6ceb8836b7c5da29bdfd5da9895ac25c7a79bcb41e26c32a",
+    "fixtures/web/oracle.mjs": "cc52d1fd81892ab36d76e6662480568d9831f3f32fd1a25834d403eb1c0e9109",
+    "fixtures/web/pages.mjs": "dd0b00dc9e70795469603266b276a403f266a1d19cd239bd82f9f6469a337d60",
+    "fixtures/web/public/app.mjs": "c87d6c957d21a92444afc2f64a589e44325cd637a550857859fbfe0b56fee75a",
+    "fixtures/web/public/style.css": "767186f736acd7fdcada587e5f088003c061a439b9deb3d5eb82f03879a35b85"
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.35",
+    "revision": "@4befba4e8237fc6452fe5918001a01235180e6fc",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.16"
+  },
+  "performance": {
+    "sampleCount": 30,
+    "p50Ms": 19.051799999999957,
+    "p95Ms": 23.52019999999993,
+    "maxMs": 37.0861000000001,
+    "returnedElements": 115,
+    "candidateButtons": 200
+  }
+}

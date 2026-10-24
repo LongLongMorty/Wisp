@@ -1,0 +1,23 @@
+{
+  "name": "@wisp/extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@wisp/protocol": "0.1.0",
+    "@wisp/sdk": "0.1.0",
+    "@wisp/runtime": "0.1.0",
+    "@wisp/models": "0.1.0",
+    "@wisp/policy": "0.1.0",
+    "@wisp/browser-chrome": "0.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@wxt-dev/module-react": "1.2.2",
+    "wxt": "0.21.4",
+    "vite": "7.1.7",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1"
+  }
+}

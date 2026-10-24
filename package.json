@@ -1,0 +1,49 @@
+{
+  "name": "wisp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "prepare": "node scripts/prepare.mjs",
+    "build": "node scripts/build.mjs",
+    "build:protocol": "node scripts/protocol-build.mjs",
+    "check": "node scripts/check.mjs",
+    "check:static": "node scripts/static-check.mjs",
+    "typecheck": "node scripts/typecheck.mjs",
+    "test": "node scripts/test.mjs",
+    "probe:t001": "node probes/t001/run.mjs",
+    "validate:toolchain": "node scripts/validate-toolchain.mjs",
+    "fixtures:start": "node fixtures/web/start.mjs",
+    "fixtures:smoke": "node fixtures/web/test/browser-smoke.mjs",
+    "build:browser": "node scripts/browser-build.mjs",
+    "observer:smoke": "node scripts/browser-build.mjs && node packages/browser-chrome/test/observer-browser.mjs",
+    "control:smoke": "node scripts/control-smoke.mjs",
+    "policy:smoke": "node scripts/policy-smoke.mjs",
+    "build:policy": "node scripts/policy-build.mjs",
+    "runtime:smoke": "node scripts/runtime-smoke.mjs",
+    "build:runtime": "node scripts/runtime-build.mjs",
+    "build:models": "node scripts/protocol-build.mjs && node scripts/models-build.mjs",
+    "models:live": "npm run build:models && node scripts/models-live.mjs",
+    "loop:smoke": "node scripts/loop-smoke.mjs",
+    "build:sdk": "node scripts/sdk-build.mjs",
+    "sdk:example": "npm run build:sdk && node packages/sdk/examples/minimal.mjs",
+    "sdk:smoke": "node scripts/sdk-smoke.mjs",
+    "panel:smoke": "node scripts/panel-smoke.mjs",
+    "faults:smoke": "node scripts/faults-smoke.mjs",
+    "release:smoke": "node scripts/release-smoke.mjs",
+    "release:live": "node scripts/release-run.mjs live",
+    "release:performance": "node scripts/release-run.mjs performance",
+    "release:reliability": "node scripts/release-run.mjs reliability"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "22.18.6"
+  }
+}

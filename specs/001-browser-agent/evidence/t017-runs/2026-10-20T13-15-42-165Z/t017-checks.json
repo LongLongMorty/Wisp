@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-10-20T13:05:07.671Z",
+  "kind": "local-reproducible-release-candidate",
+  "version": "0.1.0-rc.1",
+  "status": "incomplete",
+  "output": "E:\\Wisp\\.cache\\candidates\\0.1.0-rc.1-2026-10-20T13-05-07-667Z",
+  "installMode": "offline",
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "checks": [
+    {
+      "name": "frozenAcceptance",
+      "passed": true,
+      "detail": {
+        "status": "passed",
+        "sha256": "3e4dfdb9f9366fa133625d9f8c96cfc557d1b7a1da3cbdba9dbf879753e978d6"
+      }
+    },
+    {
+      "name": "sourceSnapshot",
+      "passed": true,
+      "detail": {
+        "files": 271,
+        "sha256": "fad02bb3b8af6d72a934adced5deced7af0858f3d6174afbff405819f2235319",
+        "git": "No Git metadata; content-addressed source snapshot"
+      }
+    },
+    {
+      "name": "cleanInstall",
+      "passed": false,
+      "error": "Command failed: D:\\nodejs\\node.exe D:\\nodejs\\node_global\\node_modules\\npm\\bin\\npm-cli.js ci --offline --no-audit --no-fund --fetch-retries=0 --fetch-timeout=30000\nnpm WARN cleanup Failed to remove some directories [\nnpm WARN cleanup   [\nnpm WARN cleanup     '\\\\\\\\?\\\\E:\\\\Wisp\\\\.cache\\\\candidates\\\\0.1.0-rc.1-2026-10-20T13-05-07-667Z\\\\clean\\\\node_modules\\\\@aklinker1\\\\rollup-plugin-visualizer',\nnpm WARN cleanup     [Error: EPERM: operation not permitted, rmdir 'E:\\Wisp\\.cache\\candidates\\0.1.0-rc.1-2026-10-20T13-05-07-667Z\\clean\\node_modules\\@aklinker1\\rollup-plugin-visualizer'] {\nnpm WARN cleanup       errno: -4048,\nnpm WARN cleanup       code: 'EPERM',\nnpm WARN cleanup       syscall: 'rmdir',\nnpm WARN cleanup       path: 'E:\\\\Wisp\\\\.cache\\\\candidates\\\\0.1.0-rc.1-2026-10-20T13-05-07-667Z\\\\clean\\\\node_modules\\\\@aklinker1\\\\rollup-plugin-visualizer'\nnpm WARN cleanup     }\nnpm WARN cleanup   ]\nnpm WARN cleanup ]\nnpm ERR! code ENOTCACHED\nnpm ERR! request to https://registry.npmmirror.com/vite/-/vite-7.1.7.tgz failed: cache mode is 'only-if-cached' but no cached response is available.\n\nnpm ERR! A complete log of this run can be found in: E:\\Wisp\\.cache\\npm\\_logs\\2026-10-20T13_05_09_535Z-debug-0.log\n"
+    },
+    {
+      "name": "sourceAndAcceptanceUnchanged",
+      "passed": true,
+      "detail": {
+        "sourceFiles": 271
+      }
+    }
+  ],
+  "artifacts": {
+    "extension-manifest.json": "2d86dd7de5c5e77c5a3121115d570e55974b2f3bb7609edd204351e29a95f089",
+    "source-manifest.json": "b286af31bd8fe591882ef6503f2ab7d6464417beb8328aafd8dc1ba811ba9e63",
+    "wisp-0.1.0-rc.1-chrome-mv3.zip": "b9ab70b52a784df4d2956a4cad665209a760f3d9ff345f175dd32e84257bf4e8",
+    "wisp-0.1.0-rc.1-source.zip": "fad02bb3b8af6d72a934adced5deced7af0858f3d6174afbff405819f2235319"
+  },
+  "publication": "local-only",
+  "manualBrowserLoad": "not-run"
+}

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Wisp T-001 probe",
+  "version": "0.0.1",
+  "minimum_chrome_version": "125",
+  "permissions": [
+    "debugger",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "resolved",
+  "attempts": [
+    {
+      "timestamp": "2026-10-18T02:46:56.694Z",
+      "command": "npm install --registry=https://registry.npmmirror.com --cache=E:/Wisp/.cache/npm --fetch-retries=0 --fetch-timeout=10000 --no-audit --no-fund",
+      "passed": false,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "npm ERR! code EACCES\nnpm ERR! errno EACCES\nnpm ERR! FetchError: request to https://registry.npmmirror.com/@types%2fnode failed, reason: \nnpm ERR!     at ClientRequest.<anonymous> (D:\\nodejs\\node_global\\node_modules\\npm\\node_modules\\minipass-fetch\\lib\\index.js:130:14)\nnpm ERR!     at ClientRequest.emit (node:events:519:28)\nnpm ERR!     at emitErrorEvent (node:_http_client:105:11)\nnpm ERR!     at _destroy (node:http:898:9)\nnpm ERR!     at onSocketNT (node:http:918:5)\nnpm ERR!     at process.processTicksAndRejections (node:internal/process/task_queues:91:21)\nnpm ERR!  FetchError: request to https://registry.npmmirror.com/@types%2fnode failed, reason: \nnpm ERR!     at ClientRequest.<anonymous> (D:\\nodejs\\node_global\\node_modules\\npm\\node_modules\\minipass-fetch\\lib\\index.js:130:14)\nnpm ERR!     at ClientRequest.emit (node:events:519:28)\nnpm ERR!     at emitErrorEvent (node:_http_client:105:11)\nnpm ERR!     at _destroy (node:http:898:9)\nnpm ERR!     at onSocketNT (node:http:918:5)\nnpm ERR!     at process.processTicksAndRejections (node:internal/process/task_queues:91:21) {\nnpm ERR!   code: 'EACCES',\nnpm ERR!   errno: 'EACCES',\nnpm ERR!   type: 'system',\nnpm ERR!   requiredBy: '.'\nnpm ERR! }\nnpm ERR! \nnpm ERR! The operation was rejected by your operating system.\nnpm ERR! It's possible that the file was already in use (by a text editor or antivirus),\nnpm ERR! or that you lack permissions to access it.\nnpm ERR! \nnpm ERR! If you believe this might be a permissions issue, please double-check the\nnpm ERR! permissions of the file and its containing directories, or try running\nnpm ERR! the command again as root/Administrator.\n\nnpm ERR! A complete log of this run can be found in: E:\\Wisp\\.cache\\npm\\_logs\\2026-10-18T02_46_01_895Z-debug-0.log\n"
+    },
+    {
+      "timestamp": "2026-10-18T02:49:55.966Z",
+      "note": "Retry with the same mirror succeeded; the earlier EACCES did not reproduce and is treated as a transient host-environment failure.",
+      "command": "npm install --registry=https://registry.npmmirror.com --no-audit --no-fund",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "\n> wisp@0.1.0 prepare\n> node scripts/prepare.mjs\n\n\nWXT 0.21.4\n i Generating types...\n + Finished in 439 ms\n\nadded 154 packages in 16s\n",
+      "lockfile": {
+        "path": "package-lock.json",
+        "bytes": 125386,
+        "lockfileVersion": 3
+      }
+    }
+  ]
+}

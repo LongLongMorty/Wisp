@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-10-18T02:53:03.734Z",
+  "node": "v22.20.0",
+  "platform": "win32",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "static",
+      "passed": true,
+      "stdout": "Node syntax, JSON and WXT source entry paths: PASS\nThis does not replace tsc type checking or TSX/WXT compilation.\n"
+    },
+    {
+      "name": "protocol-tests",
+      "passed": true,
+      "stdout": "TAP version 13\n# Subtest: valid actions survive JSON decoding without sharing input references\nok 1 - valid actions survive JSON decoding without sharing input references\n  ---\n  duration_ms: 2.4931\n  type: 'test'\n  ...\n# Subtest: unknown action and executable fields are rejected\nok 2 - unknown action and executable fields are rejected\n  ---\n  duration_ms: 0.5995\n  type: 'test'\n  ...\n# Subtest: all target identity scopes are mandatory\nok 3 - all target identity scopes are mandatory\n  ---\n  duration_ms: 0.2883\n  type: 'test'\n  ...\n# Subtest: navigation disallows script URLs, credentials and malformed URLs\nok 4 - navigation disallows script URLs, credentials and malformed URLs\n  ---\n  duration_ms: 0.3747\n  type: 'test'\n  ...\n# Subtest: timeouts and scrolling reject unbounded, fractional and nonfinite values\nok 5 - timeouts and scrolling reject unbounded, fractional and nonfinite values\n  ---\n  duration_ms: 0.468\n  type: 'test'\n  ...\n# Subtest: fill values are bounded and errors do not expose the submitted value\nok 6 - fill values are bounded and errors do not expose the submitted value\n  ---\n  duration_ms: 0.2106\n  type: 'test'\n  ...\n# Subtest: key allowlist excludes browser shortcuts\nok 7 - key allowlist excludes browser shortcuts\n  ---\n  duration_ms: 0.8218\n  type: 'test'\n  ...\n# Subtest: conditions validate strictly including empty comparison values\nok 8 - conditions validate strictly including empty comparison values\n  ---\n  duration_ms: 0.4296\n  type: 'test'\n  ...\n# Subtest: wire payload uses UTF-8 byte limit before JSON parsing\nok 9 - wire payload uses UTF-8 byte limit before JSON parsing\n  ---\n  duration_ms: 0.6047\n  type: 'test'\n  ...\n# Subtest: prototype fields, arrays and nonplain request objects are rejected\nok 10 - prototype fields, arrays and nonplain request objects are rejected\n  ---\n  duration_ms: 0.5209\n  type: 'test'\n  ...\n1..10\n# tests 10\n# suites 0\n# pass 10\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 132.4364\n"
+    },
+    {
+      "name": "typecheck",
+      "passed": true,
+      "stdout": "\nWXT 0.21.4\n\u001b[36mi\u001b[39m Generating types...\n\u001b[32m√\u001b[39m Finished in 287 ms\n"
+    },
+    {
+      "name": "build",
+      "passed": true,
+      "stdout": "\nWXT 0.21.4\n\u001b[36mi\u001b[39m Building chrome-mv3 for production with Vite 8.3.4\n\u001b[?25l\r⠋ Preparing...\u001b[K\r⠋ [1/1] background, sidepanel\u001b[K\r⠙ [1/1] background, sidepanel\u001b[K\r\u001b[K\u001b[?25h\r\u001b[K\u001b[?25h\u001b[32m√\u001b[39m Built extension in 246 ms\n  ├─ .output\\chrome-mv3\\manifest.json                            277 B    \n  ├─ .output\\chrome-mv3\\sidepanel.html                           449 B    \n  ├─ .output\\chrome-mv3\\background.js                            1.00 kB  \n  ├─ .output\\chrome-mv3\\chunks\\_virtual_wxt-plugins-DB4ZMZxa.js  29 B     \n  ├─ .output\\chrome-mv3\\chunks\\sidepanel-D2QChPs8.js             140.82 kB\n  └─ .output\\chrome-mv3\\assets\\sidepanel-CSBSSHKl.css            171 B    \nΣ Total size: 142.75 kB                                        \n\u001b[32m√\u001b[39m Finished in 414 ms\nWXT MV3 manifest and entry resources: PASS\n"
+    }
+  ],
+  "files": {
+    "apps/extension/entrypoints/background.ts": "1eef39481bb8db4813b15ff320eced1227605f3a043ede0647b19f85f8e8d2b9",
+    "apps/extension/entrypoints/sidepanel/App.tsx": "1de52dde6733b8b1331ac7962543984a07d7f91e64a14cc05e3619b69e81e936",
+    "apps/extension/entrypoints/sidepanel/index.html": "a1403500f8765e64b5386588ce72f6b65b6865df001ec0eb22190fc74c9c0cff",
+    "apps/extension/entrypoints/sidepanel/main.tsx": "d9b5bd7780cbef91bb6f948f391254a033c6d04eb306754c61cba84ebbeea661",
+    "apps/extension/entrypoints/sidepanel/style.css": "634cfd03b5571f29caa2146c2606bba0ba5e8035e665fee76220d075b1136fca",
+    "apps/extension/package.json": "4c32dacb24d4bea2f856ab9e279fddc8fb709f7678f13daeccdb860f71ac1816",
+    "apps/extension/tsconfig.json": "ce69720394bcb3910e99922f3c3b887eaddc3c43c5618c484b4940e2d8fd9871",
+    "apps/extension/wxt.config.ts": "a320479c86c6bb575273a432edd56dbd5ff636d2dbb5a313f8699df5ec1d8400",
+    "packages/browser-chrome/README.md": "8e48fed97fb964a70aacaf53a73210e256ae1b885251e2a721f3b7aa59cc81b6",
+    "packages/models/README.md": "204e8d4af358a4f8995184ded1783b0fd33014e37136a4e7dabde120e90c9cfe",
+    "packages/policy/README.md": "b6c9fc0d66eff8592de58fbb159c39031efb5f25a372c652fb0f3af49c44f055",
+    "packages/protocol/package.json": "8e1bcb1dfc6b250602552e4666bc478c1dd4ab2431167947e8290c247cabdb55",
+    "packages/protocol/src/index.mts": "a8219e812c79fd7e18cc37e78bcbef6e2e0b08dea471c01ac665a7d06e1dd34f",
+    "packages/protocol/test/action.test.mjs": "03ee234d2001ddce951736e61c84479c143678caa8edcf06ac1f112e61109315",
+    "packages/protocol/test/contract.test-d.mts": "eef7ef4f100578d41c890b3f2784f9a5901a3e312189b70286582e3c42813a8d",
+    "packages/protocol/tsconfig.json": "6d7368dc4c8ec67bf082694d1f4e19578bbfe76a281f5a269ca4987c0c5a5179",
+    "packages/protocol/tsconfig.test.json": "4a31014f19b0737d4fafaf2eabe36d35163b9c810f1678de10bedc887fc6f8c5",
+    "packages/runtime/README.md": "d882dd20b26fd44e3a1e76d3ef1367fa71700c92e17f46c17e31e632ed70dd14",
+    "packages/sdk/README.md": "ebfc68f1d1bead6fc08c7bf7d1093847a53e9c925b674c506a672869fdf60879",
+    "scripts/build.mjs": "98b5ad046ff3c3c3aeb24a018d851f406a801b1967ff66ab7d117b16e496d88f",
+    "scripts/check.mjs": "936dddd8ae2e8c67b4d71f652d36b65e7f4eca64f66e515d898a9a613ef807fa",
+    "scripts/prepare.mjs": "5e0348f88d389e4e09b9a927414296447c05057c7a5b37f97759b7440043ce98",
+    "scripts/protocol-build.mjs": "85dafa571ef53e12afb02b987e824831649d30d9e50e2329d874aff3ac0ae53f",
+    "scripts/static-check.mjs": "53883663fa10ccb328f7d3d987215a189009bff98cbb37675ee16a2bb92f869a",
+    "scripts/tools.mjs": "b3fd9776e77efc89a90121a5fdfd7996850e86b1a44b4edfe227c14504a75782",
+    "scripts/typecheck.mjs": "215807044ce778143f3e513f125368abda58381c5d18ff4da45a6880ce7c0d3d",
+    "scripts/validate-toolchain.mjs": "c0d9deb539df8b07ffea9b9ae91036e218f021cf8f3ad39bbff0400ab8b44fae",
+    "scripts/verify-build.mjs": "ab0b3b3c45d741c8c77cd99c5b26429c874811bc41e1cb10c8baf026b4dd6a18",
+    "package.json": "ea050e8bcc68be9e84c46c945d185e189565befc41cda21a5fe0b05f904bab4e",
+    "package-lock.json": "71720fc9c3b1281f0e91fb69a553c76b3eb95b99c5a4944abae1d7d17f4f2244",
+    "tsconfig.base.json": "72c8229cbd45d3cfa56e86fffc50fbdbb8019a7da45f10400c7a3847bd58298e"
+  },
+  "lockfilePresent": true
+}

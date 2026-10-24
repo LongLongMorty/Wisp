@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "frozen-acceptance-closure-baseline",
+  "artifacts": {
+    "specs/001-browser-agent/evidence/t013-observer-browser.json": "00efef9b3db8ed03251ad2084f2644042783cd2e636dd115cb0228d3005f5d59",
+    "specs/001-browser-agent/evidence/t013-control-browser.json": "e5a5374ba5fcf61f6fcacce26ea4bc1b79e5cdbda9f93117eef913bf6dc9234e",
+    "specs/001-browser-agent/evidence/t013-policy-browser.json": "314a1d97ff2c23e1eacc0630a808895202cfb4f76de114c7b21bf92223455b8d",
+    "specs/001-browser-agent/evidence/t013-runtime-browser.json": "e3379ccbe9c0601f5c01faade7f305051b4d37e4f2075f545b3cde2717d25864",
+    "specs/001-browser-agent/evidence/t013-loop-browser.json": "3c06155a7dff9aad74345a7754f11cd9167abb56f2d27bd08d5a0854d1aba10a",
+    "specs/001-browser-agent/evidence/t013-sdk-browser.json": "67b2b7f67c03f863a7a7362eac7b15f496f834e08e9b230e345a4186bb31f59c",
+    "specs/001-browser-agent/evidence/t013-panel-browser.json": "73c666b365a64ed08eec96b8d2408f25086ba5dabde10a3493565ccb3ff6d2eb",
+    "specs/001-browser-agent/evidence/t013-deterministic.json": "778f59daa8e924cb105b413729369f3ad7f37230090d37c2f7a24d7850c5773d",
+    "specs/001-browser-agent/evidence/t013-faults.json": "d94697a0e289040468ddb52483eff3ffc4866f5b17875d122d73c8429f94e4e9",
+    "specs/001-browser-agent/evidence/t013-checks.json": "f24444238b8cf7d429b6a525822658744cef24b572b3967d42c544616674e11a",
+    "specs/001-browser-agent/evidence/t014-live.json": "ceab81ce63e0a128841f4d70dab24ac588abb4be5bfabf61b45d94c3293adadf",
+    "specs/001-browser-agent/evidence/t014-performance.json": "c93d36ea9f195e619251a17faa1c62141d9adae4cd89511867b141bb5cdb5b6c",
+    "specs/001-browser-agent/evidence/t014-manual.json": "49894f41389e5f47f9d8c0855455ad3bd5b5b9bd4fb85e49e7c6b6d90c6c4d5e",
+    "specs/001-browser-agent/evidence/t014-reliability.json": "eddbdc7f4ee31ca106107377f2309860581bb9a2532a6bdc228b2afea7671f91",
+    "specs/001-browser-agent/evidence/t014-acceptance.json": "c930ca49cbf3e8ccd77484c172e2f65767b908f8bffebfe9868b4c1310672579",
+    "specs/001-browser-agent/evidence/t014-checks.json": "f7be12ea4721c6492b1681bac4c53ed644b3087dcdc7e9ae39f530d886b7d593"
+  },
+  "specifications": {
+    "specs/001-browser-agent/release-v01.md": "bcbaac3f6d1026871cfdc95fbc6334401ba8ccc2440484e826381b9b00655176",
+    "specs/001-browser-agent/closure-v01.md": "b4757c91ec858cf2a2db76972deb2189810112cf4c0142f6ecdea15d972afbb2"
+  },
+  "transition": {
+    "file": "specs/001-browser-agent/release-v01.md",
+    "originalStatus": "状态：运行器与验收门禁已实现；实际模型、性能与人工验收待完成，T-014未勾选。依赖T-013，关联acceptance.md发布门槛及NFR-005–007。",
+    "frozenSha256": "bcbaac3f6d1026871cfdc95fbc6334401ba8ccc2440484e826381b9b00655176",
+    "originalSha256": "8a6c1e6e1f13fcacf86d6cdf50aa2bb62a4a5b91337a8be3557ac5d5e7938d7e"
+  }
+}

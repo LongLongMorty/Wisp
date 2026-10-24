@@ -1,0 +1,15 @@
+export const timestamp = '2026-10-18T03:00:00.000Z';
+export const target = { documentId: 'doc-1', frameId: 'main', observationId: 'obs-1', ref: 'ref-1' };
+export const evidence = { kind: 'text', url: 'https://example.test/work', documentId: 'doc-1', observationId: 'obs-1', capturedAt: timestamp, actual: 'Saved' };
+export const element = { ref: 'ref-1', tag: 'button', role: 'button', name: 'Save', enabled: true, editable: false, sensitive: false, bounds: { x: 10, y: 20, width: 80, height: 30 } };
+export const observation = { observationId: 'obs-1', documentId: 'doc-1', frameId: 'main', url: 'https://example.test/work', title: 'Work', capturedAt: timestamp, viewport: { width: 1280, height: 720, dpr: 1, scrollX: 0, scrollY: 0 }, elements: [element], text: 'Save', truncated: false, truncationReasons: [] };
+export const result = { actionId: 'action-1', dispatched: 'yes', responded: 'yes', verified: 'passed', evidence: [evidence] };
+export const verification = { status: 'passed', conditions: [{ condition: { kind: 'text', includes: 'Saved' }, status: 'passed', evidence: [evidence] }] };
+export const budget = Object.fromEntries(['steps', 'modelCalls', 'elapsedMs', 'contextChars', 'observationChars', 'consecutiveNoProgress'].map(key => [key, { used: 0, limit: 30 }]));
+export const confirmation = { confirmationId: 'confirm-1', actionId: 'action-1', origin: 'https://example.test', documentId: 'doc-1', targetFingerprint: 'fingerprint', contextDigest: 'a'.repeat(64), summary: 'Save the form', displayParameters: { name: '[REDACTED]' }, expiresAt: '2026-10-18T03:00:30.000Z' };
+export const extraction = { schemaId: 'rows', data: [{ id: 1 }], source: [evidence] };
+export const snapshot = { runId: 'run-1', tabId: 1, goal: 'Save form', status: 'running', updatedAt: timestamp };
+export const request = (type, payload = {}, extra = { runId: 'run-1' }) => ({ version: '0.1', requestId: 'req-1', type, ...extra, payload });
+export const event = (type, payload, extra = {}) => ({ version: '0.1', eventId: 'event-1', runId: 'run-1', seq: 1, timestamp, type, payload, ...extra });
+export const response = (type, data, extra = {}) => ({ version: '0.1', requestId: 'req-1', type, ok: true, data, ...extra });
+export const clone = value => structuredClone(value);

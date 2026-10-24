@@ -1,0 +1,10 @@
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {root} from './tools.mjs';
+import {panelHashes} from './panel-evidence.mjs';
+const names=['permissions','layout','confirmation','takeover','privacy'];
+const passed=process.argv.includes('--passed='+names.join(','));
+const reviewer=process.argv.find(a=>a.startsWith('--reviewer='))?.slice(11);
+if(passed&&(!reviewer||reviewer.length>80))throw Error('Provide --reviewer after completing the five checks in panel-manual.md');
+const report={timestamp:new Date().toISOString(),kind:'human-review',status:passed?'passed':'not-run',...(reviewer?{reviewer}:{}),checks:passed?names.map(name=>({name,passed:true})):[],files:await panelHashes()};
+await writeFile(path.join(root,'specs/001-browser-agent/evidence/t012-manual.json'),JSON.stringify(report,null,2)+'\n');console.log('Manual review: '+report.status);

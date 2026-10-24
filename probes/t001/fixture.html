@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8"><title>Wisp fixture</title>
+<label>Name <input id="name"></label><output id="echo"></output>
+<div contenteditable="true" id="editor">old</div>
+<button id="target">Original</button><span id="counter">0</span><div id="host"></div>
+<div id="react-root"></div>
+<script src="/vendor/react.production.min.js"></script>
+<script src="/vendor/react-dom.production.min.js"></script>
+<script>
+nameInput=document.querySelector('#name');nameInput.addEventListener('input',e=>{document.querySelector('#echo').textContent=e.target.value});
+window.clicks=0;document.querySelector('#target').onclick=()=>window.clicks++;
+const shadow=document.querySelector('#host').attachShadow({mode:'open'});shadow.innerHTML='<button>Shadow</button>';shadow.querySelector('button').onclick=()=>window.shadowClicks=(window.shadowClicks||0)+1;
+const createElement=React.createElement;
+function ControlledName(){
+  const [value,setValue]=React.useState('');
+  return createElement('div',null,
+    createElement('label',null,'React name ',
+      createElement('input',{id:'react-name',value,onChange:e=>setValue(e.target.value)})),
+    createElement('output',{id:'react-echo'},value));
+}
+ReactDOM.createRoot(document.querySelector('#react-root')).render(createElement(ControlledName));
+</script>

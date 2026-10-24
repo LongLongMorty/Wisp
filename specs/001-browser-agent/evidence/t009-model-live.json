@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-10-18T08:31:59.749Z",
+  "kind": "actual-model-endpoint",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "decide",
+      "passed": true,
+      "usage": {
+        "inputTokens": 493,
+        "outputTokens": 49,
+        "totalTokens": 542
+      }
+    },
+    {
+      "name": "extract",
+      "passed": true,
+      "usage": {
+        "inputTokens": 422,
+        "outputTokens": 261,
+        "totalTokens": 683
+      }
+    }
+  ],
+  "files": {
+    "packages/models/package.json": "025d1b3ed77d0af51b94f6a691395b89b52d3ac9595e61a53649c3afccfd3b6c",
+    "packages/models/README.md": "084eca7f65f03fd51155fef1e683f08469f1c93820bc598fbf58102100a4aca6",
+    "packages/models/src/index.mts": "4b53a3cb47f136cad517fb8fd9d58a0298b601d6d0ac32aade219e4fa346e0f4",
+    "packages/models/src/schema.mts": "3df5701f67f2a01959c0b72da5273265b37119193be34595be6966350d215097",
+    "packages/models/test/input.mjs": "47644559ea85d5d84210e0c7d04734ffe593e17969d5218008dc6dbdad2966b9",
+    "packages/models/test/models.test.mjs": "f8ff7028a1efaba099e1000cc191f80ae8884dd8e3ed97ab0b00cffd1b6be92d",
+    "packages/models/tsconfig.json": "b295463f39f199298301a577ce5272541552e9a39417469b26e39107874633b4",
+    "packages/protocol/src/actions.mts": "78d8c4a749bb6c6633f7cde025ad749aa6c566d1dd25a1411ad0b52bd2d85e3e",
+    "packages/protocol/src/index.mts": "605cc4a9f70cbbedef27458a19986824872a0a311a5d694c6bf0b7b2d60a18a7",
+    "packages/protocol/src/messages.mts": "69c998594d2b706c7a4ad5447be261b422d93c71392b15ddbee6bca9c62cae10",
+    "packages/protocol/src/observation.mts": "5a1813a724ca36de57a2b0cf4b3e96182638e26c6e7841be17ef99918936c244",
+    "packages/protocol/src/policy.mts": "74a152fa13e9909a4298894c745024eb8335a804ff62f4d2f6db58a5034a9a88",
+    "packages/protocol/src/runtime.mts": "17b62b4318a381b7aa2943c2a8e0aa7797dafaaff86d50327312ca8b3cc0094c",
+    "packages/protocol/src/validation.mts": "a35cf1ba97666893dfc915e9d3a42703708d404e7bbbbfc02fae061d7b9b5c27",
+    "scripts/models-build.mjs": "518be813b6b334edca464e6b1c809805cfa6d4034f4f2a5233a9379b17f482c8",
+    "scripts/models-live.mjs": "5651cfeef1ce5f5dccc9b4f46299ea3beb987f7d6069024fa09b03fd7424f7be",
+    "scripts/models-evidence.mjs": "839ed1d3fe8d73fb0a665f46f23c93cdfbe3601be7a3e49dc62c2f5420fe3352",
+    "package.json": "35ec66857277f41d7b03e8f5a0cda037fe62f92d7012cdfb76375b231fb64bcd",
+    "package-lock.json": "471fa7d0dead4103df1e7cb44a6becca64095f281d945cfbec7f4bd5def79b78",
+    "tsconfig.base.json": "72c8229cbd45d3cfa56e86fffc50fbdbb8019a7da45f10400c7a3847bd58298e"
+  },
+  "configuration": {
+    "endpointSha256": "948f1ecb6b48f91adc4e110d0351cd172b16450e9936d358992e0dfad7b863f3",
+    "model": "deepseek-flash",
+    "jsonMode": true
+  },
+  "requestCount": 2
+}

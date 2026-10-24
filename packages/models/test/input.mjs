@@ -1,0 +1,4 @@
+export const observation={observationId:'o',documentId:'d',frameId:'main',url:'https://example.test/',title:'Fixture',capturedAt:'2026-01-01T00:00:00.000Z',viewport:{width:1280,height:720,dpr:1,scrollX:0,scrollY:0},elements:[],text:'Product: Wisp; price: 12',truncated:false,truncationReasons:[]};
+export const input={goal:'Ask the user what to do next',observation,historySummary:'',allowedActions:['scroll'],schemaIds:['product'],budget:Object.fromEntries(['steps','modelCalls','elapsedMs','contextChars','observationChars','consecutiveNoProgress'].map(k=>[k,{used:0,limit:64000}]))};
+export const extractInput={observation,schemaId:'product',schema:{type:'object',properties:{name:{type:'string'},price:{type:'number'}},required:['name','price'],additionalProperties:false}};
+export const ask={kind:'ask_user',question:'What next?'};
