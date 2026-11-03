@@ -42,7 +42,7 @@
 |------|------|------|
 | id | integer | 自增 |
 | ticket_id | string | 关联工单 |
-| action | string | created/status_changed/assigned |
+| action | string | 当前只写入 created 和 status_changed。分配变化记录在 status_changed 的操作人与工单 assignee 中，没有单独的 assigned 记录 |
 | operator | string | 操作人 ID |
 | timestamp | string | ISO 8601 时间戳 |
 | details | string | JSON 字符串，status_changed 时存 `{"from":"X","to":"Y"}` |
@@ -442,7 +442,7 @@ DELETE /control/sessions/:sessionId
 GitHub Primer 风格：
 - 表单：白色卡片，灰色边框，字段上下堆叠
 - 按钮：绿色（创建）、蓝色（提交）、灰色边框
-- 表格：斑马纹，hover 高亮
+- 表格：行 hover 高亮（没有斑马纹）
 - 聚焦样式：蓝色 outline，满足基本可访问性
 
 ---
