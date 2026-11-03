@@ -9,6 +9,7 @@ dist/
 
 # local caches and test artifacts (Chrome profiles, npm cache, candidates)
 .cache/
+.superpowers/
 probes/t001/artifacts/
 
 # logs
