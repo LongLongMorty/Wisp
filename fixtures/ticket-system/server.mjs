@@ -1,6 +1,6 @@
 import {createServer} from 'node:http';
 import {randomBytes, timingSafeEqual} from 'node:crypto';
-import {FIXTURE_VERSION, FixtureError, createRepository} from './domain.mjs';
+import {FIXTURE_VERSION, FixtureError, createRepository, CATEGORIES, USERS} from './domain.mjs';
 
 export function send(res, status, data, type = 'application/json; charset=utf-8') {
   res.writeHead(status, {'Content-Type': type, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'});
@@ -16,11 +16,14 @@ export async function readJson(req) {
     chunks.push(chunk);
   }
   if (!chunks.length) return {};
+  let value;
   try {
-    return JSON.parse(Buffer.concat(chunks).toString('utf8'));
+    value = JSON.parse(Buffer.concat(chunks).toString('utf8'));
   } catch {
     throw new FixtureError(400, 'Invalid JSON');
   }
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new FixtureError(400, 'JSON body must be an object');
+  return value;
 }
 
 function listen(server) {
@@ -113,10 +116,10 @@ export async function createFixtureServer() {
       }
     }
     if (req.method === 'GET' && url.pathname.match(/^\/api\/[^/]+\/categories$/)) {
-      return send(res, 200, {categories: await import('./domain.mjs').then(m => m.CATEGORIES)}), true;
+      return send(res, 200, {categories: CATEGORIES}), true;
     }
     if (req.method === 'GET' && url.pathname.match(/^\/api\/[^/]+\/users$/)) {
-      return send(res, 200, {users: await import('./domain.mjs').then(m => m.USERS)}), true;
+      return send(res, 200, {users: USERS}), true;
     }
     return false;
   });

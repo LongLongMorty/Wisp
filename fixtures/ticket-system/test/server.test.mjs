@@ -71,4 +71,35 @@ describe('Business API', () => {
     const data = await res.json();
     assert.match(data.error, /operator.*not allowed/i);
   }));
+
+  it('rejects non-object JSON bodies with 400 instead of 500', () => withServer(async server => {
+    const {sessionId} = server.initialSession;
+    for (const body of ['null', '[]', '"x"']) {
+      const res = await fetch(`${server.origin}/api/${sessionId}/tickets`, {method: 'POST', headers: {'Content-Type': 'application/json'}, body});
+      assert.strictEqual(res.status, 400, body);
+    }
+  }));
+
+  it('PATCH status enforces state machine and writes audit log', () => withServer(async server => {
+    const {sessionId} = server.initialSession;
+    const base = `${server.origin}/api/${sessionId}/tickets`;
+    const created = await (await fetch(base, {method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({title: 'T', description: 'D', category1: '技术问题', category2: '无法登录', priority: 'low'})})).json();
+    const id = created.ticket.id;
+    const skip = await fetch(`${base}/${id}/status`, {method: 'PATCH', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({status: 'closed'})});
+    assert.strictEqual(skip.status, 400);
+    const ok = await fetch(`${base}/${id}/status`, {method: 'PATCH', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({status: 'processing'})});
+    assert.strictEqual(ok.status, 200);
+    const logs = (await (await fetch(`${base}/${id}/audit-logs`)).json()).logs;
+    assert.deepStrictEqual(logs.map(l => l.action), ['created', 'status_changed']);
+    assert.ok(logs.every(l => l.operator === 'user1'));
+  }));
+
+  it('serves categories and users', () => withServer(async server => {
+    const {sessionId} = server.initialSession;
+    const categories = (await (await fetch(`${server.origin}/api/${sessionId}/categories`)).json()).categories;
+    const users = (await (await fetch(`${server.origin}/api/${sessionId}/users`)).json()).users;
+    assert.deepStrictEqual(categories['技术问题'], ['无法登录', '功能报错', '性能问题', '数据丢失']);
+    assert.deepStrictEqual(users.map(u => u.id), ['user1', 'user2', 'user3']);
+  }));
 });
