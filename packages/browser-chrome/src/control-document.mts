@@ -187,9 +187,9 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
                 }
                 const formHint = (form?.getAttribute('aria-label') || '').slice(0, 2048) + ' ' + (form?.getAttribute('name') || '').slice(0, 2048) + ' ' + (form?.action || '').slice(0, 4096);
                 const hint = [field.type || '', isSubmit ? 'submit' : '', link ? 'link' : '', /pay|checkout|purchase|支付|付款/i.test(formHint) ? 'payment' : '', /login|sign.in|oauth|authoriz|密码|验证码|登录/i.test(formHint) ? 'authentication' : ''].join(' ');
-                const target: PolicyTarget = { ref: summary.ref, tag: summary.tag, role: summary.role, name: summary.name, hint, enabled: summary.enabled, editable: summary.editable, sensitive: summary.sensitive, formSensitive: hasSensitive && !!form, inputType: field.type || '', destinationOrigins: [...new Set(destinationOrigins)].slice(0, 4), newWindow, fingerprint: await digest({ attributes: attributes(el), formAttributes: form ? attributes(form) : [], summary, type: field.type || '', hint, destination, formAction: form?.action || '', formMethod: form?.method || '', newWindow }) };
+                const target: PolicyTarget = { ref: summary.ref, tag: summary.tag, role: summary.role, name: summary.name, hint, enabled: summary.enabled, editable: summary.editable, sensitive: summary.sensitive, formSensitive: hasSensitive && !!form, inputType: field.type || '', destinationOrigins: [...new Set(destinationOrigins)].slice(0, 20), newWindow, fingerprint: await digest({ attributes: attributes(el), formAttributes: form ? attributes(form) : [], summary, type: field.type || '', hint, destination, formAction: form?.action || '', formMethod: form?.method || '', newWindow }) };
                 result.target = target;
-                result.complete = complete && new Set(destinationOrigins).size <= 4;
+                result.complete = complete && new Set(destinationOrigins).size <= 20;
             }
             if (new URL(doc.URL).origin !== result.origin)
                 throw Object.assign(new Error('STALE_TARGET'), { code: 'STALE_TARGET' });
