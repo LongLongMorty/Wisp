@@ -1,14 +1,17 @@
 import {createServer} from 'node:http';
 import {randomBytes, timingSafeEqual} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
 import {FIXTURE_VERSION, FixtureError, createRepository, CATEGORIES, USERS} from './domain.mjs';
 import {renderPage} from './pages.mjs';
 
+const base = path.dirname(fileURLToPath(import.meta.url));
 const ASSETS = {
-  '/assets/vendor/react.production.min.js': 'fixtures/ticket-system/public/vendor/react.production.min.js',
-  '/assets/vendor/react-dom.production.min.js': 'fixtures/ticket-system/public/vendor/react-dom.production.min.js',
-  '/assets/app.js': 'fixtures/ticket-system/public/app.js',
-  '/assets/style.css': 'fixtures/ticket-system/public/style.css'
+  '/assets/vendor/react.production.min.js': path.join(base, 'public/vendor/react.production.min.js'),
+  '/assets/vendor/react-dom.production.min.js': path.join(base, 'public/vendor/react-dom.production.min.js'),
+  '/assets/app.js': path.join(base, 'public/app.js'),
+  '/assets/style.css': path.join(base, 'public/style.css')
 };
 
 const MIME = {'.js': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8'};

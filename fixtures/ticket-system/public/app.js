@@ -19,6 +19,7 @@
     const [dueDate, setDueDate] = useState('');
     const [categories, setCategories] = useState({});
     const [users, setUsers] = useState([]);
+    const [error, setError] = useState('');
 
     useEffect(() => {
       fetch(`${origin}/api/${sessionId}/categories`)
@@ -50,16 +51,23 @@
 
     const handleSubmit = async (ev) => {
       ev.preventDefault();
-      await fetch(`${origin}/api/${sessionId}/tickets`, {
+      setError('');
+      const res = await fetch(`${origin}/api/${sessionId}/tickets`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({title, description, category1, category2, priority, assignee: assignee || null, due_date: dueDate || null})
       });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({error: 'Unknown error'}));
+        setError('创建失败: ' + (err.error || err.message || res.statusText));
+        return;
+      }
       window.location.href = `${origin}/ticket-system/s/${sessionId}/list`;
     };
 
     return e('form', {onSubmit: handleSubmit},
       e('h1', null, '创建工单'),
+      error && e('div', {role: 'alert', style: {padding: '12px', marginBottom: '16px', background: '#ffebe9', border: '1px solid #cf222e', borderRadius: '6px', color: '#cf222e'}}, error),
       e('label', null, '标题 *', e('input', {name: 'title', value: title, onChange: ev => setTitle(ev.target.value), required: true})),
       e('label', null, '描述 *', e('textarea', {name: 'description', value: description, onChange: ev => setDescription(ev.target.value), required: true})),
       e('label', null, '一级分类 *', e('select', {name: 'category1', value: category1, onChange: handleCategory1Change},
@@ -134,6 +142,7 @@
   function TicketDetail({sessionId, origin, ticketId}) {
     const [ticket, setTicket] = useState(null);
     const [logs, setLogs] = useState([]);
+    const [error, setError] = useState('');
 
     const loadTicket = () => {
       fetch(`${origin}/api/${sessionId}/tickets/${ticketId}`)
@@ -147,11 +156,17 @@
     useEffect(() => { loadTicket(); }, []);
 
     const handleStatusChange = async (newStatus) => {
-      await fetch(`${origin}/api/${sessionId}/tickets/${ticketId}/status`, {
+      setError('');
+      const res = await fetch(`${origin}/api/${sessionId}/tickets/${ticketId}/status`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({status: newStatus})
       });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({error: 'Unknown error'}));
+        setError('状态变更失败: ' + (err.error || err.message || res.statusText));
+        return;
+      }
       loadTicket();
     };
 
@@ -179,6 +194,7 @@
         e('dt', null, '创建时间'), e('dd', null, ticket.created_at),
         e('dt', null, '更新时间'), e('dd', null, ticket.updated_at),
         ticket.due_date && e('dt', null, '预计解决时间'), ticket.due_date && e('dd', null, ticket.due_date)),
+      error && e('div', {role: 'alert', style: {padding: '12px', margin: '16px 0', background: '#ffebe9', border: '1px solid #cf222e', borderRadius: '6px', color: '#cf222e'}}, error),
       e('a', {href: `${origin}/ticket-system/s/${sessionId}/list`}, '返回列表'),
       action && action.allowed && e('button', {onClick: () => handleStatusChange(action.next)}, action.label),
       ticket.status === 'closed' && e('p', null, '工单已关闭，无可用操作'),

@@ -66,6 +66,16 @@ describe('State Machine', () => {
     assert.strictEqual(log.operator, 'user3');
   });
 
+  it('start processing reassigns an already-assigned ticket to the operator (design 5.3)', () => {
+    const repo = createRepository();
+    const {sessionId} = repo.createSession();
+    const ticket = repo.createTicket(sessionId, {title: 'T', description: 'D', category1: '技术问题', category2: '无法登录', priority: 'low', assignee: 'user2'}, 'user1');
+    const updated = repo.changeStatus(sessionId, ticket.id, 'processing', 'user1');
+    assert.strictEqual(updated.assignee, 'user1');
+    repo.changeStatus(sessionId, ticket.id, 'resolved', 'user1');
+    assert.strictEqual(repo.getTicketById(sessionId, ticket.id).status, 'resolved');
+  });
+
   it('rejects non-assignee closing ticket', () => {
     const repo = createRepository();
     const {sessionId} = repo.createSession();

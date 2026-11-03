@@ -116,6 +116,29 @@ try {
   await clickButton('筛选');
   await wait(() => evaluate('document.querySelectorAll("tbody tr").length === 1', sid), sid);
   console.log('✓ List: 筛选 button applies the status filter');
+
+  await send('Page.navigate', {url: `${server.origin}/ticket-system/s/${sessionId}/create`}, sid);
+  await wait(() => evaluate('document.querySelector("select[name=category1]")?.options.length > 0', sid), sid);
+  await evaluate(`(()=>{
+    const set = (el, proto, value, type) => { Object.getOwnPropertyDescriptor(proto, 'value').set.call(el, value); el.dispatchEvent(new Event(type, {bubbles: true})); };
+    set(document.querySelector('[name=title]'), HTMLInputElement.prototype, '   ', 'input');
+    set(document.querySelector('[name=description]'), HTMLTextAreaElement.prototype, '描述', 'input');
+    set(document.querySelector('[name=priority]'), HTMLSelectElement.prototype, 'low', 'change');
+  })()`, sid);
+  await clickButton('提交工单');
+  await wait(() => evaluate('!!document.querySelector("[role=alert]")', sid), sid);
+  if (!(await evaluate('location.pathname.endsWith("/create")', sid))) throw Error('create form left the page despite a server rejection');
+  const createError = await evaluate('document.querySelector("[role=alert]").textContent', sid);
+  if (!createError.includes('创建失败')) throw Error('unexpected create error text: ' + createError);
+  console.log('✓ Create: a server rejection shows an inline error and stays on the form');
+
+  const stale = server.repository.createTicket(sessionId, {title: '过期页面', description: 'D', category1: '技术问题', category2: '无法登录', priority: 'low'}, 'user1');
+  await send('Page.navigate', {url: `${server.origin}/ticket-system/s/${sessionId}/detail/${stale.id}`}, sid);
+  await wait(() => evaluate('[...document.querySelectorAll("button")].some(b=>b.textContent==="开始处理")', sid), sid);
+  server.repository.changeStatus(sessionId, stale.id, 'processing', 'user1');
+  await clickButton('开始处理');
+  await wait(() => evaluate('!!document.querySelector("[role=alert]")', sid), sid);
+  console.log('✓ Detail: a rejected status change shows an inline error');
 } finally {
   child.kill();
   rejectAll(Error('Closed'));

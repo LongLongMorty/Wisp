@@ -119,7 +119,7 @@ export function createRepository() {
       }
       const now = new Date().toISOString();
       session.db.prepare('UPDATE tickets SET status = ?, updated_at = ? WHERE id = ?').run(newStatus, now, ticketId);
-      if (newStatus === 'processing' && !ticket.assignee) {
+      if (newStatus === 'processing') {
         session.db.prepare('UPDATE tickets SET assignee = ? WHERE id = ?').run(currentUser, ticketId);
       }
       session.db.prepare('INSERT INTO audit_logs (ticket_id, action, operator, details, timestamp) VALUES (?, ?, ?, ?, ?)')
