@@ -103,3 +103,19 @@ describe('Business API', () => {
     assert.deepStrictEqual(users.map(u => u.id), ['user1', 'user2', 'user3']);
   }));
 });
+
+describe('Pages and Assets', () => {
+  it('GET /ticket-system/s/:sessionId/create returns HTML', () => withServer(async server => {
+    const {sessionId} = server.initialSession;
+    const res = await fetch(`${server.origin}/ticket-system/s/${sessionId}/create`);
+    assert.strictEqual(res.headers.get('content-type'), 'text/html; charset=utf-8');
+    const html = await res.text();
+    assert.ok(html.includes('data-route="create"'));
+  }));
+
+  it('serves vendored React scripts', () => withServer(async server => {
+    const react = await fetch(`${server.origin}/assets/vendor/react.production.min.js`);
+    assert.strictEqual(react.status, 200);
+    assert.ok((await react.text()).includes('React'));
+  }));
+});

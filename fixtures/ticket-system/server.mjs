@@ -1,6 +1,17 @@
 import {createServer} from 'node:http';
 import {randomBytes, timingSafeEqual} from 'node:crypto';
+import {readFile} from 'node:fs/promises';
 import {FIXTURE_VERSION, FixtureError, createRepository, CATEGORIES, USERS} from './domain.mjs';
+import {renderPage} from './pages.mjs';
+
+const ASSETS = {
+  '/assets/vendor/react.production.min.js': 'fixtures/ticket-system/public/vendor/react.production.min.js',
+  '/assets/vendor/react-dom.production.min.js': 'fixtures/ticket-system/public/vendor/react-dom.production.min.js',
+  '/assets/app.js': 'fixtures/ticket-system/public/app.js',
+  '/assets/style.css': 'fixtures/ticket-system/public/style.css'
+};
+
+const MIME = {'.js': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8'};
 
 export function send(res, status, data, type = 'application/json; charset=utf-8') {
   res.writeHead(status, {'Content-Type': type, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'});
@@ -65,6 +76,16 @@ export async function createFixtureServer() {
     if (req.headers.host !== new URL(origin).host) throw new FixtureError(403, 'Invalid host');
     const url = new URL(req.url, origin);
     if (req.method === 'GET' && url.pathname === '/health') return send(res, 200, {version: FIXTURE_VERSION});
+    if (req.method === 'GET' && ASSETS[url.pathname]) {
+      const content = await readFile(ASSETS[url.pathname]);
+      const ext = url.pathname.slice(url.pathname.lastIndexOf('.'));
+      return send(res, 200, content, MIME[ext] || 'application/octet-stream');
+    }
+    const pageMatch = url.pathname.match(/^\/ticket-system\/s\/([^/]+)\/(home|create|list|detail)(?:\/([^/]+))?$/);
+    if (req.method === 'GET' && pageMatch) {
+      const [, sid, route] = pageMatch;
+      return send(res, 200, renderPage(sid, route, origin), 'text/html; charset=utf-8');
+    }
     for (const route of routes.business) if (await route(req, res, url)) return;
     throw new FixtureError(404, 'Not found');
   }));
