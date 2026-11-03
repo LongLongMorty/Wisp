@@ -81,10 +81,10 @@ export async function createFixtureServer() {
       const ext = url.pathname.slice(url.pathname.lastIndexOf('.'));
       return send(res, 200, content, MIME[ext] || 'application/octet-stream');
     }
-    const pageMatch = url.pathname.match(/^\/ticket-system\/s\/([^/]+)\/(home|create|list|detail)(?:\/([^/]+))?$/);
+    const pageMatch = url.pathname.match(/^\/ticket-system\/s\/([^/]+)\/(home|create|list|detail)(?:\/(.+))?$/);
     if (req.method === 'GET' && pageMatch) {
-      const [, sid, route] = pageMatch;
-      return send(res, 200, renderPage(sid, route, origin), 'text/html; charset=utf-8');
+      const [, sid, route, param] = pageMatch;
+      return send(res, 200, renderPage(sid, route, origin, param), 'text/html; charset=utf-8');
     }
     for (const route of routes.business) if (await route(req, res, url)) return;
     throw new FixtureError(404, 'Not found');

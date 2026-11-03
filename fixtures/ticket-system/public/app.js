@@ -7,6 +7,7 @@
   const sessionId = root.dataset.sessionId;
   const route = root.dataset.route;
   const origin = root.dataset.origin;
+  const param = root.dataset.param;
 
   function CreateTicket({sessionId, origin}) {
     const [title, setTitle] = useState('');
@@ -79,13 +80,106 @@
     );
   }
 
-  function TicketList() { return e('div', null, 'TicketList placeholder'); }
-  function TicketDetail() { return e('div', null, 'TicketDetail placeholder'); }
+  function TicketList({sessionId, origin}) {
+    const [tickets, setTickets] = useState([]);
+    const [statusFilter, setStatusFilter] = useState('all');
+    const [priorityFilter, setPriorityFilter] = useState('all');
+
+    const loadTickets = () => {
+      fetch(`${origin}/api/${sessionId}/tickets?status=${statusFilter}&priority=${priorityFilter}`)
+        .then(r => r.json())
+        .then(d => setTickets(d.tickets));
+    };
+
+    useEffect(() => { loadTickets(); }, []);
+
+    return e('div', null,
+      e('h1', null, '工单列表'),
+      e('a', {href: `${origin}/ticket-system/s/${sessionId}/create`}, '+ 创建工单'),
+      e('div', null,
+        e('label', null, '状态筛选 ',
+          e('select', {value: statusFilter, onChange: ev => setStatusFilter(ev.target.value)},
+            e('option', {value: 'all'}, '全部'),
+            e('option', {value: 'pending'}, '待处理'),
+            e('option', {value: 'processing'}, '处理中'),
+            e('option', {value: 'resolved'}, '已解决'),
+            e('option', {value: 'closed'}, '已关闭'))),
+        e('label', null, ' 优先级 ',
+          e('select', {value: priorityFilter, onChange: ev => setPriorityFilter(ev.target.value)},
+            e('option', {value: 'all'}, '全部'),
+            e('option', {value: 'low'}, '低'),
+            e('option', {value: 'medium'}, '中'),
+            e('option', {value: 'high'}, '高'),
+            e('option', {value: 'urgent'}, '紧急'))),
+        e('button', {type: 'button', onClick: loadTickets}, '筛选')),
+      e('table', null,
+        e('thead', null, e('tr', null,
+          e('th', null, 'ID'),
+          e('th', null, '标题'),
+          e('th', null, '状态'),
+          e('th', null, '优先级'),
+          e('th', null, '处理人'),
+          e('th', null, '操作'))),
+        e('tbody', null,
+          tickets.map(t => e('tr', {key: t.id},
+            e('td', null, t.id),
+            e('td', null, t.title),
+            e('td', null, t.status),
+            e('td', null, t.priority),
+            e('td', null, t.assignee || '未分配'),
+            e('td', null, e('a', {href: `${origin}/ticket-system/s/${sessionId}/detail/${t.id}`}, '查看'))))))
+    );
+  }
+
+  function TicketDetail({sessionId, origin, ticketId}) {
+    const [ticket, setTicket] = useState(null);
+    const [logs, setLogs] = useState([]);
+
+    const loadTicket = () => {
+      fetch(`${origin}/api/${sessionId}/tickets/${ticketId}`)
+        .then(r => r.json())
+        .then(d => setTicket(d.ticket));
+      fetch(`${origin}/api/${sessionId}/tickets/${ticketId}/audit-logs`)
+        .then(r => r.json())
+        .then(d => setLogs(d.logs));
+    };
+
+    useEffect(() => { loadTicket(); }, []);
+
+    const handleStatusChange = async (newStatus) => {
+      await fetch(`${origin}/api/${sessionId}/tickets/${ticketId}/status`, {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({status: newStatus})
+      });
+      loadTicket();
+    };
+
+    if (!ticket) return e('div', null, '加载中...');
+
+    const nextStatus = {pending: 'processing', processing: 'resolved', resolved: 'closed'}[ticket.status];
+
+    return e('div', null,
+      e('h1', null, `工单详情 - ${ticket.id}`),
+      e('dl', null,
+        e('dt', null, '标题'), e('dd', null, ticket.title),
+        e('dt', null, '描述'), e('dd', null, ticket.description),
+        e('dt', null, '状态'), e('dd', null, ticket.status),
+        e('dt', null, '优先级'), e('dd', null, ticket.priority),
+        e('dt', null, '处理人'), e('dd', null, ticket.assignee || '未分配'),
+        ticket.due_date && e('dt', null, '预计解决时间'), ticket.due_date && e('dd', null, ticket.due_date)),
+      nextStatus && e('button', {onClick: () => handleStatusChange(nextStatus)}, `变更为 ${nextStatus}`),
+      e('h2', null, '审计日志'),
+      e('ul', null,
+        logs.map(log => e('li', {key: log.id},
+          `${log.timestamp} - ${log.action} by ${log.operator}${log.details ? ': ' + log.details : ''}`)))
+    );
+  }
 
   function App() {
     if (route === 'create') return e(CreateTicket, {sessionId, origin});
     if (route === 'list') return e(TicketList, {sessionId, origin});
-    if (route === 'detail') return e(TicketDetail, {sessionId, origin});
+    if (route === 'detail') return e(TicketDetail, {sessionId, origin, ticketId: param});
     return e('div', null, 'Unknown route');
   }
 
