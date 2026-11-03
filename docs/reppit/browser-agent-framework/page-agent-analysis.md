@@ -1,8 +1,8 @@
 # Page Agent 技术分析与 Wisp 对比
 
-**日期**：2024-11-03  
+**日期**：2026-11-03  
 **来源**：https://github.com/alibaba/page-agent (MIT License, v1.12.4)  
-**核心代码**：`packages/page-controller/src/dom/`
+**核心代码**：`packages/page-controller/src/dom/`（已读取并验证）
 
 ---
 
@@ -10,10 +10,10 @@
 
 ### 1.1 DOM Dehydration 算法（FlatDomTree）
 
-**文件**：`packages/page-controller/src/dom/index.ts` + `dom_tree/index.js`（约 1000+ 行）
+**文件**：`packages/page-controller/src/dom/index.ts` + `dom_tree/index.js`（1745 行，移植自 browser-use）
 
 **核心思路**：
-1. **遍历整个 DOM 树**，构建扁平化的 `FlatDomTree`
+1. **遍历整个 DOM 树**，构建扁平化的 `FlatDomTree`（用 `{ rootId, map: Record<nodeId, DomNode> }` 结构）
 2. **只保留可交互元素** + **语义标签**（nav/menu/header/footer 等）
 3. **给每个可交互元素分配递增的 highlightIndex**（[0], [1], [2]...）
 4. **压缩为纯文本**：`flatTreeToString()` 生成类似 Markdown 的结构
@@ -35,49 +35,84 @@ UI Agent in your webpage
 
 **特点**：
 - 用缩进表示层级关系
-- 可交互元素用 `[index]` 标记
+- 可交互元素用 `[index]` 标记，新出现的元素用 `*[index]` 标记
 - 普通文本直接列出（如果父节点可见且是 topElement）
 - 属性去重（如果多个属性值相同且长度 > 5，只保留一个）
 - 属性与文本重复时删除属性（如 `aria-label` 等于文本内容）
+- 属性值最多 20 字符，超出截断为 `...`
 
 ---
 
 ### 1.2 可交互元素判定逻辑
 
-**来源**：`dom_tree/index.js`（browser-use 移植版本）
+**来源**：`dom_tree/index.js` 的 `isInteractiveElement()` 函数（约 700-950 行）
 
-**判定条件**（满足任一即可）：
-1. **标签名**：`a`、`button`、`input`、`textarea`、`select`、`details`、`label`
-2. **角色**：`role="button|link|checkbox|menuitem|tab|search|textbox"`
-3. **属性**：`contenteditable="true"`、`tabindex >= 0`
-4. **事件监听器**：`onclick`、`onmousedown`、`onmouseup`、`onkeydown`、`onkeyup`、`onkeypress`
-5. **ARIA 属性**：`aria-haspopup`、`aria-controls`、`aria-expanded`
-6. **特殊情况**：
-   - `cursor: pointer` + 非空文本
-   - `<div>` 包含 click 事件监听器
+**注释中的核心观点**：
+> lots of comments, and uncommented code - to show the logic of what we already tried  
+> One of the things we tried at the beginning was also to use event listeners, and other fancy class, style stuff -> **what actually worked best was just combining most things with computed cursor style :)**
 
-**黑名单/白名单**：
-- 支持自定义 `interactiveBlacklist`（强制排除）
-- 支持自定义 `interactiveWhitelist`（强制包含）
+**判定逻辑（按优先级排序）**：
 
-**与 Wisp 对比**：
-- Wisp 依赖**无障碍树**（`computedRole`、`computedName`）
-- Page Agent 直接遍历 DOM + 启发式规则
+1. **黑名单/白名单优先**（如果配置了 `interactiveBlacklist/Whitelist`）
+2. **Cursor 样式判断**（核心机制，效果最好）：
+   - 如果 `cursor` 是交互型（`pointer`、`move`、`text`、`grab`、`copy`、`cell`、`resize`、`zoom-in/out` 等 30+ 种）→ **直接返回 true**
+   - 如果 `cursor` 是非交互型（`not-allowed`、`no-drop`、`wait`、`progress`）→ **返回 false**
+
+3. **标签白名单**：
+   - `a`、`button`、`input`、`select`、`textarea`、`details`、`summary`、`label`、`option`、`optgroup`、`fieldset`、`legend`
+   - 但需检查是否被 `disabled`、`readOnly`、`inert` 禁用
+
+4. **Role 白名单**：
+   - `button`、`menu`、`menubar`、`menuitem*`、`radio`、`checkbox`、`tab`、`switch`、`slider`、`spinbutton`、`combobox`、`searchbox`、`textbox`、`listbox`、`option`、`scrollbar`
+
+5. **contenteditable**：
+   - `contenteditable="true"` 或 `element.isContentEditable`
+
+6. **类名启发式**：
+   - `classList` 包含 `button`、`dropdown-toggle`
+   - 或有 `data-toggle="dropdown"`、`aria-haspopup="true"` 等属性
+
+7. **事件监听器检查**（降级方案）：
+   - 尝试调用 `window.getEventListeners(element)`（Chrome DevTools 专有）
+   - 或 `window.getEventListenersForNode(element)`
+   - 或回退到检查 `onclick`、`onmousedown` 等属性
+
+8. **滚动元素**：
+   - `isScrollableElement(element)` 检查 `overflow`/`scrollHeight`/`scrollWidth`
+
+**与 Wisp 的对比**：
+
+| 维度 | Page Agent | Wisp (`document.mts:177`) |
+|------|-----------|---------------------------|
+| **主要机制** | `cursor` 样式 + 标签白名单 | `roles.has(role(el))` + `tabIndex >= 0` + `cursor === 'pointer'` |
+| **标签判定** | 30+ 种 cursor 样式枚举 | 固定 13 个 role（`button/link/textbox/checkbox` 等） |
+| **事件监听** | 尝试但不依赖（注释说效果不好） | 不检查事件监听器 |
+| **contenteditable** | 支持 | 支持（`role()` 返回 `textbox`） |
+| **滚动元素** | 作为可交互元素 | 不作为可交互元素 |
+| **禁用状态** | 检查 `disabled`/`readOnly`/`inert` | 检查 `:disabled`/`aria-disabled`/`inert` |
+
+**关键差异**：
+- Page Agent 更激进（cursor 样式覆盖面广，包含滚动元素）
+- Wisp 更保守（固定 role 集合，不依赖 cursor 启发式）
 
 ---
 
 ### 1.3 文本收集策略
 
-**函数**：`getAllTextTillNextClickableElement()`
+**函数**：`getAllTextTillNextClickableElement(node, maxDepth = -1)`
 
 **逻辑**：
 - 从当前节点开始，递归收集所有子节点的文本
-- **遇到下一个可交互元素立即停止**
+- **遇到下一个可交互元素立即停止**（`if (currentNode !== node && currentNode.highlightIndex !== undefined) return`）
 - 最多递归 `maxDepth` 层（默认 -1 无限制）
 
-**目的**：
+**用途**：
 - 避免将嵌套可交互元素的文本重复输出
 - 例如 `<button><span>点击</span>这里</button>`，只输出 "点击这里"
+
+**与 Wisp 的对比**：
+- **Wisp** (`document.mts:204-236`)：`bodyText()` 遍历所有文本节点，排除 `input/textarea/sensitive` 元素内的文本，**但不排除已在 `rawName()` 中收集的文本**
+- **潜在问题**：Wisp 的 `bodyText()` 可能与 `ElementSummary.name` 重复（如按钮文本既在 `name` 又在 `text`）
 
 ---
 
@@ -93,15 +128,15 @@ UI Agent in your webpage
 **用途**：
 - 提示模型关注新出现的元素（如加载更多后的列表项）
 
-**与 Wisp 对比**：
-- Wisp 的引用有 `observationId` 作用域，过期后必须重新观察
-- Page Agent 的 `WeakMap` 跨观察持久化（但刷新页面丢失）
+**与 Wisp 的对比**：
+- **Wisp**：引用有 `observationId` 作用域，过期后必须重新观察，没有跨观察的"新元素"概念
+- **设计差异**：Wisp 更严格（引用作用域隔离），Page Agent 更连续（跨观察缓存）
 
 ---
 
 ### 1.5 属性过滤与去重
 
-**默认保留属性**：
+**默认保留属性**（`flatTreeToString()` 中的 `DEFAULT_INCLUDE_ATTRIBUTES`）：
 ```js
 'title', 'type', 'checked', 'name', 'role', 'value', 'placeholder',
 'data-date-format', 'alt', 'aria-label', 'aria-expanded', 'data-state',
@@ -117,309 +152,235 @@ UI Agent in your webpage
 **文本长度限制**：
 - 属性值最多 20 字符，超出截断为 `...`
 
----
-
-### 1.6 Viewport 扩展
-
-**配置**：`viewportExpansion`
-- `-1`：全页面（无视口限制）
-- `0`：仅视口内
-- 正值：视口扩展 N 像素
-
-**注释说明**：
-> Since isTopElement depends on elementFromPoint, it returns null when out of viewport, this feature has no practical use, only differ between -1 and 0
-
-**实际行为**：
-- 只区分 `-1`（全页面）和 `0`（仅视口）
-- 正值扩展暂无实际效果
+**与 Wisp 的对比**：
+- **Wisp** (`document.mts:184-203`)：`ElementSummary` **不包含 HTML 属性**，只有语义化字段（`ref/tag/role/name/enabled/editable/sensitive/bounds/value/options`）
+- **关键差异**：Wisp 输出的是结构化 JSON，Page Agent 输出的是带属性的纯文本
 
 ---
 
-### 1.7 页面信息获取
+## 二、错误更正说明
 
-**函数**：`getPageInfo()`（`getPageInfo.ts`）
+**已修正的错误**（原版本 `bf95d9b` 已推送，现本地更正）：
 
-**返回字段**：
-```js
-{
-  viewport_width, viewport_height,     // 视口尺寸
-  page_width, page_height,            // 页面总尺寸
-  scroll_x, scroll_y,                 // 当前滚动位置
-  pixels_above, pixels_below,         // 上下方剩余像素
-  pages_above, pages_below,           // 上下方剩余页数
-  total_pages,                        // 总页数
-  current_page_position,              // 当前滚动百分比（0-1）
-  pixels_left, pixels_right           // 左右剩余像素
-}
-```
+1. **"Wisp 依赖无障碍树（AOM）"错误**
+   - **实际**：Wisp 的 `interactive()` 函数（`document.mts:177`）使用 `roles.has(role(el))` 判定，其中 `role()` 函数根据标签名和属性映射返回语义角色
+   - **不是** `computedRole`/`computedName` 等 AOM API
 
-**用途**：
-- 模型判断是否需要滚动
-- 与 Wisp 的 `Observation.viewport` 类似，但更详细
+2. **"属性去重逻辑可借鉴"错误**
+   - **实际**：Wisp 的 `ElementSummary` 根本不包含 HTML 属性字段，只有 `ref/tag/role/name/enabled/editable/sensitive/bounds/value/options`
+   - **结论**：属性去重逻辑**不适用**于 Wisp
+
+3. **示例代码有 bug**
+   - **错误代码**：`if (result.role === result.tagName) delete result.role`
+   - **问题**：`tagName` 不是 `ElementSummary` 的属性字段（实际是 `tag`）
+
+4. **可交互判定列表不准确**
+   - **错误**：原文列举了"标签名、角色、属性、事件监听器、cursor: pointer"
+   - **实际**：Page Agent 的注释明确说 **cursor 样式效果最好**，事件监听器只是降级方案
+
+5. **收益数字无依据**
+   - **错误**：原文声称"减少 5-10%""10-20%""15-30%"
+   - **实际**：这些数字是编造的，没有任何测量
+
+6. **日期错误**
+   - **错误**：三份文档日期都写成 `2024-11-03`
+   - **实际**：今天是 `2026-11-03`
 
 ---
 
-## 二、与 Wisp 的详细对比
+## 三、与 Wisp 的详细对比（已验证）
 
-| 维度 | Page Agent | Wisp v0.1 | 优劣 |
+| 维度 | Page Agent | Wisp v0.1 | 差异 |
 |------|-----------|-----------|------|
-| **DOM 遍历** | 直接遍历 DOM 树 | 无障碍树（AOM）优先 | Page Agent 更全面，Wisp 更精简 |
-| **可交互判定** | 启发式规则（标签+角色+属性+事件） | `computedRole` + `computedName` | Page Agent 覆盖更广，Wisp 更标准 |
-| **文本压缩** | 递归收集 + 遇可交互元素停止 | 有界文本（24,000 字符预算） | Page Agent 策略更智能 |
-| **属性过滤** | 去重 + 文本匹配删除 | 脱敏（密码/验证码） | Page Agent 优化 token，Wisp 优化安全 |
-| **引用绑定** | `highlightIndex` + `WeakMap` | `documentId/frameId/observationId/ref` | Wisp 更严格（作用域隔离） |
-| **新元素检测** | `WeakMap` 跨观察缓存 | 每次观察分配新 `observationId` | Page Agent 更连续，Wisp 更安全 |
-| **输出格式** | 纯文本（Markdown 风格） | JSON（`Observation` 结构） | Page Agent 更省 token，Wisp 更结构化 |
-| **视口限制** | 可配置 `-1`/`0`/正值 | 固定观察视口内可见元素 | Page Agent 更灵活 |
-| **Scroll 信息** | 详细（`pages_above/below`） | 简单（`viewport: {scroll: {x, y}}`） | Page Agent 更详细 |
+| **运行位置** | 页面内（`<script>` 嵌入） | 浏览器扩展（Chrome MV3） | 形态完全不同 |
+| **DOM 访问** | 直接访问活页面 DOM | isolated world + CDP | Wisp 更安全 |
+| **观察方式** | DOM 树遍历 + FlatDomTree 文本化 | 遍历 + `visible()` 过滤 + JSON 结构化 | Page Agent 更省 token，Wisp 更精确 |
+| **可交互判定** | cursor 样式优先 + 30+ 种标签/角色 + 事件监听器 | 固定 13 个 role + `tabIndex >= 0` + `cursor === 'pointer'` | Page Agent 更激进，Wisp 更保守 |
+| **执行方式** | 直接 DOM 操作（`element.click()`） | CDP 驱动（`Input.dispatchMouseEvent/KeyEvent`） | Wisp 更可靠（T-001 已验证） |
+| **输出格式** | 纯文本（Markdown 风格，带属性） | JSON（`Observation` 结构，无属性） | Page Agent 省 token，Wisp 可解析 |
+| **引用绑定** | `highlightIndex` + `WeakMap` 跨观察缓存 | `documentId/frameId/observationId/ref` 严格作用域 | Wisp 更安全 |
+| **文本收集** | 遇下一个可交互元素停止 | 遍历所有文本节点，排除 input/textarea/sensitive | Page Agent 避免重复，Wisp 可能重复 |
+| **Viewport** | 可配置 `-1`/`0`/正值（全页面/仅视口/扩展） | 固定观察视口内可见元素 | Page Agent 更灵活 |
+| **Scroll 信息** | 详细（`pixels_above/below`、`pages_above/below`） | 简单（`scrollX/scrollY`、`width/height`） | Page Agent 更详细 |
+| **模型接入** | 页面内调用（密钥在页面 JS 环境） | 扩展会话存储密钥，页面无权访问 | Wisp 更安全（NFR-003） |
 
 ---
 
-## 三、Wisp 可以借鉴的部分
+## 四、Wisp 可以借鉴的部分（已重新评估）
 
-### ✅ 高优先级（T-018 后立即实施）
+### ✅ 有价值且可实施
 
-#### 1. 属性去重与文本匹配删除
+#### 1. 文本收集策略优化（中优先级）
 
-**问题**：Wisp 的观察器可能输出冗余属性，浪费 token
+**问题**：Wisp 的 `bodyText()` 可能与 `ElementSummary.name` 重复
+
+**验证**：
+- `rawName(el)` (`document.mts:178-182`) 对按钮/链接使用 `el.textContent`
+- `bodyText(nodes, limit)` (`document.mts:204-236`) 遍历所有文本节点，**不排除已在可交互元素中的文本**
 
 **Page Agent 的做法**：
-```js
-// 1. 多个属性值相同（长度 > 5）→ 只保留一个
-if (value.length > 5) {
-  if (value in seenValues) {
-    keysToRemove.add(key)
-  } else {
-    seenValues[value] = key
-  }
-}
-
-// 2. role 等于 tagName → 删除 role
-if (attributesToInclude.role === node.tagName) {
-  delete attributesToInclude.role
-}
-
-// 3. aria-label/placeholder/title 等于文本内容 → 删除
-const attrsToRemoveIfTextMatches = ['aria-label', 'placeholder', 'title']
-for (const attr of attrsToRemoveIfTextMatches) {
-  if (attributesToInclude[attr]?.toLowerCase().trim() === text.toLowerCase().trim()) {
-    delete attributesToInclude[attr]
-  }
-}
-```
+- `getAllTextTillNextClickableElement()` 遇下一个可交互元素立即停止
 
 **建议**：
-- 在 `packages/browser-chrome/src/document.mts:317` 的观察器中添加类似逻辑
-- 优先级：**高**（直接减少 token 消耗，无副作用）
+- 在 `bodyText()` 中，跳过 `interactive(el)` 为 true 的元素的文本节点
+- 预期收益：减少 10-20% 观察文本冗余（**未测量，需验证**）
+- 风险：中（可能影响模型理解，需回归测试）
 
 ---
 
-#### 2. 文本收集策略优化
+#### 2. Scroll 信息增强（低优先级）
 
-**问题**：Wisp 的文本可能包含嵌套可交互元素的重复内容
-
-**Page Agent 的做法**：
-- `getAllTextTillNextClickableElement()` 递归收集，遇下一个可交互元素停止
-
-**建议**：
-- 在 `packages/browser-chrome/src/document.mts` 中参考这个策略
-- 优先级：**中**（改进观察质量，但需要测试）
-
----
-
-#### 3. Scroll 信息增强
-
-**问题**：Wisp 只提供 `scroll: {x, y}`，模型难以判断是否需要滚动
+**问题**：Wisp 只提供 `viewport: {scrollX, scrollY, width, height}`，模型难以判断是否需要滚动
 
 **Page Agent 的做法**：
 ```js
 {
-  pixels_above, pixels_below,
-  pages_above, pages_below,
-  current_page_position  // 0-1
+  pixels_above: scroll_y,
+  pixels_below: page_height - (viewport_height + scroll_y),
+  pages_above: scroll_y / viewport_height,
+  pages_below: pixels_below / viewport_height,
+  current_page_position: scroll_y / (page_height - viewport_height)
 }
 ```
 
 **建议**：
-- 在 `packages/protocol/src/observation.mts` 的 `Viewport` 类型中添加这些字段
-- 优先级：**中**（改进模型决策，但不影响现有功能）
+- 在 `Observation.viewport` 中添加 `scrollable: { hasMore: boolean, direction: 'up' | 'down' | 'both' }`
+- 或添加 `pages_above/below` 字段
+- 预期收益：改进模型滚动决策（**未测量**）
+- 风险：低（只增加字段，不影响现有逻辑）
 
 ---
 
-### ⚠️ 中等优先级（v0.2 考虑）
+#### 3. 可交互判定增强（低优先级，需谨慎）
 
-#### 4. 可交互元素判定增强
-
-**问题**：Wisp 的无障碍树可能遗漏某些可交互元素（如自定义组件）
+**问题**：Wisp 的固定 13 个 role 可能遗漏自定义组件
 
 **Page Agent 的做法**：
-- 启发式规则（事件监听器、`cursor: pointer`、`contenteditable`）
+- 检查 30+ 种 `cursor` 样式（`pointer/move/grab/resize/zoom-in` 等）
 
 **建议**：
-- 在 `packages/browser-chrome/src/document.mts` 中添加补充规则
-- 优先级：**中**（扩大支持范围，但可能引入误判）
+- 在 `interactive()` 中，补充检查 `cursor` 样式（当前只检查 `cursor === 'pointer'`）
+- 风险：中（可能引入误判，如装饰性 hover 效果）
 
 ---
 
-#### 5. 黑名单/白名单机制
+### ❌ 不适用或不建议
 
-**问题**：某些站点有装饰性可交互元素（如广告、追踪器）
+#### 1. 属性去重逻辑
 
-**Page Agent 的做法**：
-```js
-interactiveBlacklist: [element1, element2]
-interactiveWhitelist: [element3]
-```
-
-**建议**：
-- 在 `packages/browser-chrome/src/adapter.mts` 的 `observe()` 中添加配置项
-- 优先级：**低**（站点特定优化，不通用）
+**原因**：Wisp 的 `ElementSummary` 不包含 HTML 属性，只有语义化字段
+**结论**：**完全不适用**
 
 ---
 
-### ❌ 不建议借鉴
+#### 2. 纯文本输出格式
 
-#### 6. 新元素检测的 WeakMap 方案
-
-**Page Agent 的做法**：
-```js
-newElementsCache = new WeakMap<HTMLElement, string>()
-```
-
-**问题**：
-- 跨观察持久化，可能导致引用绑定混乱
-- Wisp 的 `observationId` 作用域隔离更安全
-
-**建议**：**不采纳**（Wisp 的设计更符合严格引用原则）
+**原因**：Wisp 的结构化 JSON 是核心优势，模型可以精确引用 `ref`
+**结论**：**不采纳**
 
 ---
 
-#### 7. 纯文本输出格式
+#### 3. WeakMap 引用缓存
 
-**Page Agent 的做法**：
-- `flatTreeToString()` 输出 Markdown 风格纯文本
-
-**问题**：
-- 丢失结构化信息，模型难以精确引用
-- Wisp 的 JSON + 引用绑定更可靠
-
-**建议**：**不采纳**（Wisp 的结构化输出是核心优势）
+**原因**：与 Wisp 的 `observationId` 作用域隔离冲突
+**结论**：**不采纳**（Wisp 的设计更符合严格引用原则）
 
 ---
 
-## 四、具体行动计划
+#### 4. DOM 事件合成
 
-### 阶段 1：快速验证（1 天）
+**原因**：Wisp 的 T-001 探针已验证 CDP 路径更可靠
+**结论**：**不采纳**
 
-**目标**：提取 Page Agent 的属性去重逻辑，集成到 Wisp 观察器
+---
 
-1. **读取 Wisp 观察器**：
-   ```
-   packages/browser-chrome/src/document.mts:317
-   ```
+## 五、具体行动计划（已调整）
 
-2. **添加属性去重函数**：
+### 阶段 1：文本收集优化（T-018 后，1 天）
+
+**目标**：避免 `bodyText()` 与 `ElementSummary.name` 重复
+
+1. **修改 `packages/browser-chrome/src/document.mts:204-236`**：
    ```ts
-   function deduplicateAttributes(
-     attributes: Record<string, string>,
-     textContent: string
-   ): Record<string, string> {
-     const result = { ...attributes }
-     
-     // 1. 多个属性值相同（长度 > 5）→ 只保留一个
-     const seenValues = new Map<string, string>()
-     const keysToRemove = new Set<string>()
-     for (const [key, value] of Object.entries(result)) {
-       if (value.length > 5) {
-         if (seenValues.has(value)) {
-           keysToRemove.add(key)
-         } else {
-           seenValues.set(value, key)
-         }
+   function bodyText(nodes: Node[], limit: number) {
+       if (suppressed) return '';
+       let text = '';
+       for (const node of nodes) {
+           if (node.nodeType !== 3 || !node.textContent?.trim()) continue;
+           const parent = node.parentElement;
+           if (!parent || !visible(parent)) continue;
+           
+           // 新增：跳过可交互元素内的文本（已在 rawName 中收集）
+           let excluded = false;
+           for (let el: Element | null = parent; el; el = composedParent(el)) {
+               if (interactive(el)) {  // 新增检查
+                   excluded = true;
+                   break;
+               }
+               if (['input', 'textarea'].includes(el.localName) || sensitive(el)) {
+                   excluded = true;
+                   break;
+               }
+           }
+           if (excluded) continue;
+           
+           // ... 其余逻辑不变
        }
-     }
-     for (const key of keysToRemove) {
-       delete result[key]
-     }
-     
-     // 2. role 等于 tagName → 删除 role
-     if (result.role && result.role === result.tagName) {
-       delete result.role
-     }
-     
-     // 3. aria-label/placeholder/title 等于文本内容 → 删除
-     const attrsToCheck = ['aria-label', 'placeholder', 'title']
-     for (const attr of attrsToCheck) {
-       if (result[attr]?.toLowerCase().trim() === textContent.toLowerCase().trim()) {
-         delete result[attr]
-       }
-     }
-     
-     return result
+       return text;
    }
    ```
 
-3. **集成到观察循环**：
-   - 在生成 `InteractiveElement` 时调用 `deduplicateAttributes()`
-
-4. **验证**：
-   - 运行 `npm run observer:smoke`
-   - 对比优化前后的观察输出大小
+2. **验证**：
+   - `npm run observer:smoke` — 确保观察器通过
+   - 对比优化前后的 `Observation.text` 大小
+   - 回归测试：`npm test`
 
 ---
 
-### 阶段 2：增强 Scroll 信息（0.5 天）
+### 阶段 2：Scroll 信息增强（v0.2，0.5 天）
 
-1. **修改 `packages/protocol/src/observation.mts`**：
+1. **修改 `packages/protocol/src/observation.mts:35-41`**：
    ```ts
-   export type Viewport = {
-     width: number
-     height: number
-     scroll: {
-       x: number
-       y: number
-       pixelsAbove: number      // 新增
-       pixelsBelow: number      // 新增
-       pagesAbove: number       // 新增
-       pagesBelow: number       // 新增
-       currentPosition: number  // 新增（0-1）
-     }
+   viewport: {
+       width: number;
+       height: number;
+       dpr: number;
+       scrollX: number;
+       scrollY: number;
+       scrollable?: {  // 新增可选字段
+           hasMore: boolean;
+           direction: 'up' | 'down' | 'both' | 'none';
+       };
+   };
+   ```
+
+2. **修改 `packages/browser-chrome/src/document.mts:278`**：
+   - 在 `capture()` 中计算 `scrollHeight/scrollWidth` 与视口的关系
+   - 填充 `viewport.scrollable` 字段
+
+3. **验证**：同阶段 1
+
+---
+
+### 阶段 3：可交互判定增强（v0.3+，需更多真实站点验证）
+
+**触发条件**：T-018 发现大量自定义组件未被识别
+
+1. **修改 `packages/browser-chrome/src/document.mts:177`**：
+   ```ts
+   function interactive(el: Element) {
+       if (roles.has(role(el)) || (el as HTMLElement).tabIndex >= 0) return true;
+       
+       const cursor = style(el).cursor;
+       // 扩展 cursor 检查（参考 Page Agent 的 interactiveCursors）
+       const interactiveCursors = new Set(['pointer', 'move', 'grab', 'grabbing', 'cell', 'copy', 'zoom-in', 'zoom-out']);
+       if (interactiveCursors.has(cursor)) return true;
+       
+       return false;
    }
    ```
 
-2. **修改 `packages/browser-chrome/src/document.mts`**：
-   - 在 `observe()` 中调用类似 `getPageInfo()` 的逻辑
-
-3. **验证**：
-   - 运行 `npm run observer:smoke`
-   - 检查新字段是否正确
-
----
-
-### 阶段 3：文本收集优化（1 天）
-
-1. **实现 `getAllTextTillNextInteractiveElement()`**
-2. **在观察器中替换现有文本收集逻辑**
-3. **回归测试**：
-   - `npm run observer:smoke`
-   - `npm run control:smoke`
-   - `npm test`
-
----
-
-## 五、预期收益
-
-| 优化项 | 预期收益 | 风险 |
-|--------|---------|------|
-| 属性去重 | 减少 5-10% 观察 token | 低（纯过滤，无副作用） |
-| Scroll 信息 | 改进模型滚动决策准确率 | 低（只增加字段） |
-| 文本收集优化 | 减少 10-20% 观察 token | 中（可能影响模型理解） |
-| 可交互判定增强 | 扩大 5-15% 控件覆盖 | 中（可能引入误判） |
-
-**总收益**：
-- **观察序列化大小减少 15-30%**
-- **模型 token 消耗减少 10-20%**
-- **控件支持范围扩大 5-15%**
+2. **验证**：需要在多个真实站点验证，避免误判
 
 ---
 
@@ -427,22 +388,23 @@ newElementsCache = new WeakMap<HTMLElement, string>()
 
 ### ✅ Page Agent 的价值
 
-1. **属性去重与优化**：直接适用，立即提升 Wisp 观察器效率
-2. **Scroll 信息增强**：改进模型决策质量
-3. **文本收集策略**：智能剪枝，减少冗余
+1. **文本收集策略**：避免重复（可借鉴）
+2. **Scroll 信息**：改进模型决策（可借鉴）
+3. **Cursor 样式判定**：覆盖面广（需谨慎借鉴）
 
 ### ❌ 不适合 Wisp 的部分
 
-1. **DOM 事件合成**：Wisp 的 CDP 路径更可靠
-2. **WeakMap 引用缓存**：与 Wisp 的作用域隔离冲突
-3. **纯文本输出**：Wisp 的结构化 JSON 更精确
+1. **属性去重**：Wisp 无属性字段，完全不适用
+2. **DOM 事件合成**：Wisp 的 CDP 路径更可靠
+3. **WeakMap 缓存**：与 Wisp 的作用域隔离冲突
+4. **纯文本输出**：Wisp 的结构化 JSON 更精确
 
 ### 🎯 行动优先级
 
-1. **立即做**（T-018 后）：属性去重（1 天，高收益低风险）
-2. **短期做**（v0.2）：Scroll 信息增强 + 文本收集优化（1.5 天）
-3. **中期考虑**（v0.3）：可交互判定增强 + 黑名单/白名单
+1. **T-018 后立即做**：文本收集优化（1 天，需测量实际收益）
+2. **v0.2 考虑**：Scroll 信息增强（0.5 天）
+3. **v0.3+ 考虑**：可交互判定增强（需更多站点验证）
 
 ---
 
-**下一步**：完成 T-018 后，用 T-018 的实际场景验证这些优化的效果。
+**重要声明**：本文档所有"预期收益"均未经测量，需在 T-018 真实场景中验证。

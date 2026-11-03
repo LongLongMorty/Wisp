@@ -1,6 +1,6 @@
 # Research：浏览器端侧 Agent 框架现状调研
 
-**日期**：2024-11-03  
+**日期**：2026-11-03  
 **范围**：调研 Wisp v0.1 已实现功能、架构、验收状态及待完成任务  
 **目的**：为下一步规划提供清晰的现状基线
 
@@ -208,7 +208,7 @@ browser-chrome   models   policy
 5. `scroll`：上下滚动（1–2000 像素）
 6. `navigate`：导航到指定 URL
 
-**五类条件**：
+**四类条件**：
 - `url`：equals 或 startsWith
 - `element`：role/name/state（visible 或 absent）
 - `text`：includes
@@ -230,7 +230,7 @@ browser-chrome   models   policy
 - `readPolicyContext()`：读取策略上下文（origin、formaction、输入类型）
 
 **actionability 检查**：
-- 可见（offsetWidth/Height > 0、无 `display:none`）
+- 可见（`visible()` 函数：元素及祖先链无 `hidden`/`aria-hidden`/`display:none`/`visibility:hidden`/`opacity:0`，且 `getBoundingClientRect()` 有效尺寸且在视口内）
 - 启用（不是 `disabled`/`aria-disabled`/`inert`）
 - 视口中心未遮挡
 - 两次 50ms 几何稳定
@@ -272,9 +272,9 @@ browser-chrome   models   policy
 
 **公开接口**：
 - `createMemoryStore()`：内存 store（测试用）
-- `createIndexedDBStore()`：IndexedDB store（生产用）
-- `createRuntime(options)`：创建运行时实例
-- `configureLoop(options)`：配置单步循环
+- `openIndexedDbStore(options)`：IndexedDB store（生产用，接受 `name` 和 `factory` 参数）
+- `createTaskRuntime(options)`：创建运行时实例
+- `attachLoop(runtime, store, sessionId, options?)`：附加单步循环到运行时
 
 **状态机**：
 ```
