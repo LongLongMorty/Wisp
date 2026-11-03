@@ -157,18 +157,31 @@
 
     if (!ticket) return e('div', null, '加载中...');
 
-    const nextStatus = {pending: 'processing', processing: 'resolved', resolved: 'closed'}[ticket.status];
+    // The server fixes the acting user to user1; the UI mirrors it only to hide buttons, the server enforces it.
+    const currentUser = 'user1';
+    const isAssignee = ticket.assignee === currentUser;
+    const action = {
+      pending: {next: 'processing', label: '开始处理', allowed: true},
+      processing: {next: 'resolved', label: '标记已解决', allowed: isAssignee},
+      resolved: {next: 'closed', label: '关闭工单', allowed: isAssignee}
+    }[ticket.status];
 
     return e('div', null,
       e('h1', null, `工单详情 - ${ticket.id}`),
       e('dl', null,
         e('dt', null, '标题'), e('dd', null, ticket.title),
         e('dt', null, '描述'), e('dd', null, ticket.description),
+        e('dt', null, '一级分类'), e('dd', null, ticket.category1),
+        e('dt', null, '二级分类'), e('dd', null, ticket.category2),
         e('dt', null, '状态'), e('dd', null, ticket.status),
         e('dt', null, '优先级'), e('dd', null, ticket.priority),
         e('dt', null, '处理人'), e('dd', null, ticket.assignee || '未分配'),
+        e('dt', null, '创建时间'), e('dd', null, ticket.created_at),
+        e('dt', null, '更新时间'), e('dd', null, ticket.updated_at),
         ticket.due_date && e('dt', null, '预计解决时间'), ticket.due_date && e('dd', null, ticket.due_date)),
-      nextStatus && e('button', {onClick: () => handleStatusChange(nextStatus)}, `变更为 ${nextStatus}`),
+      e('a', {href: `${origin}/ticket-system/s/${sessionId}/list`}, '返回列表'),
+      action && action.allowed && e('button', {onClick: () => handleStatusChange(action.next)}, action.label),
+      ticket.status === 'closed' && e('p', null, '工单已关闭，无可用操作'),
       e('h2', null, '审计日志'),
       e('ul', null,
         logs.map(log => e('li', {key: log.id},

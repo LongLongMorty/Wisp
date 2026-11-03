@@ -69,6 +69,53 @@ try {
     throw Error('Form fields missing: ' + JSON.stringify(form));
   }
   console.log('✓ CreateTicket form renders with cascading selects');
+
+  async function clickButton(text) {
+    const point = await evaluate(`(()=>{const b=[...document.querySelectorAll("button")].find(x=>x.textContent===${JSON.stringify(text)});if(!b)throw Error("no button "+${JSON.stringify(text)});b.scrollIntoView({block:"center"});const r=b.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()`, sid);
+    for (const type of ['mousePressed', 'mouseReleased'])
+      await send('Input.dispatchMouseEvent', {type, ...point, button: 'left', clickCount: 1}, sid);
+  }
+
+  const created = await (await fetch(`${server.origin}/api/${sessionId}/tickets`, {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({title: '烟雾工单', description: 'D', category1: '技术问题', category2: '无法登录', priority: 'high'})
+  })).json();
+  const ticketId = created.ticket.id;
+  await send('Page.navigate', {url: `${server.origin}/ticket-system/s/${sessionId}/detail/${ticketId}`}, sid);
+  await wait(() => evaluate('document.querySelector("h1")?.textContent.includes("工单详情")', sid), sid);
+  const buttons = await evaluate('[...document.querySelectorAll("button")].map(b=>b.textContent)', sid);
+  if (!buttons.includes('开始处理')) throw Error('Detail buttons: ' + JSON.stringify(buttons));
+  if (!(await evaluate('[...document.querySelectorAll("a")].some(a=>a.textContent==="返回列表")', sid))) throw Error('missing 返回列表 link');
+  await clickButton('开始处理');
+  await wait(() => server.repository.getTicketById(sessionId, ticketId).status === 'processing', sid);
+  console.log('✓ Detail: 开始处理 moves ticket to processing');
+
+  await wait(() => evaluate('[...document.querySelectorAll("button")].some(b=>b.textContent==="标记已解决")', sid), sid);
+  await clickButton('标记已解决');
+  await wait(() => server.repository.getTicketById(sessionId, ticketId).status === 'resolved', sid);
+  await wait(() => evaluate('[...document.querySelectorAll("button")].some(b=>b.textContent==="关闭工单")', sid), sid);
+  await clickButton('关闭工单');
+  await wait(() => server.repository.getTicketById(sessionId, ticketId).status === 'closed', sid);
+  await wait(() => evaluate('document.body.textContent.includes("工单已关闭")', sid), sid);
+  if ((await evaluate('document.querySelectorAll("button").length', sid)) !== 0) throw Error('closed ticket still shows buttons');
+  console.log('✓ Detail: assignee can resolve and close; closed ticket has no buttons');
+
+  const other = server.repository.createTicket(sessionId, {title: '他人工单', description: 'D', category1: '技术问题', category2: '无法登录', priority: 'low', assignee: 'user2'}, 'user1');
+  server.repository.changeStatus(sessionId, other.id, 'processing', 'user2');
+  await send('Page.navigate', {url: `${server.origin}/ticket-system/s/${sessionId}/detail/${other.id}`}, sid);
+  await wait(() => evaluate('document.querySelector("h1")?.textContent.includes("工单详情")', sid), sid);
+  if ((await evaluate('[...document.querySelectorAll("button")].length', sid)) !== 0) throw Error('non-assignee sees action buttons');
+  console.log('✓ Detail: non-assignee sees no action buttons');
+
+  await send('Page.navigate', {url: `${server.origin}/ticket-system/s/${sessionId}/list`}, sid);
+  await wait(() => evaluate('document.querySelector("h1")?.textContent.includes("工单列表")', sid), sid);
+  await wait(() => evaluate('document.querySelector("button")?.textContent==="筛选"', sid), sid);
+  const rowsBefore = await evaluate('document.querySelectorAll("tbody tr").length', sid);
+  await evaluate('(()=>{const s=document.querySelectorAll("select")[0];const set=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,"value").set;set.call(s,"closed");s.dispatchEvent(new Event("change",{bubbles:true}))})()', sid);
+  if ((await evaluate('document.querySelectorAll("tbody tr").length', sid)) !== rowsBefore) throw Error('list refetched before 筛选 was clicked');
+  await clickButton('筛选');
+  await wait(() => evaluate('document.querySelectorAll("tbody tr").length === 1', sid), sid);
+  console.log('✓ List: 筛选 button applies the status filter');
 } finally {
   child.kill();
   rejectAll(Error('Closed'));
