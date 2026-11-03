@@ -9,6 +9,8 @@ export const CATEGORIES = {
   '功能建议': ['新功能', '界面改进', '流程优化', '其他建议']
 };
 
+const PRIORITIES = ['low', 'medium', 'high', 'urgent'];
+
 export const USERS = [
   {id: 'user1', name: '张三'},
   {id: 'user2', name: '李四'},
@@ -78,10 +80,20 @@ export function createRepository() {
     },
     createTicket(sessionId, data, currentUser) {
       const session = get(sessionId);
+      const text = (value, max) => {
+        if (typeof value !== 'string' || !value.trim() || value.length > max) throw new FixtureError(400, 'Invalid ticket field');
+        return value.trim();
+      };
+      const title = text(data.title, 200), description = text(data.description, 2000);
+      if (!Object.hasOwn(CATEGORIES, data.category1) || !CATEGORIES[data.category1].includes(data.category2)) throw new FixtureError(400, 'Invalid category');
+      if (!PRIORITIES.includes(data.priority)) throw new FixtureError(400, 'Invalid priority');
+      const assignee = data.assignee || null;
+      if (assignee !== null && !USERS.some(user => user.id === assignee)) throw new FixtureError(400, 'Invalid assignee');
+      const dueDate = data.priority === 'urgent' && data.due_date ? text(data.due_date, 10) : null;
       const id = 'T-' + String(++session.ticketCounter).padStart(4, '0');
       const now = new Date().toISOString();
       session.db.prepare('INSERT INTO tickets (id, title, description, category1, category2, priority, assignee, status, due_date, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
-        .run(id, data.title, data.description, data.category1, data.category2, data.priority, data.assignee || null, 'pending', data.due_date || null, now, now);
+        .run(id, title, description, data.category1, data.category2, data.priority, assignee, 'pending', dueDate, now, now);
       session.db.prepare('INSERT INTO audit_logs (ticket_id, action, operator, details, timestamp) VALUES (?, ?, ?, ?, ?)')
         .run(id, 'created', currentUser, null, now);
       return session.db.prepare('SELECT * FROM tickets WHERE id = ?').get(id);

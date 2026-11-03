@@ -85,6 +85,35 @@ describe('State Machine', () => {
   });
 });
 
+describe('createTicket validation', () => {
+  const valid = {title: 'T', description: 'D', category1: '技术问题', category2: '无法登录', priority: 'low'};
+  const cases = [
+    ['empty title', {title: '  '}],
+    ['empty description', {description: ''}],
+    ['unknown category1', {category1: '不存在'}],
+    ['category2 from another category1', {category2: '功能咨询'}],
+    ['unknown priority', {priority: 'critical'}],
+    ['unknown assignee', {assignee: 'user9'}]
+  ];
+  for (const [name, patch] of cases) {
+    it(`rejects ${name} with 400 and writes nothing`, () => {
+      const repo = createRepository();
+      const {sessionId} = repo.createSession();
+      assert.throws(() => repo.createTicket(sessionId, {...valid, ...patch}, 'user1'), {status: 400});
+      const state = repo.getState(sessionId);
+      assert.strictEqual(state.tickets.length, 0);
+      assert.strictEqual(state.auditLogs.length, 0);
+    });
+  }
+
+  it('drops due_date unless priority is urgent', () => {
+    const repo = createRepository();
+    const {sessionId} = repo.createSession();
+    assert.strictEqual(repo.createTicket(sessionId, {...valid, due_date: '2026-11-10'}, 'user1').due_date, null);
+    assert.strictEqual(repo.createTicket(sessionId, {...valid, priority: 'urgent', due_date: '2026-11-10'}, 'user1').due_date, '2026-11-10');
+  });
+});
+
 describe('Queries', () => {
   it('getTickets filters by status and priority', () => {
     const repo = createRepository();
