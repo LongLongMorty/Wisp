@@ -64,7 +64,7 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
                     continue;
                 }
                 chars += a.name.length + a.value.length;
-                if (chars > 65536) {
+                if (chars > 262144) {
                     complete = false;
                     break;
                 }
@@ -72,7 +72,7 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
             } return attrs.sort(); }
             const sensitive = (el: Element) => el.getAttribute('type')?.toLowerCase() === 'password' || /password|passwd|secret|token|authorization|api[ _-]?key|one-time-code|(?:^|[^a-z])otp(?:[^a-z]|$)|密码|口令|验证码|密钥|令牌/i.test(['name', 'id', 'autocomplete', 'aria-label', 'placeholder'].map(k => el.getAttribute(k) || '').join(' ') + ' ' + ((el as HTMLInputElement).labels ? [...(el as HTMLInputElement).labels!].map(l => l.textContent || '').join(' ') : ''));
             let hasSensitive = false;
-            while (nodes.length && count < 10000) {
+            while (nodes.length && count < 50000) {
                 const node = nodes.pop()!;
                 count++;
                 if (node.nodeType === 1) {
@@ -85,13 +85,13 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
                         hasSensitive ||= privateField;
                         const value = privateField ? '[SENSITIVE]' : typeof field.value === 'string' ? field.value : el.textContent || '';
                         chars += value.length;
-                        if (chars > 65536 || (field.name || '').length > 2048 || el.id.length > 2048) {
+                        if (chars > 262144 || (field.name || '').length > 2048 || el.id.length > 2048) {
                             complete = false;
                             break;
                         }
                         const meta = { tag: el.localName, type: field.type || '', name: field.name || '', id: el.id, value, checked: !!field.checked, disabled: !!field.disabled };
                         chars += JSON.stringify(meta).length;
-                        if (chars > 65536) {
+                        if (chars > 262144) {
                             complete = false;
                             break;
                         }
@@ -100,7 +100,7 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
                     if (el.shadowRoot) {
                         const children = el.shadowRoot.childNodes;
                         for (let i = children.length - 1; i >= 0; i--) {
-                            if (nodes.length + count >= 10000) {
+                            if (nodes.length + count >= 50000) {
                                 complete = false;
                                 break;
                             }
@@ -109,14 +109,14 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
                     }
                 }
                 for (let i = node.childNodes.length - 1; i >= 0; i--) {
-                    if (nodes.length + count >= 10000) {
+                    if (nodes.length + count >= 50000) {
                         complete = false;
                         break;
                     }
                     nodes.push(node.childNodes[i]!);
                 }
             }
-            if (nodes.length || chars > 65536)
+            if (nodes.length || chars > 262144)
                 complete = false;
             const documentDigest = await digest({ url: doc.URL.length <= 65536 ? doc.URL : "[URL_TOO_LONG]", controls });
             const result: PolicyContext = { origin: new URL(doc.URL).origin, url: snapshot.url, documentId: snapshot.documentId, frameId: snapshot.frameId, documentDigest, complete };
