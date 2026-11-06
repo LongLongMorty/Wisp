@@ -7,9 +7,9 @@
 ## 30 秒了解
 
 - **是什么**：浏览器 Agent 框架的 v0.1 原型。控制层、策略、运行时与 SDK 可独立复用，Chrome 扩展只是首个宿主。
-- **已能做什么**：在本地 fixture 上用真实 Chrome + 真实模型完成搜索详情、表格筛选与结构化提取、表单填写到提交确认；单步执行、写前确认、暂停/恢复、unknown 先核对后处理。
+- **已能做什么**：在本地 fixture 上用真实 Chrome + 真实模型完成搜索详情、表格筛选与结构化提取、表单填写到提交确认；在 Project Gutenberg 真实页面完成过一次只读信息提取。支持单步执行、写前确认、暂停/恢复、unknown 先核对后处理。
 - **不能做什么**：不是任意网站可用的产品。不支持多标签、跨域 iframe、视觉定位、文件上传、支付/密码/验证码；未做安全审计，不保证副作用完全可控。
-- **快速验证**：`npm ci --cache .cache/npm` → `npm run check` → `npm test` → `npm run build`；无浏览器示例 `node docs/examples/sdk-task.mjs`。
+- **快速验证**：`npm ci --cache .cache/npm` → `npm run build` → `npm run check` → `npm test`；无浏览器示例 `node docs/examples/sdk-task.mjs`。
 
 ## 使用入口
 
@@ -28,9 +28,9 @@
 
 ```powershell
 npm ci --cache .cache/npm
+npm run build
 npm run check
 npm test
-npm run build
 ```
 
 在 `chrome://extensions` 开启开发者模式，加载 `apps/extension/.output/chrome-mv3`，点击图标打开原生侧边栏。配置完整模型端点与模型名后，选择并授权普通 HTTP(S) 网页。普通 tab 打开 sidepanel.html 不具备任务权限。
@@ -56,16 +56,16 @@ node scripts/validate-docs.mjs
 
 ## 当前状态与边界
 
-- 290 项确定性测试；故障矩阵 137/137；可靠性 15/15；性能 30 次采样 p95 约 30ms（随机器与时间变化）；`deepseek-flash` 实际 15 轮 search/table/form 各 5/5，零未授权副作用；四项人工检查通过。
-- 发布候选 `node scripts/package-candidate.mjs --online` 十项检查通过（隔离安装、检查/测试/构建/示例、两次构建重现），见 [T-017 报告](specs/001-browser-agent/t017-report.md)。
-- **真实站点试用**：GitHub Issues 试用因页面复杂度触发 `INCOMPLETE_CONTEXT` 策略限制失败（页面包含 >4 个 `destinationOrigins`），见 [T-018 GitHub Issues 试用](specs/002-ticket-system/t018-github-issues-trial.md)。
+- 历史 fixture 验收包含 290 项确定性测试、故障矩阵 137/137、可靠性 15/15、性能采样和 `deepseek-flash` 实际 15 轮 search/table/form 各 5/5；这些结果绑定当时的代码和环境。
+- 历史发布候选曾通过十项检查，见 [T-017 报告](specs/001-browser-agent/t017-report.md)；后续代码和规格已变更，不能将旧候选验收结果直接用于当前构建。
+- **真实站点试用**：[Project Gutenberg](specs/002-ticket-system/t018-gutenberg-trial.md) 一次只读提取完成；[Open Library](specs/002-ticket-system/t018-open-library-trial.md) 曾需人工接管，后续复测仍暂停；[维基百科](specs/002-ticket-system/t018-wikipedia-trial.md) 试用未完成；[GitHub Issues](specs/002-ticket-system/t018-github-issues-trial.md) 的历史试用失败。中文与英文维基百科按同一应用计数。
 - 说明：T-014 的严格聚合 JSON 因实测后修改了发布规格状态行而显示 `incomplete`；T-015 记录了该精确差异，T-016 以冻结证据复核通过，均未改写原报告。细节见 [验证与证据](docs/verification.md)。
 - 以上成绩绑定本机 fixture 与单一提供方，不代表任意网站成功率；最低 Chrome 125 未做同等回归；Q-005（用户/程序输入归因）仍有边界。
 
 **已知限制**（真实站点暴露的问题）：
-- 复杂页面（如 GitHub）包含大量全局导航和外部链接时，会触发 `destinationOrigins > 4` 的安全限制，导致操作被标记为需要人工接管（`handoff`）
-- 当前策略网关的 `INCOMPLETE_CONTEXT` 检查较为保守，可能在安全复杂站点上误判
-- 用户界面在任务暂停时未清楚显示具体原因（只显示"已暂停"，不显示 `INCOMPLETE_CONTEXT` 或 `handoff` 原因）
+- 上下文不完整仍会触发保守接管；页面加载、自定义元素、过大内容或其他限制都可能导致暂停，不能从通用错误推断具体原因。
+- 侧边栏现可显示固定集合的策略暂停原因；动作失败、结果未明和预算耗尽仍可能缺少足够的诊断细节。
+- 默认五分钟按任务开始后的实际时间计算，暂停和等待人工处理的时间也会计入；恢复不重置预算。
 
 ## 参与与许可
 

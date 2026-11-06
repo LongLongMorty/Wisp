@@ -31,6 +31,14 @@ async function fixture(t) {
     return m;
 }
 
+test('real policy handoff is recorded without dispatch', async t => {
+    const m = await fixture(t); m.context.complete = false;
+    const result = await m.r.execute('run', m.request('click'));
+    assert.equal(result.action.stage, 'abandoned'); assert.equal(m.effects, 0);
+    const events = await m.r.events('run');
+    assert.ok(events.some(e => e.reason === 'POLICY_STOP'));
+    assert.ok(events.some(e => e.type === 'action.result' && e.reason === 'INCOMPLETE_CONTEXT'));
+});
 test('fault.concurrentDuplicate: runtime and policy dispatch one effect', async t => {
     const m = await fixture(t), req = m.request();
     const receipts = await Promise.all(Array.from({ length: 12 }, () => m.r.execute('run', req)));

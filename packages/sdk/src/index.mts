@@ -26,6 +26,7 @@ const safeError = (error: unknown) => new RuntimeError(error && typeof error ===
 function cursor(value: number) { if (!Number.isSafeInteger(value) || value < 0)
     throw new RuntimeError('POLICY_DENIED'); return value; }
 const summaries = new Set([...ERROR_CODES, 'CREATED', 'STARTING', 'OBSERVED', 'START_FAILED', 'USER_PAUSE', 'USER_CANCEL', 'USER_INTERFERENCE', 'HOST_DISPOSED', 'RECOVERED', 'APPROVING', 'COMPLETED', 'FAILED', 'CONFIRMATION_REQUIRED', 'CONFIRMATION_REJECTED', 'ACTION_FAILED', 'POLICY_STOP', 'PREPARED', 'DISPATCHING', 'REPLAN_REQUIRED', 'NO_PROGRESS', 'LOOP_ABORTED', 'ASK_USER', 'DECIDE', 'EXTRACT', 'FAILED_ATTEMPT', 'DECIDE_INPUT', 'STOP', 'finished', 'unknown', 'abandoned', 'waiting_confirmation', 'passed', 'failed', 'unknown', 'USER_ACKNOWLEDGED']);
+for (const reason of ['ORIGIN_NOT_GRANTED', 'DESTINATION_NOT_GRANTED', 'STALE_TARGET', 'UNSUPPORTED_WINDOW', 'NOT_ACTIONABLE', 'SENSITIVE_OPERATION', 'INCOMPLETE_CONTEXT', 'UNSUPPORTED_INPUT', 'SITE_RULE', 'POLICY_REASON_UNKNOWN']) summaries.add(reason);
 async function wire(entry: JournalEntry): Promise<RuntimeEvent> {
     const id = [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(entry.runId + '\0' + entry.seq)))].map(x => x.toString(16).padStart(2, '0')).join('');
     const base = { version: '0.1', eventId: id, runId: entry.runId, seq: entry.seq, timestamp: entry.timestamp };

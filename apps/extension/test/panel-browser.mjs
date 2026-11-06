@@ -14,7 +14,7 @@ import { createController, assertNoEffects, assertSubmissionCount, assertSavedTi
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const stage = process.env.WISP_PANEL_STAGE === 't013' ? 't013' : 't012';
 const server = await createFixtureServer(), control = createController(server), session = await control.create();
-const reports = path.join(root, 'specs/001-browser-agent/evidence');
+const reports = path.join(root, process.env.WISP_PANEL_POLICY_EVIDENCE === '1' ? '.cache/policy-stop-evidence' : 'specs/001-browser-agent/evidence');
 await mkdir(reports, { recursive: true });
 const cache = path.join(root, '.cache', stage);
 await mkdir(cache, { recursive: true });
@@ -107,6 +107,10 @@ const modelServer = createServer(async (req, res) => {
     let decision;
     if (input.goal === 'PANEL_WAIT')
         decision = { kind: 'ask_user', question: 'Manual help requested' };
+    else if (input.goal === 'PANEL_POLICY') {
+        const el = input.observation.elements.find(e => e.role === 'button' && e.name === 'login');
+        decision = { kind: 'action', request: { action: { kind: 'click', target: { documentId: input.observation.documentId, frameId: input.observation.frameId, observationId: input.observation.observationId, ref: el.ref } }, timeoutMs: 3000 } };
+    }
     else if (input.goal === 'PANEL_CONFIRM' && !input.observation.text.includes('操作已记录')) {
         const el = input.observation.elements.find(e => e.role === 'button' && e.name === '普通按钮');
         decision = { kind: 'action', request: { action: { kind: 'click', target: { documentId: input.observation.documentId, frameId: input.observation.frameId, observationId: input.observation.observationId, ref: el.ref } }, expected: [{ kind: 'text', includes: '操作已记录' }], timeoutMs: 3000 } };
@@ -176,6 +180,24 @@ try {
     const read = (await rpc('run.get', { runId })).data.snapshot;
     check('result.actualEvidence', read.result.evidence.length >= 2);
     check('events.versioned', (await rpc('run.events', { runId })).data.events.every(e => e.version === '0.1' && !!e.eventId));
+    fixtureSession = (await send('Target.attachToTarget', { targetId: target.targetId, flatten: true })).sessionId;
+    await evaluateIn(fixtureSession, 'document.querySelector("button[data-click=primary]").setAttribute("aria-label","login")');
+    await send('Target.detachFromTarget', { sessionId: fixtureSession });
+    const policy = await rpc('run.start', { tabId: read.tabId, goal: 'PANEL_POLICY' }), policyId = policy.data.runId;
+    await until(async () => await status(policyId) === 'paused');
+    check('policy.reasonRecorded', (await rpc('run.events', { runId: policyId })).data.events.some(e => e.payload?.summary === 'SENSITIVE_OPERATION'));
+    await until(() => evaluateIn(panel, '[...document.querySelectorAll(".history-row")].some(b=>b.textContent.includes("PANEL_POLICY"))'));
+    check('policy.historyVisible', true);
+    await evaluateIn(panel, '[...document.querySelectorAll(".history-row")].find(b=>b.textContent.includes("PANEL_POLICY")).click()');
+    await until(() => evaluateIn(panel, 'document.querySelector(".events")?.textContent.includes("敏感操作")'));
+    check('policy.reasonDisplayed', true);
+    await evaluateIn(bootstrap, `(async()=>{const db=await new Promise((resolve,reject)=>{const q=indexedDB.open('wisp-production-v01');q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});await new Promise((resolve,reject)=>{const tx=db.transaction('state','readwrite'), store=tx.objectStore('state'), q=store.get('root');q.onsuccess=()=>{const s=q.result,r=s.runs.get(${JSON.stringify(policyId)}),events=s.journal.get(${JSON.stringify(policyId)});for(const [type,reason] of [['run.state','POLICY_STOP'],['action.result','POLICY_REASON_UNKNOWN']]) events.push({seq:++r.seq,runId:${JSON.stringify(policyId)},timestamp:new Date().toISOString(),type,reason,actionId:null,...(type==='run.state'?{state:'paused'}:{})});store.put(s,'root')};tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close()})()`);
+    await until(() => evaluateIn(panel, 'document.querySelector(".events")?.textContent.includes("具体原因未知")'));
+    check('policy.oldAndUnknownEvents', await evaluateIn(panel, '(()=>{const text=document.querySelector(".events").textContent;return text.includes("POLICY_STOP") && text.indexOf("敏感操作") < text.indexOf("具体原因未知")})()'));
+    await rpc('run.cancel', { runId: policyId });
+    fixtureSession = (await send('Target.attachToTarget', { targetId: target.targetId, flatten: true })).sessionId;
+    await evaluateIn(fixtureSession, 'document.querySelector("button[data-click=primary]").removeAttribute("aria-label")');
+    await send('Target.detachFromTarget', { sessionId: fixtureSession });
     const repeatedId = crypto.randomUUID(), waiting = await rpc('run.start', { tabId: read.tabId, goal: 'PANEL_WAIT' }, repeatedId), waitingId = waiting.data.runId;
     await until(async () => await status(waitingId) === 'waiting_user');
     const beforeReplay = calls;

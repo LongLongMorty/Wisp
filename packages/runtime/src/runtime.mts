@@ -345,6 +345,10 @@ export async function createTaskRuntime({ store, gatewayFactory, now = Date.now,
             }
             a.updatedAt = time();
             event(s, r, 'action.result', a.stage, actionId);
+            if (live && (decision?.kind === 'deny' || decision?.kind === 'handoff')) {
+                const allowed = new Set(['ORIGIN_NOT_GRANTED', 'DESTINATION_NOT_GRANTED', 'STALE_TARGET', 'UNSUPPORTED_WINDOW', 'NOT_ACTIONABLE', 'SENSITIVE_OPERATION', 'INCOMPLETE_CONTEXT', 'UNSUPPORTED_INPUT', 'SITE_RULE']);
+                event(s, r, 'action.result', allowed.has(decision.reason) ? decision.reason : 'POLICY_REASON_UNKNOWN', actionId);
+            }
             return decision && live ? { action: a, decision } : { action: a };
         });
     }

@@ -9,9 +9,9 @@ Wisp目前以源码工作区和未打包Chrome扩展交付，尚未发布到npm�
 
 ```powershell
 npm ci --cache .cache/npm
+npm run build
 npm run check
 npm test
-npm run build
 ```
 
 使用随仓库的package-lock.json安装；prepare会生成WXT类型。首次安装需要可用网络，完整缓存已有时才可加 `--offline`。本次文档验收复用已安装依赖，不把它记为一次全新联网安装验证。构建输出是 `apps/extension/.output/chrome-mv3`；历史 `dist/extension` 不是当前产物。
@@ -26,6 +26,12 @@ npm run build
 6. 手动操作目标页前先点击接管。停止不撤销已经发出的请求；关闭面板或Worker中断后任务暂停，重新打开不会自动续跑。
 
 更新构建后在扩展管理页重新加载；浏览器重启、扩展重载/更新/停用后会话配置可能被清除，重新配置并核对授权。任务历史与密钥的存储周期不同。
+
+## 给同学的小范围体验
+
+当前为实验版，先在公开、只读页面试用，不要将含私人信息或重要业务的页面用于首次体验。每位使用者自行配置模型服务与 API 密钥，不要共享密钥；远程模型可能接收经过过滤的页面信息并产生费用。可打开 [Project Gutenberg 书目页](https://www.gutenberg.org/ebooks/1342)，授权其 origin，输入“读取当前页面，告诉我书名和作者。不要点击链接、下载文件或刷新页面”。一次已记录的试用直接完成；其他站点仍可能暂停或失败，见[试用记录](../specs/002-ticket-system/t018-gutenberg-trial.md)。
+
+任务默认时限为五分钟，暂停和人工处理的时间在恢复时也会计入。出现结果未明时先核对页面，不确定时停止；停止不能撤销已发出的操作。
 
 ## 本地试用
 

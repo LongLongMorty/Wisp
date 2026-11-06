@@ -26,6 +26,8 @@ node scripts/validate-docs.mjs
 
 ## 已有成绩和证据边界
 
+T-017 之后的策略和规格已发生变化，以下历史成绩及指纹绑定其原始版本，不能证明当前源码已通过旧发布门禁。当前真实站点的结果与缺失数据见 [T-018 任务](../specs/001-browser-agent/tasks.md)及其各次试用记录；一次 Gutenberg 只读成功不能代表其他页面或交互任务均可用。
+
 本地候选验证：`node scripts/package-candidate.mjs`，先确保文档与闭合证据当前有效（需要时依次执行 `node scripts/validate-docs.mjs`、`node scripts/validate-closure.mjs`）。候选工具在新目录离线安装锁定依赖，执行check/test/build及SDK示例，比较已验收扩展与两次隔离构建，生成源码/扩展ZIP和SHA256SUMS。记录见[T-017报告](../specs/001-browser-agent/t017-report.md)。工具不调用模型或启动Chrome；缓存不足会失败，不自动改为在线安装。联网补验需显式运行 `node scripts/package-candidate.mjs --online`。存在ZIP不等于通过，必须检查机器报告status。
 
 实际归档的deepseek-flash三类各5/5，faults137/137、reliability15/15、四项人工通过。当前performance JSON为30样本、p95约29.9ms、返回115元素、状态取消约1.1ms；较早一次补测约31.5ms，具体结果以对应timestamp的JSON为准。测量包含本地CDP往返/观察/序列化，不含模型与导航等待，不能拿来声称云端任务总耗时。

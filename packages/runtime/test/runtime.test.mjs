@@ -3,6 +3,33 @@ import assert from 'node:assert/strict';
 import { createTaskRuntime, createMemoryStore, RuntimeError } from '../src/index.mts';
 import { parseRequest } from '../../protocol/src/index.mts';
 const proof = (status = 'passed') => ({ status, conditions: [{ condition: { kind: 'text', includes: 'saved' }, status, evidence: [{ kind: 'text', url: 'https://example.test/private?token=secret', documentId: 'd', observationId: 'o', capturedAt: new Date(1000).toISOString(), actual: 'SECRET_EVIDENCE' }] }] });
+test('policy stop records only permitted reason codes without changing action state', async () => {
+    for (const [kind, reason, expected] of [['handoff', 'INCOMPLETE_CONTEXT', 'INCOMPLETE_CONTEXT'], ['deny', 'DESTINATION_NOT_GRANTED', 'DESTINATION_NOT_GRANTED'], ['deny', 'PRIVATE_SECRET', 'POLICY_REASON_UNKNOWN']]) {
+        const m = await fixture();
+        const original = m.factory;
+        m.factory = async () => { const gateway = await original(); gateway.submit = async () => ({ kind, reason }); return gateway; };
+        await m.r.dispose(); m.r = await m.open('s2'); await m.ready();
+        const req = { ...m.req(), action: { kind: 'fill', target: { documentId: 'd', frameId: 'main', observationId: 'o', ref: 'PRIVATE_TARGET' }, value: 'PRIVATE_VALUE' } };
+        const receipt = await m.r.execute('run', req);
+        assert.equal(receipt.action.stage, 'abandoned');
+        const events = await m.r.events('run');
+        assert.ok(events.some(e => e.reason === 'POLICY_STOP'));
+        assert.ok(events.some(e => e.type === 'action.result' && e.reason === expected));
+        assert.ok(!JSON.stringify(events).includes('PRIVATE_SECRET'));
+        assert.ok(!JSON.stringify(events).includes('PRIVATE_VALUE'));
+        assert.ok(!JSON.stringify(events).includes('PRIVATE_TARGET'));
+        await m.r.dispose();
+    }
+});
+test('execution confirmation and user pause do not emit policy reasons', async () => {
+    for (const mode of ['executed', 'confirm', 'pause']) {
+        const m = await fixture(); await m.ready(); m.decisions = mode;
+        if (mode === 'pause') await m.r.pause('run'); else await m.r.execute('run', m.req());
+        const events = await m.r.events('run');
+        assert.ok(!events.some(e => e.reason === 'POLICY_REASON_UNKNOWN' || e.reason === 'INCOMPLETE_CONTEXT'));
+        await m.r.dispose();
+    }
+});
 const observation = { observationId: 'o', documentId: 'd', frameId: 'main', url: 'https://example.test/', title: 'Example', capturedAt: new Date(1000).toISOString(), viewport: { width: 1280, height: 720, dpr: 1, scrollX: 0, scrollY: 0 }, elements: [], text: '', truncated: false, truncationReasons: [] };
 const deferred = () => { let resolve; const promise = new Promise(r => resolve = r); return { promise, resolve }; };
 async function fixture(options = {}) {

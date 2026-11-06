@@ -54,12 +54,12 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
             let complete = !snapshot.truncated;
             const controls: unknown[] = [], nodes: Node[] = doc.body ? [doc.body] : [];
             let count = 0, chars = doc.URL.length;
-            function attributes(el: Element) { const attrs: string[][] = []; if (el.attributes.length > 64)
+            async function attributes(el: Element) { const attrs: [string, string | ['sha256', number, string]][] = []; if (el.attributes.length > 64)
                 complete = false; for (let i = 0; i < Math.min(el.attributes.length, 64); i++) {
                 const a = el.attributes[i]!;
                 if (a.name === 'value')
                     continue;
-                if (a.name.length > 64 || a.value.length > 2048) {
+                if (a.name.length > 64 || a.value.length > 65536) {
                     complete = false;
                     continue;
                 }
@@ -68,7 +68,7 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
                     complete = false;
                     break;
                 }
-                attrs.push([a.name, a.value]);
+                attrs.push([a.name, a.value.length <= 2048 ? a.value : ['sha256', a.value.length, await digest(a.value)]]);
             } return attrs.sort(); }
             const sensitive = (el: Element) => el.getAttribute('type')?.toLowerCase() === 'password' || /password|passwd|secret|token|authorization|api[ _-]?key|one-time-code|(?:^|[^a-z])otp(?:[^a-z]|$)|密码|口令|验证码|密钥|令牌/i.test(['name', 'id', 'autocomplete', 'aria-label', 'placeholder'].map(k => el.getAttribute(k) || '').join(' ') + ' ' + ((el as HTMLInputElement).labels ? [...(el as HTMLInputElement).labels!].map(l => l.textContent || '').join(' ') : ''));
             let hasSensitive = false;
@@ -187,7 +187,7 @@ export function createDocumentController(doc: Document, observer: DocumentObserv
                 }
                 const formHint = (form?.getAttribute('aria-label') || '').slice(0, 2048) + ' ' + (form?.getAttribute('name') || '').slice(0, 2048) + ' ' + (form?.action || '').slice(0, 4096);
                 const hint = [field.type || '', isSubmit ? 'submit' : '', link ? 'link' : '', /pay|checkout|purchase|支付|付款/i.test(formHint) ? 'payment' : '', /login|sign.in|oauth|authoriz|密码|验证码|登录/i.test(formHint) ? 'authentication' : ''].join(' ');
-                const target: PolicyTarget = { ref: summary.ref, tag: summary.tag, role: summary.role, name: summary.name, hint, enabled: summary.enabled, editable: summary.editable, sensitive: summary.sensitive, formSensitive: hasSensitive && !!form, inputType: field.type || '', destinationOrigins: [...new Set(destinationOrigins)].slice(0, 20), newWindow, fingerprint: await digest({ attributes: attributes(el), formAttributes: form ? attributes(form) : [], summary, type: field.type || '', hint, destination, formAction: form?.action || '', formMethod: form?.method || '', newWindow }) };
+                const target: PolicyTarget = { ref: summary.ref, tag: summary.tag, role: summary.role, name: summary.name, hint, enabled: summary.enabled, editable: summary.editable, sensitive: summary.sensitive, formSensitive: hasSensitive && !!form, inputType: field.type || '', destinationOrigins: [...new Set(destinationOrigins)].slice(0, 20), newWindow, fingerprint: await digest({ attributes: await attributes(el), formAttributes: form ? await attributes(form) : [], summary, type: field.type || '', hint, destination, formAction: form?.action || '', formMethod: form?.method || '', newWindow }) };
                 result.target = target;
                 result.complete = complete && new Set(destinationOrigins).size <= 20;
             }

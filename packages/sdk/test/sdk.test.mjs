@@ -12,6 +12,19 @@ const observation = { observationId: 'o', documentId: 'd', frameId: 'main', url:
 const evidence = { kind: 'url', url: observation.url, documentId: 'd', observationId: 'o', capturedAt: observation.capturedAt, actual: 'matched' };
 const finish = { kind: 'finish', summary: 'Done', expected: [{ kind: 'url', equals: observation.url }] };
 const ask = { kind: 'ask_user', question: 'Choose next' };
+test('policy reason summaries pass through only the approved codes', async t => {
+    const f = await fixture(t, { decisions: [ask] }), h = f.a.run({ goal: 'Policy event' });
+    await wait(async () => (await h.snapshot()).status === 'waiting_user');
+    await f.store.transact(s => {
+        const run = s.runs.get(h.runId), journal = s.journal.get(h.runId);
+        for (const reason of ['INCOMPLETE_CONTEXT', 'DESTINATION_NOT_GRANTED', 'POLICY_REASON_UNKNOWN', 'PRIVATE_SECRET'])
+            journal.push({ runId: h.runId, seq: ++run.seq, timestamp: observation.capturedAt, type: 'action.result', actionId: null, reason });
+    });
+    const page = await h.events();
+    assert.deepEqual(page.events.slice(-4).map(e => e.payload.summary), ['INCOMPLETE_CONTEXT', 'DESTINATION_NOT_GRANTED', 'POLICY_REASON_UNKNOWN', 'REDACTED']);
+    assert.ok(!JSON.stringify(page).includes('PRIVATE_SECRET'));
+    await h.cancel();
+});
 const action = { kind: 'action', request: { action: { kind: 'scroll', direction: 'down', pixels: 10 }, timeoutMs: 1000 } };
 const deferred = () => { let resolve; const promise = new Promise(r => resolve = r); return { promise, resolve }; };
 const wait = async (predicate) => { for (let n = 0; n < 200; n++) {
